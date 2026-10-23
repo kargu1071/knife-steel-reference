@@ -10,7 +10,9 @@ Bıçak seçiminde yalnızca çelik adını karşılaştırmak yeterli değildir
 | D2 | Yüksek aşınma direnci ve iyi ağız tutma | Düzenli kurutma ve yüzey kontrolü | EDC, outdoor, çalışma bıçakları |
 | N690 | Korozyon direnci ile keskinlik tutma arasında dengeli yapı | Kolay | Outdoor, av, kamp |
 | VG-10 | İnce ağız performansı ve paslanmaya karşı iyi direnç | Kolay | EDC, mutfak, hafif outdoor |
+| 440C | Dengeli paslanmazlık ve genel kullanım karakteri | Kolay | Çakı, outdoor, genel kullanım |
 | 1095 | Tok, kolay bilenebilir karbon çeliği | Neme karşı düzenli bakım gerekir | Bushcraft, kamp, sabit bıçak |
+| Damascus | Desenli ve üretim yöntemine göre değişken karakter | Üretime göre değişir | Koleksiyon, özel üretim, kullanım |
 
 ## 4116
 
@@ -28,9 +30,17 @@ N690, paslanmazlık, keskinlik ve kullanım dayanımı arasında dengeli bir pro
 
 VG-10, iyi korozyon direnci ve ince kesici ağız performansıyla tanınan paslanmaz çeliklerden biridir. Cep çakıları ve mutfak bıçaklarında sık karşılaşılır. Ağız geometrisi ve ısıl işlem kalitesi bu çeliğin gerçek performansında belirleyicidir.
 
+## 440C
+
+440C, uzun süredir bıçak üretiminde kullanılan paslanmaz çeliklerden biridir. Günlük kullanım ve çakı segmentinde bakım kolaylığı ile dengeli performansı nedeniyle sık araştırılır.
+
 ## 1095
 
 1095, yüksek karbonlu klasik bıçak çeliklerinden biridir. Kolay bilenebilirliği ve tok kullanım karakteri nedeniyle bushcraft ve sabit bıçaklarda tercih edilir. Buna karşılık paslanmaz çeliklere göre neme daha hassastır; kullanımdan sonra temiz ve kuru tutulması gerekir.
+
+## Damascus
+
+Damascus veya Şam çeliği adı, desenli görünümüyle öne çıkan farklı üretim yöntemlerini kapsayabilir. Performans değerlendirilirken yalnızca desen değil, kullanılan çelik kombinasyonu, ısıl işlem ve üretim kalitesi de dikkate alınmalıdır.
 
 ## Çelik seçerken neye bakılmalı?
 
@@ -46,13 +56,26 @@ En iyi çelik, kullanım amacına en uygun olan çeliktir. Günlük cep taşıma
 - bilenebilirlik,
 - bakım ihtiyacı.
 
-## Türkçe kaynak
+## Türkçe kaynak ağı
 
-Bıçak çeliklerini daha geniş bir çelik listesi ve kullanım notlarıyla incelemek için [AnkaOutdoor Bıçak Çelikleri Sözlüğü](https://www.ankaoutdoor.com/blog/icerik/bicak-celikleri-sozlugu) rehberine bakabilirsiniz.
+Ana merkez: [AnkaOutdoor Bıçak Çelikleri Sözlüğü](https://www.ankaoutdoor.com/blog/icerik/bicak-celikleri-sozlugu)
+
+Ayrıntılı rehberler:
+- [D2 Çelik Nedir? Kullanım ve Bakım](https://www.ankaoutdoor.com/blog/icerik/d2-celik-nedir-kullanim-ve-bakim)
+- [N690 Çelik Nedir?](https://www.ankaoutdoor.com/blog/icerik/n690-celik-nedir)
+- [VG10 Çelik Nedir?](https://www.ankaoutdoor.com/blog/icerik/vg10-celik-nedir)
+- [440C Çelik Kullanım Rehberi](https://www.ankaoutdoor.com/blog/icerik/440c-celik-nedir-kullanim-rehberi)
+- [1095 Karbon Çelik Nedir?](https://www.ankaoutdoor.com/blog/icerik/1095-karbon-celik-nedir)
+- [Damascus Çeliği Neden Bu Kadar Popüler?](https://www.ankaoutdoor.com/blog/icerik/damascus-celigi-neden-bu-kadar-populer)
+
+Bağımsız destek içerikleri:
+- [Bıçak Kurdu – Bıçak Çeliği Seçerken Nelere Bakılmalı?](https://bicakkurdu.wordpress.com/2026/10/23/bicak-celigi-secerken-nelere-bakilmali-d2-n690-vg10-440c/)
+- [Wix – Bıçak Çeliği Seçimi Rehberi](https://ankaoutdoor.wixsite.com/sitem/single-post/bicak-celigi-secimi-d2-n690-vg10-440c-1095-damascus)
+- [AnkaOutdoor Pinterest – Çakı ve Bıçaklar](https://tr.pinterest.com/Anka_outdoor/%C3%A7ak%C4%B1-ve-b%C4%B1%C3%A7aklar/)
 
 ---
 
 **Yayıncı:** AnkaOutdoor  
-**Son güncelleme:** 21 Ekim 2026
+**Son güncelleme:** 23 Ekim 2026
 
 > Not: Bu içerik genel bilgilendirme amaçlıdır. Aynı çelik, farklı üreticilerde ısıl işlem ve geometri nedeniyle farklı performans gösterebilir.
