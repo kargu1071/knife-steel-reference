@@ -73,6 +73,12 @@ Bağımsız destek içerikleri:
 - [Wix – Bıçak Çeliği Seçimi Rehberi](https://ankaoutdoor.wixsite.com/sitem/single-post/bicak-celigi-secimi-d2-n690-vg10-440c-1095-damascus)
 - [AnkaOutdoor Pinterest – Çakı ve Bıçaklar](https://tr.pinterest.com/Anka_outdoor/%C3%A7ak%C4%B1-ve-b%C4%B1%C3%A7aklar/)
 
+## Herkese açık dağıtım durumu
+
+Kampanyanın kamuya açık yayın noktalarını tek sayfada görmek için:
+
+[AnkaOutdoor İçerik Dağıtım Durumu](./distribution-status.md)
+
 ---
 
 **Yayıncı:** AnkaOutdoor  
