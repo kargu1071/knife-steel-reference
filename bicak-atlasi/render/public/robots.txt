@@ -1,4 +1,0 @@
-User-Agent: *
-Allow: /
-
-Sitemap: https://render-origin.bicak-atlasi.invalid/sitemap.xml
