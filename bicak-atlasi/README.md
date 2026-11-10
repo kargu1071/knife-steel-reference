@@ -8,6 +8,8 @@ AnkaOutdoor, BıçakKurdu, Knife Informer, Blade HQ, KnifeCenter ve benzer kayna
 
 ## Çalışan uygulamalar
 
+- [Bıçak Atlası karar aracı](https://bicak-atlasi.pages.dev/)
+
 - [Bıçak Atlası — Vercel](https://bicak-atlasi.vercel.app/)
 - [Canlı karşılaştırma aracı](https://bicak-atlasi.vercel.app/karsilastir/)
 - [Bıçak Atlası — Wix](https://headless-jbwdckbuspd-ankaoutdoor-140b.wix-site-host.com/)
