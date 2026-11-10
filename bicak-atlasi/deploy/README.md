@@ -36,3 +36,7 @@ node bicak-atlasi/deploy/prepare.mjs netlify
 ```
 
 Bu komutlar sadece `.atlas-dist/` altında yayın kopyası oluşturur; çalışan sitelere dokunmaz. Vercel Git bağlantısı ve mevcut Next.js projesi ancak orijinal kaynak kod doğrulandıktan sonra ayrı bir işlem olarak ele alınmalıdır.
+
+## Cloudflare Git yapılandırması (10 Kasım 2026)
+
+Cloudflare Pages kontrol panelinde bu deponun `main` dalından otomatik yayın ve `node bicak-atlasi/deploy/prepare.mjs cloudflare` komutu ile `.atlas-dist` yayın klasörü doğrulandı. Bu belgelendirme değişikliği, yeni build ayarlarıyla ilk Git tabanlı üretim dağıtımını tetiklemek için eklenmiştir. Vercel Next.js projesi bağımsız bırakılır.
