@@ -1,0 +1,1996 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+<meta name="robots" content="noindex, follow"/>
+<link rel="canonical" href="https://bicak-atlasi.pages.dev/"/>
+
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="Bıçak ve çakı dünyasından 20 kaynak. Site profillerini keşfet, bağlantılara git ve kendi ölçütlerinle karşılaştır."/>
+<title>Bıçak Atlası | Kaynak Rehberi</title>
+<style>
+body { margin: 0; }
+#bicak-atlasi-app {
+  --paper: #f7f6f0;
+  --card: #fff;
+  --ink: #213a30;
+  --forest: #285640;
+  --olive: #778650;
+  --muted: #5d6e63;
+  --line: #dfe3d8;
+  --wash: #edf1e4;
+  --shadow: 0 8px 32px #203b300b;
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif;
+  text-align: left;
+}
+#bicak-atlasi-app * { box-sizing: border-box; }
+#bicak-atlasi-app [hidden] { display: none !important; }
+#bicak-atlasi-app a { color: inherit; text-decoration: none; }
+#bicak-atlasi-app h1, #bicak-atlasi-app h2, #bicak-atlasi-app h3,
+#bicak-atlasi-app p, #bicak-atlasi-app ul, #bicak-atlasi-app ol { margin: 0; }
+#bicak-atlasi-app h1, #bicak-atlasi-app h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  letter-spacing: -.045em;
+  line-height: 1.13;
+}
+#bicak-atlasi-app h1 { font-size: clamp(2.2rem, 4.8vw, 4.25rem); margin-top: 15px; }
+#bicak-atlasi-app h2 { font-size: clamp(1.65rem, 2.7vw, 2.5rem); }
+#bicak-atlasi-app h3 { font-size: 1.11rem; line-height: 1.35; }
+#bicak-atlasi-app em { color: var(--olive); font-style: normal; }
+#bicak-atlasi-app button, #bicak-atlasi-app input, #bicak-atlasi-app select {
+  max-width: 100%;
+  font: inherit;
+  text-transform: none;
+  letter-spacing: normal;
+}
+#bicak-atlasi-app button { cursor: pointer; }
+#bicak-atlasi-app button:disabled { cursor: not-allowed; opacity: .48; }
+#bicak-atlasi-app :focus-visible { outline: 3px solid #a65732; outline-offset: 4px; }
+#bicak-atlasi-app input:not([type="checkbox"]):not([type="range"]):not([type="file"]),
+#bicak-atlasi-app select {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--ink);
+  line-height: 1.5;
+}
+#bicak-atlasi-app label { display: block; margin-bottom: 5px; font-size: .75rem; font-weight: 650; }
+#bicak-atlasi-app .ba-wrap { width: min(1188px, calc(100% - 64px)); margin-inline: auto; }
+#bicak-atlasi-app .ba-header { background: var(--card); border-bottom: 1px solid var(--line); }
+#bicak-atlasi-app .ba-header-inner {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+#bicak-atlasi-app .ba-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font: 700 1.65rem/1 Georgia, serif;
+  letter-spacing: -.07em;
+  white-space: nowrap;
+}
+#bicak-atlasi-app .ba-logo {
+  flex: none;
+  width: 38px;
+  height: 38px;
+  padding: 7px;
+  border-radius: 12px;
+  background: var(--forest);
+  color: white;
+}
+#bicak-atlasi-app .ba-nav { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+#bicak-atlasi-app .ba-nav a { padding: 9px 14px; border-radius: 999px; font-size: .85rem; font-weight: 650; }
+#bicak-atlasi-app .ba-nav a[aria-current="page"] { background: var(--wash); color: var(--forest); }
+#bicak-atlasi-app .ba-pill { display: inline-flex; align-items: center; gap: 6px; font-size: .72rem; color: var(--muted); }
+#bicak-atlasi-app .ba-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--olive); }
+#bicak-atlasi-app .ba-hero {
+  display: grid;
+  grid-template-columns: 1.13fr 1fr;
+  align-items: center;
+  gap: 66px;
+  padding-block: 66px 60px;
+}
+#bicak-atlasi-app .ba-eyebrow {
+  color: #647144;
+  font-size: .67rem;
+  font-weight: 750;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+#bicak-atlasi-app .ba-lead { margin-top: 19px; max-width: 650px; color: var(--muted); font-size: 1.03rem; line-height: 1.8; }
+#bicak-atlasi-app .ba-small { color: var(--muted); font-size: .75rem; }
+#bicak-atlasi-app .ba-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 23px; }
+#bicak-atlasi-app .ba-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--ink);
+  background: var(--card);
+  font-size: .84rem;
+  font-weight: 650;
+  line-height: 1.45;
+}
+#bicak-atlasi-app .ba-button:hover { border-color: var(--olive); background: #f8faf4; }
+#bicak-atlasi-app .ba-primary { border-color: var(--forest); background: var(--forest); color: white; }
+#bicak-atlasi-app .ba-primary:hover { background: #1e4432; color: white; }
+#bicak-atlasi-app .ba-small-button { padding: 7px 11px; font-size: .75rem; }
+#bicak-atlasi-app .ba-stats { display: flex; gap: 23px; margin-top: 31px; }
+#bicak-atlasi-app .ba-stats div+div { padding-left: 23px; border-left: 1px solid var(--line); }
+#bicak-atlasi-app .ba-stats strong { font-size: 1.45rem; font-weight: 600; letter-spacing: -.06em; }
+#bicak-atlasi-app .ba-stats span { margin-left: 7px; font-size: .68rem; color: var(--muted); }
+#bicak-atlasi-app .ba-panel {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+#bicak-atlasi-app .ba-discover { padding: 28px 30px; }
+#bicak-atlasi-app .ba-discover h2 { margin-block: 9px 17px; font-size: 1.78rem; }
+#bicak-atlasi-app .ba-discover a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-block: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--forest);
+}
+#bicak-atlasi-app .ba-discover strong { display: block; font-size: .88rem; }
+#bicak-atlasi-app .ba-discover small { display: block; color: var(--muted); font-size: .76rem; }
+#bicak-atlasi-app .ba-discover > p:last-child { margin-top: 10px; }
+#bicak-atlasi-app .ba-directory { padding-block: 18px 70px; scroll-margin-top: 20px; }
+#bicak-atlasi-app .ba-section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+#bicak-atlasi-app .ba-section-head h2 { margin-top: 10px; }
+#bicak-atlasi-app .ba-section-head p:not(.ba-eyebrow) { margin-top: 8px; color: var(--muted); font-size: .84rem; }
+#bicak-atlasi-app .ba-link {
+  font-size: .8rem;
+  font-weight: 650;
+  color: var(--forest);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+#bicak-atlasi-app .ba-toolbar, #bicak-atlasi-app .ba-decision-tools {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 19px;
+}
+#bicak-atlasi-app .ba-grow { flex: 1; min-width: 170px; }
+#bicak-atlasi-app .ba-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  margin: 0;
+  white-space: nowrap;
+}
+#bicak-atlasi-app input[type="checkbox"], #bicak-atlasi-app input[type="range"] { accent-color: var(--forest); }
+#bicak-atlasi-app .ba-toggle { display: flex; gap: 4px; }
+#bicak-atlasi-app .ba-toggle [aria-pressed="true"], #bicak-atlasi-app [data-action="toggle-site"][aria-pressed="true"] { background: var(--wash); }
+#bicak-atlasi-app .ba-categories { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 13px; }
+#bicak-atlasi-app .ba-chip {
+  padding: 7px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-size: .75rem;
+}
+#bicak-atlasi-app .ba-chip span { margin-left: 6px; opacity: .78; }
+#bicak-atlasi-app .ba-chip[aria-pressed="true"] { background: var(--forest); border-color: var(--forest); color: white; }
+#bicak-atlasi-app .ba-results-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-block: 20px 17px;
+  color: var(--muted);
+  font-size: .75rem;
+}
+#bicak-atlasi-app .ba-results-line strong { color: var(--ink); }
+#bicak-atlasi-app .ba-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 19px; }
+#bicak-atlasi-app .ba-card { display: flex; flex-direction: column; padding: 21px; }
+#bicak-atlasi-app .ba-card-top { display: flex; align-items: start; justify-content: space-between; gap: 10px; margin-bottom: 13px; }
+#bicak-atlasi-app .ba-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--site-color, var(--forest));
+  color: white;
+  font-size: .75rem;
+  font-weight: 750;
+}
+#bicak-atlasi-app .ba-badge { color: var(--muted); font-size: .64rem; letter-spacing: .065em; text-transform: uppercase; }
+#bicak-atlasi-app .ba-card h3 { margin-top: 5px; }
+#bicak-atlasi-app .ba-card .ba-character { margin-top: 11px; font-size: .86rem; font-weight: 650; }
+#bicak-atlasi-app .ba-card .ba-description { margin-top: 8px; color: var(--muted); font-size: .79rem; line-height: 1.75; }
+#bicak-atlasi-app .ba-features { padding-left: 17px; margin-top: 13px; font-size: .77rem; }
+#bicak-atlasi-app .ba-features li+li { margin-top: 5px; }
+#bicak-atlasi-app .ba-features li::marker { color: var(--olive); }
+#bicak-atlasi-app .ba-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  margin-block: 15px;
+  list-style: none;
+}
+#bicak-atlasi-app .ba-tags li { padding: 3px 7px; border-radius: 5px; background: #f1f3eb; color: var(--muted); font-size: .65rem; }
+#bicak-atlasi-app .ba-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+#bicak-atlasi-app .ba-card > button { width: 100%; margin-top: 12px; }
+#bicak-atlasi-app .ba-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+#bicak-atlasi-app table { width: 100%; border-collapse: collapse; margin: 0; font-size: .8rem; text-align: left; }
+#bicak-atlasi-app .ba-directory-table { min-width: 780px; }
+#bicak-atlasi-app th, #bicak-atlasi-app td { padding: 12px 14px; border: 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+#bicak-atlasi-app th { background: #f0f3e9; color: var(--ink); font-size: .76rem; font-weight: 650; }
+#bicak-atlasi-app .ba-empty { padding: 32px 20px; text-align: center; }
+#bicak-atlasi-app .ba-empty p { margin-block: 8px 14px; color: var(--muted); font-size: .85rem; }
+#bicak-atlasi-app .ba-page { min-height: 68vh; padding-block: 40px 65px; }
+#bicak-atlasi-app .ba-page-intro { max-width: 760px; margin-bottom: 24px; }
+#bicak-atlasi-app .ba-page h1 { font-size: clamp(2.15rem, 4.4vw, 3.35rem); }
+#bicak-atlasi-app .ba-back { display: inline-block; margin-bottom: 18px; color: var(--muted); font-size: .8rem; }
+#bicak-atlasi-app .ba-profile-intro { display: flex; gap: 20px; align-items: start; margin-bottom: 30px; }
+#bicak-atlasi-app .ba-profile-intro .ba-mark { width: 70px; height: 70px; border-radius: 19px; font-size: 1.05rem; }
+#bicak-atlasi-app .ba-profile-intro h1 { margin-top: 6px; }
+#bicak-atlasi-app .ba-profile-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 21px; }
+#bicak-atlasi-app .ba-stack { display: grid; gap: 19px; align-content: start; min-width: 0; }
+#bicak-atlasi-app .ba-pad { padding: 24px; }
+#bicak-atlasi-app .ba-pad h2 { font-size: 1.63rem; margin-bottom: 12px; }
+#bicak-atlasi-app .ba-pad p:not(.ba-eyebrow) { color: var(--muted); font-size: .84rem; line-height: 1.8; }
+#bicak-atlasi-app .ba-profile-character { border-left: 4px solid var(--olive); }
+#bicak-atlasi-app .ba-profile-character p:not(.ba-eyebrow) { font: italic 1.36rem/1.5 Georgia, serif; color: var(--forest); }
+#bicak-atlasi-app .ba-source-list { display: grid; gap: 9px; padding: 0; margin-top: 13px; list-style: none; }
+#bicak-atlasi-app .ba-source-list a { display: block; padding: 10px 13px; border: 1px solid var(--line); border-radius: 8px; }
+#bicak-atlasi-app .ba-method { max-width: 880px; }
+#bicak-atlasi-app .ba-method-section { padding-block: 24px; border-top: 1px solid var(--line); }
+#bicak-atlasi-app .ba-method-section h2 { margin-block: 8px 12px; font-size: 1.7rem; }
+#bicak-atlasi-app .ba-method-section p:not(.ba-eyebrow), #bicak-atlasi-app .ba-method-section li { color: var(--muted); font-size: .9rem; line-height: 1.85; }
+#bicak-atlasi-app .ba-method-section ul { padding-left: 22px; margin-top: 12px; }
+#bicak-atlasi-app .ba-note { padding: 13px 16px; border: 1px solid var(--line); border-radius: 9px; background: var(--wash); color: var(--forest); font-size: .8rem; }
+#bicak-atlasi-app .ba-formula { margin-top: 14px; font-weight: 650; }
+#bicak-atlasi-app .ba-decision-tools { margin-block: 19px 23px; }
+#bicak-atlasi-app #atlas-save-status { margin-top: 5px; }
+#bicak-atlasi-app .ba-compare-grid { display: grid; grid-template-columns: 290px minmax(0, 1fr); gap: 21px; align-items: start; }
+#bicak-atlasi-app .ba-criteria h2, #bicak-atlasi-app .ba-ranking h2 { font: 680 1.05rem/1.4 system-ui, sans-serif; letter-spacing: -.01em; }
+#bicak-atlasi-app .ba-criteria h2 { margin-top: 9px; }
+#bicak-atlasi-app .ba-criterion { padding-block: 15px; border-bottom: 1px solid var(--line); }
+#bicak-atlasi-app .ba-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+#bicak-atlasi-app .ba-row > input[type="text"] { min-width: 0; border-color: transparent; padding: 5px 4px; font-weight: 650; font-size: .79rem; background: transparent; }
+#bicak-atlasi-app .ba-row > input[type="text"]:hover { border-color: var(--line); }
+#bicak-atlasi-app .ba-remove { padding: 4px 8px; border: 0; border-radius: 5px; background: transparent; color: var(--muted); }
+#bicak-atlasi-app .ba-remove:hover { background: #f5e8e2; color: #8a3e26; }
+#bicak-atlasi-app .ba-criterion input[type="range"] { width: 100%; margin: 12px 0 5px; }
+#bicak-atlasi-app .ba-weight-meta { display: flex; justify-content: space-between; color: var(--muted); font-size: .72rem; }
+#bicak-atlasi-app .ba-add-form { display: flex; align-items: end; gap: 8px; margin-top: 17px; }
+#bicak-atlasi-app .ba-add-form .ba-grow { min-width: 0; }
+#bicak-atlasi-app .ba-equal { width: 100%; margin-top: 13px; }
+#bicak-atlasi-app .ba-snapshot { background: var(--wash); }
+#bicak-atlasi-app .ba-snapshot h2 { font: 750 .69rem/1.5 system-ui, sans-serif; letter-spacing: .13em; text-transform: uppercase; color: #647144; }
+#bicak-atlasi-app .ba-snap { display: flex; justify-content: space-between; align-items: start; gap: 18px; }
+#bicak-atlasi-app .ba-snapshot .ba-snap-title { font: 600 1.8rem/1.25 Georgia, serif; letter-spacing: -.035em; color: var(--ink); }
+#bicak-atlasi-app .ba-snap-description { margin-top: 10px; }
+#bicak-atlasi-app .ba-snap-contribution { margin-top: 10px; }
+#bicak-atlasi-app .ba-big-score { display: block; font-size: 2.65rem; font-weight: 700; letter-spacing: -.07em; line-height: 1.15; white-space: nowrap; }
+#bicak-atlasi-app .ba-big-score small { display: block; text-align: right; color: var(--muted); font-size: .65rem; font-weight: 400; letter-spacing: 0; }
+#bicak-atlasi-app .ba-rank-list { display: grid; gap: 17px; padding: 0; margin-top: 17px; list-style: none; }
+#bicak-atlasi-app .ba-rank-list .ba-row { font-size: .82rem; }
+#bicak-atlasi-app .ba-bar { display: flex; width: 100%; height: 10px; margin-block: 8px 5px; overflow: hidden; border-radius: 999px; background: #edf0e8; }
+#bicak-atlasi-app .ba-bar span { height: 100%; border-right: 1px solid white; }
+#bicak-atlasi-app .ba-ranking .ba-contributions { font-size: .68rem; }
+#bicak-atlasi-app .ba-pending { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); font-size: .78rem; }
+#bicak-atlasi-app .ba-score-editor { margin-top: 26px; }
+#bicak-atlasi-app .ba-score-editor h2 { margin-block: 7px 8px; font-size: 1.85rem; }
+#bicak-atlasi-app #atlas-score-table { margin-top: 15px; }
+#bicak-atlasi-app .ba-score-table { table-layout: fixed; }
+#bicak-atlasi-app .ba-score-table th:first-child { width: 194px; }
+#bicak-atlasi-app .ba-score-table .ba-score-input { width: 78px; text-align: right; }
+#bicak-atlasi-app .ba-score-input[aria-invalid="true"] { border-color: #a43e29; background: #fff1ec; }
+#bicak-atlasi-app .ba-score-error { margin-top: 4px; color: #963e26; font-size: .68rem; }
+#bicak-atlasi-app .ba-option-forms { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+#bicak-atlasi-app .ba-limit { margin-top: 12px; }
+#bicak-atlasi-app .ba-selection {
+  position: fixed;
+  z-index: 200;
+  bottom: 17px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  width: min(1020px, calc(100% - 28px));
+  padding: 12px 15px;
+  border: 1px solid #ccd7bf;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 9px 45px #18342526;
+}
+#bicak-atlasi-app .ba-selection > div { min-width: 0; }
+#bicak-atlasi-app .ba-selection strong { font-size: .8rem; }
+#bicak-atlasi-app .ba-selection p { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--muted); font-size: .72rem; }
+#bicak-atlasi-app .ba-footer { padding-block: 27px 105px; border-top: 1px solid var(--line); }
+#bicak-atlasi-app .ba-footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 17px; }
+#bicak-atlasi-app .ba-footer .ba-small { margin-top: 5px; }
+#bicak-atlasi-app .ba-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+#bicak-atlasi-app .ba-skip { position: absolute; z-index: 250; top: 8px; left: 10px; transform: translateY(-200%); padding: 7px 11px; background: white; border: 2px solid var(--forest); }
+#bicak-atlasi-app .ba-skip:focus { transform: none; }
+#bicak-atlasi-app .ba-toast { position: fixed; z-index: 230; bottom: 100px; left: 50%; transform: translateX(-50%); max-width: calc(100% - 32px); padding: 11px 15px; border-radius: 9px; background: var(--ink); color: white; box-shadow: var(--shadow); font-size: .8rem; }
+#bicak-atlasi-app dialog { width: min(470px, calc(100% - 32px)); max-height: 90vh; padding: 23px; border: 1px solid var(--line); border-radius: 14px; background: white; color: var(--ink); box-shadow: 0 17px 90px #1834252b; }
+#bicak-atlasi-app dialog::backdrop { background: #18342577; }
+#bicak-atlasi-app dialog h2 { margin-bottom: 11px; font-size: 1.75rem; }
+#bicak-atlasi-app dialog p { color: var(--muted); font-size: .85rem; }
+#bicak-atlasi-app dialog .ba-actions { justify-content: end; }
+
+@media (max-width: 1000px) {
+  #bicak-atlasi-app .ba-wrap { width: calc(100% - 40px); }
+  #bicak-atlasi-app .ba-hero { gap: 30px; padding-block: 45px; }
+  #bicak-atlasi-app .ba-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #bicak-atlasi-app .ba-pill { display: none; }
+  #bicak-atlasi-app .ba-compare-grid { grid-template-columns: 245px minmax(0, 1fr); }
+}
+@media (max-width: 720px) {
+  #bicak-atlasi-app .ba-hero, #bicak-atlasi-app .ba-profile-grid,
+  #bicak-atlasi-app .ba-compare-grid, #bicak-atlasi-app .ba-option-forms { grid-template-columns: 1fr; }
+  #bicak-atlasi-app .ba-header-inner { flex-wrap: wrap; padding-block: 13px; gap: 9px; }
+  #bicak-atlasi-app .ba-nav { gap: 2px; }
+  #bicak-atlasi-app .ba-nav a { padding: 7px 9px; font-size: .76rem; }
+  #bicak-atlasi-app .ba-section-head, #bicak-atlasi-app .ba-footer-inner { flex-direction: column; align-items: start; }
+  #bicak-atlasi-app .ba-hero { padding-block: 37px 29px; }
+  #bicak-atlasi-app .ba-selection .ba-button { padding: 8px 10px; font-size: .74rem; }
+}
+@media (max-width: 480px) {
+  #bicak-atlasi-app .ba-wrap { width: calc(100% - 26px); }
+  #bicak-atlasi-app .ba-grid { grid-template-columns: 1fr; }
+  #bicak-atlasi-app .ba-toolbar .ba-grow { flex-basis: 100%; }
+  #bicak-atlasi-app .ba-profile-intro { flex-direction: column; }
+  #bicak-atlasi-app .ba-pad, #bicak-atlasi-app .ba-discover { padding: 19px; }
+  #bicak-atlasi-app .ba-stats { gap: 13px; }
+  #bicak-atlasi-app .ba-stats div+div { padding-left: 13px; }
+  #bicak-atlasi-app .ba-stats span { display: block; margin-left: 0; }
+  #bicak-atlasi-app .ba-snap { flex-direction: column; }
+  #bicak-atlasi-app .ba-big-score small { display: inline; margin-left: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #bicak-atlasi-app * { scroll-behavior: auto !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+<div id="bicak-atlasi-app" lang="tr">
+  <a class="ba-skip" href="#atlas-main">İçeriğe geç</a>
+  <header class="ba-header">
+    <div class="ba-wrap ba-header-inner">
+      <a class="ba-brand" href="#atlas/rehber" aria-label="Bıçak Atlası ana sayfa"><svg class="ba-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.45"/><path d="M16.7 7.3l-2.6 6.8-6.8 2.6 2.6-6.8z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M16.7 7.3l-2.6 6.8-4.2-4.2z" fill="currentColor"/></svg><span>bıçak<em>atlası.</em></span></a>
+      <nav class="ba-nav" aria-label="Ana menü">
+        <a href="#atlas/rehber" data-nav="directory" aria-current="page">Kaynak rehberi</a>
+        <a href="#atlas/karsilastir" data-nav="compare">Karşılaştır <span id="atlas-nav-count"></span></a>
+        <a href="#atlas/yontem" data-nav="method">Yöntem</a>
+      </nav>
+      <span class="ba-pill"><span class="ba-dot"></span> Kişisel karşılaştırma</span>
+    </div>
+  </header>
+  <main id="atlas-main" tabindex="-1">
+    <noscript><p class="ba-wrap ba-note">Kaynak kartları ve site bağlantıları aşağıda okunabilir. Arama ve kişisel puanlama JavaScript ile çalışır.</p></noscript>
+    <section data-view="directory">
+      <div class="ba-wrap ba-hero">
+        <div>
+          <p class="ba-eyebrow">Bıçak dünyasına açılan 20 kapı</p>
+          <div data-heading="directory"><h1 id="atlas-main-title" tabindex="-1">Bıçak dünyasının <em>kaynak haritası.</em></h1></div>
+          <p class="ba-lead">Alışveriş, inceleme, çelik bilimi ve topluluklar.<br/>Her sitenin karakterini tanı. İhtiyacına uyan kaynağı bul.</p>
+          <div class="ba-actions">
+            <a class="ba-button ba-primary" href="#atlas-kaynaklar">Kaynakları keşfet <span aria-hidden="true">→</span></a>
+            <span class="ba-small">7 Kasım 2026 araştırması</span>
+          </div>
+          <div class="ba-stats">
+            <div><strong>20</strong><span>seçilmiş site</span></div>
+            <div><strong>05</strong><span>kaynak türü</span></div>
+            <div><strong>02</strong><span>Türkçe kaynak</span></div>
+          </div>
+        </div>
+        <aside class="ba-panel ba-discover" aria-label="Keşfe nereden başlamalı">
+          <p class="ba-eyebrow">Keşfe nereden başlamalı?</p>
+          <h2>Her sorunun adresi farklı.</h2>
+          <a href="#atlas-kaynaklar"><span><strong>Model ve katalog keşfi</strong><small>AnkaOutdoor, Blade HQ, KnifeCenter…</small></span><span aria-hidden="true">↗</span></a>
+          <a href="#atlas/profil/bicakkurdu"><span><strong>Deneyim ve seçim rehberi</strong><small>BıçakKurdu, Knife Informer…</small></span><span aria-hidden="true">↗</span></a>
+          <a href="#atlas/profil/knifesteelnerds"><span><strong>Çelik ve test verisi</strong><small>Knife Steel Nerds ve metalurji araştırmaları</small></span><span aria-hidden="true">↗</span></a>
+          <p class="ba-small">Kaynaklara doğrudan bağlantı ↗</p>
+        </aside>
+      </div>
+      <section class="ba-wrap ba-directory" id="atlas-kaynaklar" aria-labelledby="atlas-directory-title">
+        <div class="ba-section-head">
+          <div><p class="ba-eyebrow">Kaynak rehberi</p><h2 id="atlas-directory-title">Her kaynağın bir karakteri var.</h2><p>Özellikleri oku, kaynak sayfalarına git veya kendi ölçütlerinle karşılaştır.</p></div>
+          <a class="ba-link" href="#atlas/yontem">Nasıl araştırdık? ↗</a>
+        </div>
+        <div class="ba-toolbar ba-panel">
+          <div class="ba-grow"><label for="atlas-search">Kaynaklarda ara</label><input id="atlas-search" type="search" placeholder="Site, konu veya özellik ara…" autocomplete="off"/></div>
+          <label class="ba-check"><input id="atlas-turkish" type="checkbox"/>Sadece Türkçe</label>
+          <div><label for="atlas-sort">Sıralama</label><select id="atlas-sort"><option value="guide">Rehber sırası</option><option value="az">İsme göre A–Z</option></select></div>
+          <div class="ba-toggle" role="group" aria-label="Görünüm">
+            <button class="ba-button ba-small-button" type="button" data-action="view" data-mode="cards" aria-pressed="true" aria-label="Kart görünümü">▦ Kart</button>
+            <button class="ba-button ba-small-button" type="button" data-action="view" data-mode="table" aria-pressed="false" aria-label="Tablo görünümü">☷ Tablo</button>
+          </div>
+        </div>
+        <div class="ba-categories" role="group" aria-label="Kategori filtresi"><button class="ba-chip" type="button" data-action="category" data-category="" aria-pressed="true">Tümü <span>20</span></button>
+<button class="ba-chip" type="button" data-action="category" data-category="Mağaza" aria-pressed="false">Mağaza <span>9</span></button>
+<button class="ba-chip" type="button" data-action="category" data-category="İnceleme ve rehber" aria-pressed="false">İnceleme ve rehber <span>5</span></button>
+<button class="ba-chip" type="button" data-action="category" data-category="Haber ve dergi" aria-pressed="false">Haber ve dergi <span>3</span></button>
+<button class="ba-chip" type="button" data-action="category" data-category="Teknik araştırma" aria-pressed="false">Teknik araştırma <span>1</span></button>
+<button class="ba-chip" type="button" data-action="category" data-category="Topluluk" aria-pressed="false">Topluluk <span>2</span></button></div>
+        <div class="ba-results-line"><p id="atlas-results" role="status"><strong>20</strong> kaynak gösteriliyor</p><span>Liste sırası bir kalite puanı göstermez.</span><button class="ba-button ba-small-button" id="atlas-clear" type="button" data-action="clear" hidden="hidden">Filtreleri temizle</button></div>
+        <div class="ba-grid" id="atlas-cards">
+<article class="ba-panel ba-card" id="atlas-card-ankaoutdoor" data-directory-site="ankaoutdoor">
+  <div class="ba-card-top"><span class="ba-mark" style="--site-color:#b56a3e" aria-hidden="true">AO</span><span class="ba-badge">Mağaza · Türkçe</span></div>
+  <h3>AnkaOutdoor</h3>
+  <p class="ba-character">Yerel, pratik ve ürün odaklı.</p>
+  <p class="ba-description">Bıçak ve çakı çeşitlerini kamp, av ve outdoor ekipmanlarıyla bir araya getiren Türkçe mağaza. Ürün keşfini kullanım alanlarına göre kuruyor.</p>
+  <ul class="ba-features"><li>Çakı, sabit bıçak, av ve bushcraft kategorileri</li><li>Bıçak aksesuarları, kamp ekipmanı ve marka sayfaları</li><li>Ürün rehberleri, blog ve video bağlantıları</li></ul>
+  <ul class="ba-tags"><li>Türkçe</li><li>Kamp</li><li>Bushcraft</li><li>Çakı</li></ul>
+  <div class="ba-card-bottom"><a class="ba-link" href="#atlas/profil/ankaoutdoor" aria-label="AnkaOutdoor profili">Profili aç →</a><a class="ba-link" href="https://www.ankaoutdoor.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></div>
+  <button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="ankaoutdoor" aria-pressed="false" aria-label="AnkaOutdoor · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button>
+</article>
+<article class="ba-panel ba-card" id="atlas-card-bicakkurdu" data-directory-site="bicakkurdu">
+  <div class="ba-card-top"><span class="ba-mark" style="--site-color:#3b6350" aria-hidden="true">BK</span><span class="ba-badge">İnceleme ve rehber · Türkçe</span></div>
+  <h3>BıçakKurdu</h3>
+  <p class="ba-character">Öğretici, teknik konuları açıklayan ve rehber odaklı.</p>
+  <p class="ba-description">Bıçak ve çakı incelemeleri, çelik karşılaştırmaları, marka profilleri ve mekanizma açıklamalarına odaklanan Türkçe içerik kaynağı.</p>
+  <ul class="ba-features"><li>Bıçak ve çakı incelemeleri ile teknik içerikler</li><li>Üreticileri tanıtan marka profilleri</li><li>Kaynak seçimi ve çelik puanlama metodolojisi</li></ul>
+  <ul class="ba-tags"><li>Türkçe</li><li>Çelik</li><li>Markalar</li><li>Mekanizmalar</li></ul>
+  <div class="ba-card-bottom"><a class="ba-link" href="#atlas/profil/bicakkurdu" aria-label="BıçakKurdu profili">Profili aç →</a><a class="ba-link" href="https://bicakkurdu.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></div>
+  <button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="bicakkurdu" aria-pressed="false" aria-label="BıçakKurdu · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button>
+</article>
+<article class="ba-panel ba-card" id="atlas-card-knifeinformer" data-directory-site="knifeinformer">
+  <div class="ba-card-top"><span class="ba-mark" style="--site-color:#728449" aria-hidden="true">KI</span><span class="ba-badge">İnceleme ve rehber · İngilizce</span></div>
+  <h3>Knife Informer</h3>
+  <p class="ba-character">Seçenekleri daraltan, karşılaştırmalı ve tüketici odaklı.</p>
+  <p class="ba-description">Cep çakısı ve outdoor bıçakları için incelemeler, satın alma rehberleri ve seçim araçları sunuyor. Test yaklaşımını ayrı bir sayfada açıklıyor.</p>
+  <ul class="ba-features"><li>Model incelemeleri ve kullanım amacına göre rehberler</li><li>Knife Finder ve çelik karşılaştırma aracı</li><li>Test alanları, ekip ve gelir modeli açıklamaları</li></ul>
+  <ul class="ba-tags"><li>EDC</li><li>İnceleme</li><li>Çelik</li><li>Seçim aracı</li></ul>
+  <div class="ba-card-bottom"><a class="ba-link" href="#atlas/profil/knifeinformer" aria-label="Knife Informer profili">Profili aç →</a><a class="ba-link" href="https://knifeinformer.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></div>
+  <button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="knifeinformer" aria-pressed="false" aria-label="Knife Informer · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button>
+</article>
+<article class="ba-panel ba-card" id="atlas-card-bladehq" data-directory-site="bladehq">
+  <div class="ba-card-top"><span class="ba-mark" style="--site-color:#56776c" aria-hidden="true">BH</span><span class="ba-badge">Mağaza · İngilizce</span></div>
+  <h3>Blade HQ</h3>
+  <p class="ba-character">Görsel keşfi güçlü, modern ve yeni ürün odaklı.</p>
+  <p class="ba-description">Katlanır, sabit ve otomatik bıçakları; EDC ekipmanını ve mağazaya özel serileri öne çıkaran perakendeci.</p>
+  <ul class="ba-features"><li>Bıçak türüne ve kullanım amacına göre katalog</li><li>Blade HQ Exclusives ve yeni gelen ürünler</li><li>Knife Blog ve kaynak dizini</li></ul>
+  <ul class="ba-tags"><li>EDC</li><li>Yeni ürün</li><li>Özel seri</li><li>Katalog</li></ul>
+  <div class="ba-card-bottom"><a class="ba-link" href="#atlas/profil/bladehq" aria-label="Blade HQ profili">Profili aç →</a><a class="ba-link" href="https://www.bladehq.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></div>
+  <button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="bladehq" aria-pressed="false" aria-label="Blade HQ · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button>
+</article>
+<article class="ba-panel ba-card" id="atlas-card-knifecenter" data-directory-site="knifecenter">
+  <div class="ba-card-top"><span class="ba-mark" style="--site-color:#697b89" aria-hidden="true">KC</span><span class="ba-badge">Mağaza · İngilizce</span></div>
+  <h3>KnifeCenter</h3>
+  <p class="ba-character">Katalogcu, geniş kapsamlı ve ürün bilgisi odaklı.</p>
+  <p class="ba-description">Üretim bıçaklarından özel yapım modellere, mutfak bıçaklarından bileme ekipmanlarına kadar uzanan ürün kataloğu sunuyor.</p>
+  <ul class="ba-features"><li>Marka, yeni ürün ve bıçak türü dizinleri</li><li>Custom ve semi-custom ürün grupları</li><li>Bileme bilgileri ve mağaza blogu</li></ul>
+  <ul class="ba-tags"><li>Katalog</li><li>Markalar</li><li>Mutfak</li><li>Bileme</li></ul>
+  <div class="ba-card-bottom"><a class="ba-link" href="#atlas/profil/knifecenter" aria-label="KnifeCenter profili">Profili aç →</a><a class="ba-link" href="https://www.knifecenter.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></div>
+  <button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="knifecenter" aria-pressed="false" aria-label="KnifeCenter · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button>
+</article>
+<article class="ba-panel ba-card" id="atlas-card-knivesandtools" data-directory-site="knivesandtools">
+  <div class="ba-card-top"><span class="ba-mark" style="--site-color:#688252" aria-hidden="true">KT</span><span class="ba-badge">Mağaza · İngilizce / çok dilli</span></div>
+  <h3>Knivesandtools</h3>
+  <p class="ba-character">Açıklayıcı, karşılaştırmalı ve kullanım odaklı.</p>
+  <p class="ba-description">Outdoor ve mutfak bıçaklarını, bileme ürünlerini ve araçları; uzman içerikleri ve müşteri değerlendirmeleriyle birlikte sunan mağaza.</p>
+  <ul class="ba-features"><li>Outdoor, mutfak, multitool ve bileme grupları</li><li>Expert Info altında rehber ve karşılaştırmalar</li><li>Kendi ürün fotoğrafları ve müşteri yorumları</li></ul>
+  <ul class="ba-tags"><li>Bileme</li><li>Mutfak</li><li>Karşılaştırma</li><li>Outdoor</li></ul>
+  <div class="ba-card-bottom"><a class="ba-link" href="#atlas/profil/knivesandtools" aria-label="Knivesandtools profili">Profili aç →</a><a class="ba-link" href="https://www.knivesandtools.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></div>
+  <button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="knivesandtools" aria-pressed="false" aria-label="Knivesandtools · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button>
+</article>
+<article class="ba-panel ba-card" id="atlas-card-lamnia" data-directory-site="lamnia">
+  <div class="ba-card-top"><span class="ba-mark" style="--site-color:#708787" aria-hidden="true">LA</span><span class="ba-badge">Mağaza · İngilizce / çok dilli</span></div>
+  <h3>Lamnia</h3>
+  <p class="ba-character">Kuzey Avrupa çizgisi güçlü, geniş seçkili ve outdoor odaklı.</p>
+  <p class="ba-description">Uluslararası üreticilerle İskandinav ustaların bıçaklarını aynı katalogda topluyor. Kamp ve outdoor ekipmanını da kapsıyor.</p>
+  <ul class="ba-features"><li>Sabit, katlanır, geleneksel ve custom bıçaklar</li><li>İskandinav ustaların ürünleri ve outdoor donanımı</li><li>Dil, ülke, para birimi ve ölçü birimi seçenekleri</li></ul>
+  <ul class="ba-tags"><li>İskandinav</li><li>Puukko</li><li>Kamp</li><li>Custom</li></ul>
+  <div class="ba-card-bottom"><a class="ba-link" href="#atlas/profil/lamnia" aria-label="Lamnia profili">Profili aç →</a><a class="ba-link" href="https://www.lamnia.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></div>
+  <button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="lamnia" aria-pressed="false" aria-label="Lamnia · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button>
+</article>
+<article class="ba-panel ba-card" id="atlas-card-dlttrading" data-directory-site="dlttrading">
+  <div class="ba-card-top"><span class="ba-mark" style="--site-color:#94745a" aria-hidden="true">DLT</span><span class="ba-badge">Mağaza · İngilizce</span></div>
+  <h3>DLT Trading</h3>
+  <p class="ba-character">Meraklıya hitap eden, koleksiyon ve kişiselleştirme odaklı.</p>
+  <p class="ba-description">Bıçak, EDC ve bakım ekipmanlarını; mağazaya özel sürümler, custom modeller ve gravür hizmetiyle birleştiriyor.</p>
+  <ul class="ba-features"><li>DLT Exclusives, drop ve yeniden stok girişleri</li><li>Gravürlü bıçaklar ve custom ürün grubu</li><li>Shop Talk videoları ve bıçak blogu</li></ul>
+  <ul class="ba-tags"><li>Özel seri</li><li>Gravür</li><li>EDC</li><li>Custom</li></ul>
+  <div class="ba-card-bottom"><a class="ba-link" href="#atlas/profil/dlttrading" aria-label="DLT Trading profili">Profili aç →</a><a class="ba-link" href="https://www.dlttrading.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></div>
+  <button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="dlttrading" aria-pressed="false" aria-label="DLT Trading · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button>
+</article>
+<article class="ba-panel ba-card" id="atlas-card-smkw" data-directory-site="smkw">
+  <div class="ba-card-top"><span class="ba-mark" style="--site-color:#a88046" aria-hidden="true">SM</span><span class="ba-badge">Mağaza · İngilizce</span></div>
+  <h3>Smoky Mountain Knife Works</h3>
+  <p class="ba-character">Geleneksel mağaza hissi taşıyan, koleksiyoner ve outdoor kitlesine açık.</p>
+  <p class="ba-description">Online satışını Tennessee’deki fiziksel showroom ve etkinliklerle tamamlayan bıçak ve outdoor perakendecisi.</p>
+  <ul class="ba-features"><li>Bıçak ve outdoor ekipmanlarına yayılan katalog</li><li>Fiziksel showroom ve koleksiyon sergileri</li><li>Marka temsilcileriyle mağaza etkinlikleri</li></ul>
+  <ul class="ba-tags"><li>Koleksiyon</li><li>Geleneksel</li><li>Outdoor</li><li>Showroom</li></ul>
+  <div class="ba-card-bottom"><a class="ba-link" href="#atlas/profil/smkw" aria-label="Smoky Mountain Knife Works profili">Profili aç →</a><a class="ba-link" href="https://smkw.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></div>
+  <button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="smkw" aria-pressed="false" aria-label="Smoky Mountain Knife Works · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button>
+</article>
+<article class="ba-panel ba-card" id="atlas-card-knifeart" data-directory-site="knifeart">
+  <div class="ba-card-top"><span class="ba-mark" style="--site-color:#76675e" aria-hidden="true">KA</span><span class="ba-badge">Mağaza · İngilizce</span></div>
+  <h3>KnifeArt</h3>
+  <p class="ba-character">Seçkili, koleksiyoner odaklı ve premium ağırlıklı.</p>
+  <p class="ba-description">Chris Reeve, Winkler ve William Henry gibi markalarla; özel yapım bıçaklar ve mağazaya özel sürümleri öne çıkarıyor.</p>
+  <ul class="ba-features"><li>Custom ustalarına göre ürün dizini</li><li>EDC, av, sabit bıçak ve Damascus kategorileri</li><li>Exclusives ve fiyat aralığına göre koleksiyonlar</li></ul>
+  <ul class="ba-tags"><li>Premium</li><li>Custom</li><li>Koleksiyon</li><li>EDC</li></ul>
+  <div class="ba-card-bottom"><a class="ba-link" href="#atlas/profil/knifeart" aria-label="KnifeArt profili">Profili aç →</a><a class="ba-link" href="https://www.knifeart.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></div>
+  <button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="knifeart" aria-pressed="false" aria-label="KnifeArt · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button>
+</article>
+<article class="ba-panel ba-card" id="atlas-card-agrussell" data-directory-site="agrussell">
+  <div class="ba-card-top"><span class="ba-mark" style="--site-color:#8c795d" aria-hidden="true">AG</span><span class="ba-badge">Mağaza · İngilizce</span></div>
+  <h3>A.G. Russell</h3>
+  <p class="ba-character">Köklü, açıklayıcı ve geleneksel bıçak kültürüne yakın.</p>
+  <p class="ba-description">Kendi markaları ve farklı üreticilerin bıçaklarıyla birlikte çelik tablosu, bıçak ansiklopedisi ve bileme rehberleri sunuyor.</p>
+  <ul class="ba-features"><li>Kendi markaları ve başka üreticilerin kataloğu</li><li>Steel Chart ve Knife Encyclopedia</li><li>Bileme rehberleri ve bıçak makaleleri</li></ul>
+  <ul class="ba-tags"><li>Çelik tablosu</li><li>Ansiklopedi</li><li>Geleneksel</li><li>Bileme</li></ul>
+  <div class="ba-card-bottom"><a class="ba-link" href="#atlas/profil/agrussell" aria-label="A.G. Russell profili">Profili aç →</a><a class="ba-link" href="https://agrussell.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></div>
+  <button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="agrussell" aria-pressed="false" aria-label="A.G. Russell · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button>
+</article>
+<article class="ba-panel ba-card" id="atlas-card-knifesteelnerds" data-directory-site="knifesteelnerds">
+  <div class="ba-card-top"><span class="ba-mark" style="--site-color:#58748a" aria-hidden="true">SN</span><span class="ba-badge">Teknik araştırma · İngilizce</span></div>
+  <h3>Knife Steel Nerds</h3>
+  <p class="ba-character">Bilimsel, veri yoğun ve yöntem açıklayan.</p>
+  <p class="ba-description">Metalurjist Dr. Larrin Thomas’ın bıçak çelikleri, ısıl işlem, tokluk, ağız tutma ve korozyon üzerine deneysel araştırmalarını yayımladığı kaynak.</p>
+  <ul class="ba-features"><li>Metalurji ve ısıl işlem üzerine teknik yazılar</li><li>Tokluk, ağız tutma ve korozyon testleri</li><li>Test koşulları ve çelik davranışlarına dair grafikler</li></ul>
+  <ul class="ba-tags"><li>Metalurji</li><li>Test verisi</li><li>Isıl işlem</li><li>Çelik</li></ul>
+  <div class="ba-card-bottom"><a class="ba-link" href="#atlas/profil/knifesteelnerds" aria-label="Knife Steel Nerds profili">Profili aç →</a><a class="ba-link" href="https://knifesteelnerds.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></div>
+  <button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="knifesteelnerds" aria-pressed="false" aria-label="Knife Steel Nerds · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button>
+</article>
+<article class="ba-panel ba-card" id="atlas-card-knifenews" data-directory-site="knifenews">
+  <div class="ba-card-top"><span class="ba-mark" style="--site-color:#aa694d" aria-hidden="true">KN</span><span class="ba-badge">Haber ve dergi · İngilizce</span></div>
+  <h3>KnifeNews</h3>
+  <p class="ba-character">Gündem odaklı, hızlı taranabilen ve yenilik izleyen.</p>
+  <p class="ba-description">Yeni bıçaklar, üreticiler, tasarımcılar ve sektör gelişmeleri hakkında haberler yayımlıyor.</p>
+  <ul class="ba-features"><li>Yeni model ve seri duyuruları</li><li>Üretici ve tasarımcı haberleri</li><li>Fuarlar, şirket gelişmeleri ve sektör başlıkları</li></ul>
+  <ul class="ba-tags"><li>Haber</li><li>Yeni ürün</li><li>Tasarımcı</li><li>Sektör</li></ul>
+  <div class="ba-card-bottom"><a class="ba-link" href="#atlas/profil/knifenews" aria-label="KnifeNews profili">Profili aç →</a><a class="ba-link" href="https://knifenews.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></div>
+  <button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="knifenews" aria-pressed="false" aria-label="KnifeNews · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button>
+</article>
+<article class="ba-panel ba-card" id="atlas-card-blademag" data-directory-site="blademag">
+  <div class="ba-card-top"><span class="ba-mark" style="--site-color:#896054" aria-hidden="true">BL</span><span class="ba-badge">Haber ve dergi · İngilizce</span></div>
+  <h3>BLADE Magazine</h3>
+  <p class="ba-character">Dergicilik geleneği olan, zanaat ve sektör kültürüne yakın.</p>
+  <p class="ba-description">Bıçak yapımı, koleksiyonculuk, ürün incelemeleri ve sektör etkinliklerini bir araya getiren dergi ve web yayını.</p>
+  <ul class="ba-features"><li>Knifemaking ve atölye teknikleri</li><li>Custom bıçaklar ve koleksiyon içerikleri</li><li>İncelemeler, BLADE Show ve sektör haberleri</li></ul>
+  <ul class="ba-tags"><li>Zanaat</li><li>Custom</li><li>Koleksiyon</li><li>Dergi</li></ul>
+  <div class="ba-card-bottom"><a class="ba-link" href="#atlas/profil/blademag" aria-label="BLADE Magazine profili">Profili aç →</a><a class="ba-link" href="https://blademag.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></div>
+  <button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="blademag" aria-pressed="false" aria-label="BLADE Magazine · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button>
+</article>
+<article class="ba-panel ba-card" id="atlas-card-knifemagazine" data-directory-site="knifemagazine">
+  <div class="ba-card-top"><span class="ba-mark" style="--site-color:#6e7864" aria-hidden="true">KM</span><span class="ba-badge">Haber ve dergi · İngilizce</span></div>
+  <h3>KNIFE Magazine</h3>
+  <p class="ba-character">Arşivci, tarih meraklısı ve koleksiyoner odaklı.</p>
+  <p class="ba-description">Basılı dergisini web haber akışı, eski sayı arşivleri, terimler ve tarih odaklı içeriklerle tamamlayan yayın.</p>
+  <ul class="ba-features"><li>Eski dergi sayıları ve dijital arşivler</li><li>Custom bıçak, üretim ve sektör haberleri</li><li>Bıçak terimleri, etkinlikler ve koleksiyon içeriği</li></ul>
+  <ul class="ba-tags"><li>Arşiv</li><li>Tarih</li><li>Koleksiyon</li><li>Dergi</li></ul>
+  <div class="ba-card-bottom"><a class="ba-link" href="#atlas/profil/knifemagazine" aria-label="KNIFE Magazine profili">Profili aç →</a><a class="ba-link" href="https://www.knifemagazine.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></div>
+  <button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="knifemagazine" aria-pressed="false" aria-label="KNIFE Magazine · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button>
+</article>
+<article class="ba-panel ba-card" id="atlas-card-everydaycommentary" data-directory-site="everydaycommentary">
+  <div class="ba-card-top"><span class="ba-mark" style="--site-color:#8a745e" aria-hidden="true">EC</span><span class="ba-badge">İnceleme ve rehber · İngilizce</span></div>
+  <h3>Everyday Commentary</h3>
+  <p class="ba-character">Kişisel sesi belirgin, eleştirel ve deneyim odaklı.</p>
+  <p class="ba-description">Bıçakları ve günlük taşıma ekipmanlarını yazarın kullanım tercihleri, yorumları ve puanlı inceleme arşivi üzerinden ele alıyor.</p>
+  <ul class="ba-features"><li>Katlanır çakı ve diğer EDC ekipmanı incelemeleri</li><li>Puanların ve sonraki güncellemelerin yer aldığı arşiv</li><li>Seçim yazıları ve dönemsel hediye rehberleri</li></ul>
+  <ul class="ba-tags"><li>EDC</li><li>Yorum</li><li>İnceleme</li><li>Puanlama</li></ul>
+  <div class="ba-card-bottom"><a class="ba-link" href="#atlas/profil/everydaycommentary" aria-label="Everyday Commentary profili">Profili aç →</a><a class="ba-link" href="https://www.everydaycommentary.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></div>
+  <button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="everydaycommentary" aria-pressed="false" aria-label="Everyday Commentary · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button>
+</article>
+<article class="ba-panel ba-card" id="atlas-card-bladereviews" data-directory-site="bladereviews">
+  <div class="ba-card-top"><span class="ba-mark" style="--site-color:#738478" aria-hidden="true">BR</span><span class="ba-badge">İnceleme ve rehber · İngilizce</span></div>
+  <h3>BladeReviews</h3>
+  <p class="ba-character">Arşivli, sistematik ve model ayrıntısına odaklanan.</p>
+  <p class="ba-description">Bıçak incelemelerini marka, kullanım amacı ve sınıfına göre düzenliyor. Bakım, çelik ve bileme içerikleri de sunuyor.</p>
+  <ul class="ba-features"><li>Marka, kullanım ve bıçak sınıfına göre gezinme</li><li>EDC, yüksek değer ve sabit bıçak incelemeleri</li><li>Bakım, bıçak sözlüğü ve çelik bilgileri</li></ul>
+  <ul class="ba-tags"><li>İnceleme</li><li>Arşiv</li><li>Bakım</li><li>Çelik</li></ul>
+  <div class="ba-card-bottom"><a class="ba-link" href="#atlas/profil/bladereviews" aria-label="BladeReviews profili">Profili aç →</a><a class="ba-link" href="https://bladereviews.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></div>
+  <button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="bladereviews" aria-pressed="false" aria-label="BladeReviews · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button>
+</article>
+<article class="ba-panel ba-card" id="atlas-card-gearjunkie" data-directory-site="gearjunkie">
+  <div class="ba-card-top"><span class="ba-mark" style="--site-color:#9c7745" aria-hidden="true">GJ</span><span class="ba-badge">İnceleme ve rehber · İngilizce</span></div>
+  <h3>GearJunkie · Knives</h3>
+  <p class="ba-character">Saha kullanımı ve outdoor senaryolarını öne çıkaran.</p>
+  <p class="ba-description">Geniş outdoor yayıncılığı içinde bıçak, balta ve multitool incelemeleri ile seçim rehberlerine yer veriyor.</p>
+  <ul class="ba-features"><li>Bıçak, balta ve multitool içerikleri</li><li>Model incelemeleri ve satın alma rehberleri</li><li>Yayımlanmış ürün değerlendirme ilkeleri</li></ul>
+  <ul class="ba-tags"><li>Outdoor</li><li>Kamp</li><li>Multitool</li><li>İnceleme</li></ul>
+  <div class="ba-card-bottom"><a class="ba-link" href="#atlas/profil/gearjunkie" aria-label="GearJunkie · Knives profili">Profili aç →</a><a class="ba-link" href="https://gearjunkie.com/knives" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></div>
+  <button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="gearjunkie" aria-pressed="false" aria-label="GearJunkie · Knives · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button>
+</article>
+<article class="ba-panel ba-card" id="atlas-card-bladeforums" data-directory-site="bladeforums">
+  <div class="ba-card-top"><span class="ba-mark" style="--site-color:#67808b" aria-hidden="true">BF</span><span class="ba-badge">Topluluk · İngilizce</span></div>
+  <h3>BladeForums</h3>
+  <p class="ba-character">Çok sesli, deneyim paylaşan ve derin arşivli.</p>
+  <p class="ba-description">Genel bıçak tartışmalarını, üretici ve usta bölümlerini, kullanıcı deneyimlerini ve ilan alanlarını aynı forumda topluyor.</p>
+  <ul class="ba-features"><li>Genel tartışma, üretici ve knifemaker bölümleri</li><li>Kullanıcı yorumları, kaynaklar ve incelemeler</li><li>Exchange ve classifieds alanları</li></ul>
+  <ul class="ba-tags"><li>Forum</li><li>Deneyim</li><li>Üreticiler</li><li>Topluluk</li></ul>
+  <div class="ba-card-bottom"><a class="ba-link" href="#atlas/profil/bladeforums" aria-label="BladeForums profili">Profili aç →</a><a class="ba-link" href="https://www.bladeforums.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></div>
+  <button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="bladeforums" aria-pressed="false" aria-label="BladeForums · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button>
+</article>
+<article class="ba-panel ba-card" id="atlas-card-aapk" data-directory-site="aapk">
+  <div class="ba-card-top"><span class="ba-mark" style="--site-color:#917b56" aria-hidden="true">AAPK</span><span class="ba-badge">Topluluk · İngilizce</span></div>
+  <h3>All About Pocket Knives</h3>
+  <p class="ba-character">Koleksiyoncu, araştırmacı ve topluluk merkezli.</p>
+  <p class="ba-description">Forum, araştırma bölümü, bıçak kayıtları ve üye mağazalarını birleştiren cep çakısı topluluğu.</p>
+  <ul class="ba-features"><li>Forum ve soru-cevap alanları</li><li>Araştırma bölümü ve bıçak kayıtları</li><li>Üye mağazaları ve satılmış ürün arşivleri</li></ul>
+  <ul class="ba-tags"><li>Cep çakısı</li><li>Koleksiyon</li><li>Araştırma</li><li>Forum</li></ul>
+  <div class="ba-card-bottom"><a class="ba-link" href="#atlas/profil/aapk" aria-label="All About Pocket Knives profili">Profili aç →</a><a class="ba-link" href="https://www.allaboutpocketknives.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></div>
+  <button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="aapk" aria-pressed="false" aria-label="All About Pocket Knives · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button>
+</article></div>
+        <div class="ba-table-wrap" id="atlas-table-wrap" hidden="hidden"><table class="ba-directory-table"><caption class="ba-sr">Kaynakların özellikleri ve bağlantıları</caption><thead><tr><th scope="col">Kaynak</th><th scope="col">Tür ve dil</th><th scope="col">Karakteri</th><th scope="col">Bağlantılar</th><th scope="col">Seçim</th></tr></thead><tbody id="atlas-rows">
+<tr id="atlas-row-ankaoutdoor" data-directory-site="ankaoutdoor">
+  <th scope="row">AnkaOutdoor</th>
+  <td>Mağaza<br/><small>Türkçe · Türkiye</small></td>
+  <td>Yerel, pratik ve ürün odaklı.<ul class="ba-features"><li>Çakı, sabit bıçak, av ve bushcraft kategorileri</li><li>Bıçak aksesuarları, kamp ekipmanı ve marka sayfaları</li><li>Ürün rehberleri, blog ve video bağlantıları</li></ul></td>
+  <td><a class="ba-link" href="#atlas/profil/ankaoutdoor" aria-label="AnkaOutdoor profili">Profili aç →</a><br/><a class="ba-link" href="https://www.ankaoutdoor.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></td>
+  <td><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="ankaoutdoor" aria-pressed="false" aria-label="AnkaOutdoor · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></td>
+</tr>
+<tr id="atlas-row-bicakkurdu" data-directory-site="bicakkurdu">
+  <th scope="row">BıçakKurdu</th>
+  <td>İnceleme ve rehber<br/><small>Türkçe · Türkiye</small></td>
+  <td>Öğretici, teknik konuları açıklayan ve rehber odaklı.<ul class="ba-features"><li>Bıçak ve çakı incelemeleri ile teknik içerikler</li><li>Üreticileri tanıtan marka profilleri</li><li>Kaynak seçimi ve çelik puanlama metodolojisi</li></ul></td>
+  <td><a class="ba-link" href="#atlas/profil/bicakkurdu" aria-label="BıçakKurdu profili">Profili aç →</a><br/><a class="ba-link" href="https://bicakkurdu.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></td>
+  <td><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="bicakkurdu" aria-pressed="false" aria-label="BıçakKurdu · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></td>
+</tr>
+<tr id="atlas-row-knifeinformer" data-directory-site="knifeinformer">
+  <th scope="row">Knife Informer</th>
+  <td>İnceleme ve rehber<br/><small>İngilizce · Uluslararası</small></td>
+  <td>Seçenekleri daraltan, karşılaştırmalı ve tüketici odaklı.<ul class="ba-features"><li>Model incelemeleri ve kullanım amacına göre rehberler</li><li>Knife Finder ve çelik karşılaştırma aracı</li><li>Test alanları, ekip ve gelir modeli açıklamaları</li></ul></td>
+  <td><a class="ba-link" href="#atlas/profil/knifeinformer" aria-label="Knife Informer profili">Profili aç →</a><br/><a class="ba-link" href="https://knifeinformer.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></td>
+  <td><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="knifeinformer" aria-pressed="false" aria-label="Knife Informer · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></td>
+</tr>
+<tr id="atlas-row-bladehq" data-directory-site="bladehq">
+  <th scope="row">Blade HQ</th>
+  <td>Mağaza<br/><small>İngilizce · ABD</small></td>
+  <td>Görsel keşfi güçlü, modern ve yeni ürün odaklı.<ul class="ba-features"><li>Bıçak türüne ve kullanım amacına göre katalog</li><li>Blade HQ Exclusives ve yeni gelen ürünler</li><li>Knife Blog ve kaynak dizini</li></ul></td>
+  <td><a class="ba-link" href="#atlas/profil/bladehq" aria-label="Blade HQ profili">Profili aç →</a><br/><a class="ba-link" href="https://www.bladehq.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></td>
+  <td><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="bladehq" aria-pressed="false" aria-label="Blade HQ · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></td>
+</tr>
+<tr id="atlas-row-knifecenter" data-directory-site="knifecenter">
+  <th scope="row">KnifeCenter</th>
+  <td>Mağaza<br/><small>İngilizce · ABD</small></td>
+  <td>Katalogcu, geniş kapsamlı ve ürün bilgisi odaklı.<ul class="ba-features"><li>Marka, yeni ürün ve bıçak türü dizinleri</li><li>Custom ve semi-custom ürün grupları</li><li>Bileme bilgileri ve mağaza blogu</li></ul></td>
+  <td><a class="ba-link" href="#atlas/profil/knifecenter" aria-label="KnifeCenter profili">Profili aç →</a><br/><a class="ba-link" href="https://www.knifecenter.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></td>
+  <td><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="knifecenter" aria-pressed="false" aria-label="KnifeCenter · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></td>
+</tr>
+<tr id="atlas-row-knivesandtools" data-directory-site="knivesandtools">
+  <th scope="row">Knivesandtools</th>
+  <td>Mağaza<br/><small>İngilizce / çok dilli · Hollanda</small></td>
+  <td>Açıklayıcı, karşılaştırmalı ve kullanım odaklı.<ul class="ba-features"><li>Outdoor, mutfak, multitool ve bileme grupları</li><li>Expert Info altında rehber ve karşılaştırmalar</li><li>Kendi ürün fotoğrafları ve müşteri yorumları</li></ul></td>
+  <td><a class="ba-link" href="#atlas/profil/knivesandtools" aria-label="Knivesandtools profili">Profili aç →</a><br/><a class="ba-link" href="https://www.knivesandtools.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></td>
+  <td><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="knivesandtools" aria-pressed="false" aria-label="Knivesandtools · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></td>
+</tr>
+<tr id="atlas-row-lamnia" data-directory-site="lamnia">
+  <th scope="row">Lamnia</th>
+  <td>Mağaza<br/><small>İngilizce / çok dilli · Finlandiya</small></td>
+  <td>Kuzey Avrupa çizgisi güçlü, geniş seçkili ve outdoor odaklı.<ul class="ba-features"><li>Sabit, katlanır, geleneksel ve custom bıçaklar</li><li>İskandinav ustaların ürünleri ve outdoor donanımı</li><li>Dil, ülke, para birimi ve ölçü birimi seçenekleri</li></ul></td>
+  <td><a class="ba-link" href="#atlas/profil/lamnia" aria-label="Lamnia profili">Profili aç →</a><br/><a class="ba-link" href="https://www.lamnia.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></td>
+  <td><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="lamnia" aria-pressed="false" aria-label="Lamnia · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></td>
+</tr>
+<tr id="atlas-row-dlttrading" data-directory-site="dlttrading">
+  <th scope="row">DLT Trading</th>
+  <td>Mağaza<br/><small>İngilizce · ABD</small></td>
+  <td>Meraklıya hitap eden, koleksiyon ve kişiselleştirme odaklı.<ul class="ba-features"><li>DLT Exclusives, drop ve yeniden stok girişleri</li><li>Gravürlü bıçaklar ve custom ürün grubu</li><li>Shop Talk videoları ve bıçak blogu</li></ul></td>
+  <td><a class="ba-link" href="#atlas/profil/dlttrading" aria-label="DLT Trading profili">Profili aç →</a><br/><a class="ba-link" href="https://www.dlttrading.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></td>
+  <td><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="dlttrading" aria-pressed="false" aria-label="DLT Trading · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></td>
+</tr>
+<tr id="atlas-row-smkw" data-directory-site="smkw">
+  <th scope="row">Smoky Mountain Knife Works</th>
+  <td>Mağaza<br/><small>İngilizce · ABD</small></td>
+  <td>Geleneksel mağaza hissi taşıyan, koleksiyoner ve outdoor kitlesine açık.<ul class="ba-features"><li>Bıçak ve outdoor ekipmanlarına yayılan katalog</li><li>Fiziksel showroom ve koleksiyon sergileri</li><li>Marka temsilcileriyle mağaza etkinlikleri</li></ul></td>
+  <td><a class="ba-link" href="#atlas/profil/smkw" aria-label="Smoky Mountain Knife Works profili">Profili aç →</a><br/><a class="ba-link" href="https://smkw.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></td>
+  <td><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="smkw" aria-pressed="false" aria-label="Smoky Mountain Knife Works · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></td>
+</tr>
+<tr id="atlas-row-knifeart" data-directory-site="knifeart">
+  <th scope="row">KnifeArt</th>
+  <td>Mağaza<br/><small>İngilizce · ABD</small></td>
+  <td>Seçkili, koleksiyoner odaklı ve premium ağırlıklı.<ul class="ba-features"><li>Custom ustalarına göre ürün dizini</li><li>EDC, av, sabit bıçak ve Damascus kategorileri</li><li>Exclusives ve fiyat aralığına göre koleksiyonlar</li></ul></td>
+  <td><a class="ba-link" href="#atlas/profil/knifeart" aria-label="KnifeArt profili">Profili aç →</a><br/><a class="ba-link" href="https://www.knifeart.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></td>
+  <td><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="knifeart" aria-pressed="false" aria-label="KnifeArt · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></td>
+</tr>
+<tr id="atlas-row-agrussell" data-directory-site="agrussell">
+  <th scope="row">A.G. Russell</th>
+  <td>Mağaza<br/><small>İngilizce · ABD</small></td>
+  <td>Köklü, açıklayıcı ve geleneksel bıçak kültürüne yakın.<ul class="ba-features"><li>Kendi markaları ve başka üreticilerin kataloğu</li><li>Steel Chart ve Knife Encyclopedia</li><li>Bileme rehberleri ve bıçak makaleleri</li></ul></td>
+  <td><a class="ba-link" href="#atlas/profil/agrussell" aria-label="A.G. Russell profili">Profili aç →</a><br/><a class="ba-link" href="https://agrussell.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></td>
+  <td><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="agrussell" aria-pressed="false" aria-label="A.G. Russell · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></td>
+</tr>
+<tr id="atlas-row-knifesteelnerds" data-directory-site="knifesteelnerds">
+  <th scope="row">Knife Steel Nerds</th>
+  <td>Teknik araştırma<br/><small>İngilizce · ABD</small></td>
+  <td>Bilimsel, veri yoğun ve yöntem açıklayan.<ul class="ba-features"><li>Metalurji ve ısıl işlem üzerine teknik yazılar</li><li>Tokluk, ağız tutma ve korozyon testleri</li><li>Test koşulları ve çelik davranışlarına dair grafikler</li></ul></td>
+  <td><a class="ba-link" href="#atlas/profil/knifesteelnerds" aria-label="Knife Steel Nerds profili">Profili aç →</a><br/><a class="ba-link" href="https://knifesteelnerds.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></td>
+  <td><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="knifesteelnerds" aria-pressed="false" aria-label="Knife Steel Nerds · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></td>
+</tr>
+<tr id="atlas-row-knifenews" data-directory-site="knifenews">
+  <th scope="row">KnifeNews</th>
+  <td>Haber ve dergi<br/><small>İngilizce · Uluslararası</small></td>
+  <td>Gündem odaklı, hızlı taranabilen ve yenilik izleyen.<ul class="ba-features"><li>Yeni model ve seri duyuruları</li><li>Üretici ve tasarımcı haberleri</li><li>Fuarlar, şirket gelişmeleri ve sektör başlıkları</li></ul></td>
+  <td><a class="ba-link" href="#atlas/profil/knifenews" aria-label="KnifeNews profili">Profili aç →</a><br/><a class="ba-link" href="https://knifenews.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></td>
+  <td><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="knifenews" aria-pressed="false" aria-label="KnifeNews · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></td>
+</tr>
+<tr id="atlas-row-blademag" data-directory-site="blademag">
+  <th scope="row">BLADE Magazine</th>
+  <td>Haber ve dergi<br/><small>İngilizce · ABD</small></td>
+  <td>Dergicilik geleneği olan, zanaat ve sektör kültürüne yakın.<ul class="ba-features"><li>Knifemaking ve atölye teknikleri</li><li>Custom bıçaklar ve koleksiyon içerikleri</li><li>İncelemeler, BLADE Show ve sektör haberleri</li></ul></td>
+  <td><a class="ba-link" href="#atlas/profil/blademag" aria-label="BLADE Magazine profili">Profili aç →</a><br/><a class="ba-link" href="https://blademag.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></td>
+  <td><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="blademag" aria-pressed="false" aria-label="BLADE Magazine · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></td>
+</tr>
+<tr id="atlas-row-knifemagazine" data-directory-site="knifemagazine">
+  <th scope="row">KNIFE Magazine</th>
+  <td>Haber ve dergi<br/><small>İngilizce · ABD</small></td>
+  <td>Arşivci, tarih meraklısı ve koleksiyoner odaklı.<ul class="ba-features"><li>Eski dergi sayıları ve dijital arşivler</li><li>Custom bıçak, üretim ve sektör haberleri</li><li>Bıçak terimleri, etkinlikler ve koleksiyon içeriği</li></ul></td>
+  <td><a class="ba-link" href="#atlas/profil/knifemagazine" aria-label="KNIFE Magazine profili">Profili aç →</a><br/><a class="ba-link" href="https://www.knifemagazine.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></td>
+  <td><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="knifemagazine" aria-pressed="false" aria-label="KNIFE Magazine · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></td>
+</tr>
+<tr id="atlas-row-everydaycommentary" data-directory-site="everydaycommentary">
+  <th scope="row">Everyday Commentary</th>
+  <td>İnceleme ve rehber<br/><small>İngilizce · Uluslararası</small></td>
+  <td>Kişisel sesi belirgin, eleştirel ve deneyim odaklı.<ul class="ba-features"><li>Katlanır çakı ve diğer EDC ekipmanı incelemeleri</li><li>Puanların ve sonraki güncellemelerin yer aldığı arşiv</li><li>Seçim yazıları ve dönemsel hediye rehberleri</li></ul></td>
+  <td><a class="ba-link" href="#atlas/profil/everydaycommentary" aria-label="Everyday Commentary profili">Profili aç →</a><br/><a class="ba-link" href="https://www.everydaycommentary.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></td>
+  <td><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="everydaycommentary" aria-pressed="false" aria-label="Everyday Commentary · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></td>
+</tr>
+<tr id="atlas-row-bladereviews" data-directory-site="bladereviews">
+  <th scope="row">BladeReviews</th>
+  <td>İnceleme ve rehber<br/><small>İngilizce · Uluslararası</small></td>
+  <td>Arşivli, sistematik ve model ayrıntısına odaklanan.<ul class="ba-features"><li>Marka, kullanım ve bıçak sınıfına göre gezinme</li><li>EDC, yüksek değer ve sabit bıçak incelemeleri</li><li>Bakım, bıçak sözlüğü ve çelik bilgileri</li></ul></td>
+  <td><a class="ba-link" href="#atlas/profil/bladereviews" aria-label="BladeReviews profili">Profili aç →</a><br/><a class="ba-link" href="https://bladereviews.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></td>
+  <td><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="bladereviews" aria-pressed="false" aria-label="BladeReviews · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></td>
+</tr>
+<tr id="atlas-row-gearjunkie" data-directory-site="gearjunkie">
+  <th scope="row">GearJunkie · Knives</th>
+  <td>İnceleme ve rehber<br/><small>İngilizce · ABD</small></td>
+  <td>Saha kullanımı ve outdoor senaryolarını öne çıkaran.<ul class="ba-features"><li>Bıçak, balta ve multitool içerikleri</li><li>Model incelemeleri ve satın alma rehberleri</li><li>Yayımlanmış ürün değerlendirme ilkeleri</li></ul></td>
+  <td><a class="ba-link" href="#atlas/profil/gearjunkie" aria-label="GearJunkie · Knives profili">Profili aç →</a><br/><a class="ba-link" href="https://gearjunkie.com/knives" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></td>
+  <td><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="gearjunkie" aria-pressed="false" aria-label="GearJunkie · Knives · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></td>
+</tr>
+<tr id="atlas-row-bladeforums" data-directory-site="bladeforums">
+  <th scope="row">BladeForums</th>
+  <td>Topluluk<br/><small>İngilizce · Uluslararası</small></td>
+  <td>Çok sesli, deneyim paylaşan ve derin arşivli.<ul class="ba-features"><li>Genel tartışma, üretici ve knifemaker bölümleri</li><li>Kullanıcı yorumları, kaynaklar ve incelemeler</li><li>Exchange ve classifieds alanları</li></ul></td>
+  <td><a class="ba-link" href="#atlas/profil/bladeforums" aria-label="BladeForums profili">Profili aç →</a><br/><a class="ba-link" href="https://www.bladeforums.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></td>
+  <td><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="bladeforums" aria-pressed="false" aria-label="BladeForums · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></td>
+</tr>
+<tr id="atlas-row-aapk" data-directory-site="aapk">
+  <th scope="row">All About Pocket Knives</th>
+  <td>Topluluk<br/><small>İngilizce · Uluslararası</small></td>
+  <td>Koleksiyoncu, araştırmacı ve topluluk merkezli.<ul class="ba-features"><li>Forum ve soru-cevap alanları</li><li>Araştırma bölümü ve bıçak kayıtları</li><li>Üye mağazaları ve satılmış ürün arşivleri</li></ul></td>
+  <td><a class="ba-link" href="#atlas/profil/aapk" aria-label="All About Pocket Knives profili">Profili aç →</a><br/><a class="ba-link" href="https://www.allaboutpocketknives.com/" target="_blank" rel="noopener noreferrer">Siteyi aç <span aria-hidden="true">↗</span></a></td>
+  <td><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="aapk" aria-pressed="false" aria-label="All About Pocket Knives · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></td>
+</tr></tbody></table></div>
+        <div class="ba-panel ba-empty" id="atlas-empty" hidden="hidden"><h3>Bu aramada kaynak bulunamadı.</h3><p>Farklı bir kelime dene veya filtreleri kaldır.</p><button class="ba-button ba-primary" type="button" data-action="clear">Filtreleri temizle</button></div>
+      </section>
+    </section>
+    
+<section class="ba-wrap ba-page" data-view="profile" data-profile="ankaoutdoor" hidden="hidden">
+  <a class="ba-back" href="#atlas/rehber">← Kaynak rehberine dön</a>
+  <header class="ba-profile-intro">
+    <span class="ba-mark" style="--site-color:#b56a3e" aria-hidden="true">AO</span><div>
+      <p class="ba-eyebrow">Mağaza · Türkiye · Türkçe</p>
+      <div data-heading="ankaoutdoor"></div>
+      <p class="ba-lead">Türkiye’den outdoor dünyasına.</p>
+      <div class="ba-actions"><a class="ba-button ba-primary" href="https://www.ankaoutdoor.com/" target="_blank" rel="noopener noreferrer">Kaynağa git <span aria-hidden="true">↗</span></a><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="ankaoutdoor" aria-pressed="false" aria-label="AnkaOutdoor · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></div>
+    </div>
+  </header>
+  <div class="ba-profile-grid">
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>Ne sunuyor?</h2><p>Bıçak ve çakı çeşitlerini kamp, av ve outdoor ekipmanlarıyla bir araya getiren Türkçe mağaza. Ürün keşfini kullanım alanlarına göre kuruyor.</p><ul class="ba-features"><li>Çakı, sabit bıçak, av ve bushcraft kategorileri</li><li>Bıçak aksesuarları, kamp ekipmanı ve marka sayfaları</li><li>Ürün rehberleri, blog ve video bağlantıları</li></ul><ul class="ba-tags"><li>Türkçe</li><li>Kamp</li><li>Bushcraft</li><li>Çakı</li></ul></section>
+      <section class="ba-panel ba-pad ba-profile-character"><h2>Kaynağın karakteri</h2><p>Yerel, pratik ve ürün odaklı.</p></section>
+      <section class="ba-panel ba-pad"><h2>Kimler için?</h2><p>Türkçe ürün bilgisiyle bıçak ve kamp ekipmanı araştıranlar.</p></section>
+    </div>
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>İncelenen sayfalar</h2><p class="ba-small">Son kontrol 7 Kasım 2026</p><ul class="ba-source-list"><li><a class="ba-link" href="https://www.ankaoutdoor.com/" target="_blank" rel="noopener noreferrer">Ana sayfa ve kategori yapısı <span aria-hidden="true">↗</span></a></li><li><a class="ba-link" href="https://www.ankaoutdoor.com/sayfa/hakkimizda" target="_blank" rel="noopener noreferrer">Hakkımızda <span aria-hidden="true">↗</span></a></li></ul></section>
+      <section class="ba-panel ba-pad"><h2>Okuma bağlamı</h2><p>Ana işlevi perakende satış. Ürün açıklamaları ve mağaza rehberleri bu ticari bağlam içinde okunmalı.</p></section>
+    </div>
+  </div>
+</section>
+<section class="ba-wrap ba-page" data-view="profile" data-profile="bicakkurdu" hidden="hidden">
+  <a class="ba-back" href="#atlas/rehber">← Kaynak rehberine dön</a>
+  <header class="ba-profile-intro">
+    <span class="ba-mark" style="--site-color:#3b6350" aria-hidden="true">BK</span><div>
+      <p class="ba-eyebrow">İnceleme ve rehber · Türkiye · Türkçe</p>
+      <div data-heading="bicakkurdu"></div>
+      <p class="ba-lead">Bıçak bilgisinin Türkçe adreslerinden.</p>
+      <div class="ba-actions"><a class="ba-button ba-primary" href="https://bicakkurdu.com/" target="_blank" rel="noopener noreferrer">Kaynağa git <span aria-hidden="true">↗</span></a><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="bicakkurdu" aria-pressed="false" aria-label="BıçakKurdu · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></div>
+    </div>
+  </header>
+  <div class="ba-profile-grid">
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>Ne sunuyor?</h2><p>Bıçak ve çakı incelemeleri, çelik karşılaştırmaları, marka profilleri ve mekanizma açıklamalarına odaklanan Türkçe içerik kaynağı.</p><ul class="ba-features"><li>Bıçak ve çakı incelemeleri ile teknik içerikler</li><li>Üreticileri tanıtan marka profilleri</li><li>Kaynak seçimi ve çelik puanlama metodolojisi</li></ul><ul class="ba-tags"><li>Türkçe</li><li>Çelik</li><li>Markalar</li><li>Mekanizmalar</li></ul></section>
+      <section class="ba-panel ba-pad ba-profile-character"><h2>Kaynağın karakteri</h2><p>Öğretici, teknik konuları açıklayan ve rehber odaklı.</p></section>
+      <section class="ba-panel ba-pad"><h2>Kimler için?</h2><p>Terimleri Türkçe öğrenmek, marka ve mekanizma bilgisi toplamak isteyenler.</p></section>
+    </div>
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>İncelenen sayfalar</h2><p class="ba-small">Son kontrol 7 Kasım 2026</p><ul class="ba-source-list"><li><a class="ba-link" href="https://bicakkurdu.com/hakkimizda/" target="_blank" rel="noopener noreferrer">Hakkımızda <span aria-hidden="true">↗</span></a></li><li><a class="ba-link" href="https://bicakkurdu.com/markalar/" target="_blank" rel="noopener noreferrer">Marka dizini <span aria-hidden="true">↗</span></a></li><li><a class="ba-link" href="https://bicakkurdu.com/kaynak-ve-inceleme-metodolojisi/" target="_blank" rel="noopener noreferrer">Kaynak ve inceleme metodolojisi <span aria-hidden="true">↗</span></a></li></ul></section>
+      <section class="ba-panel ba-pad"><h2>Okuma bağlamı</h2><p>Çelik karşılaştırmalarını kullanılan test kaynağı ve yöntemle birlikte okumak gerekir. Profil, yayımlanmış WordPress sayfaları üzerinden doğrulandı.</p></section>
+    </div>
+  </div>
+</section>
+<section class="ba-wrap ba-page" data-view="profile" data-profile="knifeinformer" hidden="hidden">
+  <a class="ba-back" href="#atlas/rehber">← Kaynak rehberine dön</a>
+  <header class="ba-profile-intro">
+    <span class="ba-mark" style="--site-color:#728449" aria-hidden="true">KI</span><div>
+      <p class="ba-eyebrow">İnceleme ve rehber · Uluslararası · İngilizce</p>
+      <div data-heading="knifeinformer"></div>
+      <p class="ba-lead">İncelemeden seçim rehberine.</p>
+      <div class="ba-actions"><a class="ba-button ba-primary" href="https://knifeinformer.com/" target="_blank" rel="noopener noreferrer">Kaynağa git <span aria-hidden="true">↗</span></a><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="knifeinformer" aria-pressed="false" aria-label="Knife Informer · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></div>
+    </div>
+  </header>
+  <div class="ba-profile-grid">
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>Ne sunuyor?</h2><p>Cep çakısı ve outdoor bıçakları için incelemeler, satın alma rehberleri ve seçim araçları sunuyor. Test yaklaşımını ayrı bir sayfada açıklıyor.</p><ul class="ba-features"><li>Model incelemeleri ve kullanım amacına göre rehberler</li><li>Knife Finder ve çelik karşılaştırma aracı</li><li>Test alanları, ekip ve gelir modeli açıklamaları</li></ul><ul class="ba-tags"><li>EDC</li><li>İnceleme</li><li>Çelik</li><li>Seçim aracı</li></ul></section>
+      <section class="ba-panel ba-pad ba-profile-character"><h2>Kaynağın karakteri</h2><p>Seçenekleri daraltan, karşılaştırmalı ve tüketici odaklı.</p></section>
+      <section class="ba-panel ba-pad"><h2>Kimler için?</h2><p>İngilizce incelemelerle kısa liste oluşturmak isteyenler.</p></section>
+    </div>
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>İncelenen sayfalar</h2><p class="ba-small">Son kontrol 7 Kasım 2026</p><ul class="ba-source-list"><li><a class="ba-link" href="https://knifeinformer.com/" target="_blank" rel="noopener noreferrer">İncelemeler ve araçlar <span aria-hidden="true">↗</span></a></li><li><a class="ba-link" href="https://knifeinformer.com/how-we-test/" target="_blank" rel="noopener noreferrer">Test ve gelir modeli <span aria-hidden="true">↗</span></a></li></ul></section>
+      <section class="ba-panel ba-pad"><h2>Okuma bağlamı</h2><p>Eski incelemelerde sayısal puanlar, yeni video incelemelerinde yazılı sonuç kullanılıyor. Reklam, satış ortaklığı ve etiketlenen sponsor içeriklerle destekleniyor.</p></section>
+    </div>
+  </div>
+</section>
+<section class="ba-wrap ba-page" data-view="profile" data-profile="bladehq" hidden="hidden">
+  <a class="ba-back" href="#atlas/rehber">← Kaynak rehberine dön</a>
+  <header class="ba-profile-intro">
+    <span class="ba-mark" style="--site-color:#56776c" aria-hidden="true">BH</span><div>
+      <p class="ba-eyebrow">Mağaza · ABD · İngilizce</p>
+      <div data-heading="bladehq"></div>
+      <p class="ba-lead">Modern çakı ve EDC kataloğu.</p>
+      <div class="ba-actions"><a class="ba-button ba-primary" href="https://www.bladehq.com/" target="_blank" rel="noopener noreferrer">Kaynağa git <span aria-hidden="true">↗</span></a><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="bladehq" aria-pressed="false" aria-label="Blade HQ · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></div>
+    </div>
+  </header>
+  <div class="ba-profile-grid">
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>Ne sunuyor?</h2><p>Katlanır, sabit ve otomatik bıçakları; EDC ekipmanını ve mağazaya özel serileri öne çıkaran perakendeci.</p><ul class="ba-features"><li>Bıçak türüne ve kullanım amacına göre katalog</li><li>Blade HQ Exclusives ve yeni gelen ürünler</li><li>Knife Blog ve kaynak dizini</li></ul><ul class="ba-tags"><li>EDC</li><li>Yeni ürün</li><li>Özel seri</li><li>Katalog</li></ul></section>
+      <section class="ba-panel ba-pad ba-profile-character"><h2>Kaynağın karakteri</h2><p>Görsel keşfi güçlü, modern ve yeni ürün odaklı.</p></section>
+      <section class="ba-panel ba-pad"><h2>Kimler için?</h2><p>Model çeşitlerini, farklı sürümleri ve yeni çıkışları keşfedenler.</p></section>
+    </div>
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>İncelenen sayfalar</h2><p class="ba-small">Son kontrol 7 Kasım 2026</p><ul class="ba-source-list"><li><a class="ba-link" href="https://www.bladehq.com/resources" target="_blank" rel="noopener noreferrer">Kaynak dizini ve mağaza menüsü <span aria-hidden="true">↗</span></a></li><li><a class="ba-link" href="https://www.bladehq.com/blog/" target="_blank" rel="noopener noreferrer">Knife Blog <span aria-hidden="true">↗</span></a></li></ul></section>
+      <section class="ba-panel ba-pad"><h2>Okuma bağlamı</h2><p>Bir mağazanın içerik ekosistemi. Blog ve seçim içerikleri ürün satışıyla aynı yapı içinde sunuluyor.</p></section>
+    </div>
+  </div>
+</section>
+<section class="ba-wrap ba-page" data-view="profile" data-profile="knifecenter" hidden="hidden">
+  <a class="ba-back" href="#atlas/rehber">← Kaynak rehberine dön</a>
+  <header class="ba-profile-intro">
+    <span class="ba-mark" style="--site-color:#697b89" aria-hidden="true">KC</span><div>
+      <p class="ba-eyebrow">Mağaza · ABD · İngilizce</p>
+      <div data-heading="knifecenter"></div>
+      <p class="ba-lead">Kapsamlı bir kesici alet kataloğu.</p>
+      <div class="ba-actions"><a class="ba-button ba-primary" href="https://www.knifecenter.com/" target="_blank" rel="noopener noreferrer">Kaynağa git <span aria-hidden="true">↗</span></a><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="knifecenter" aria-pressed="false" aria-label="KnifeCenter · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></div>
+    </div>
+  </header>
+  <div class="ba-profile-grid">
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>Ne sunuyor?</h2><p>Üretim bıçaklarından özel yapım modellere, mutfak bıçaklarından bileme ekipmanlarına kadar uzanan ürün kataloğu sunuyor.</p><ul class="ba-features"><li>Marka, yeni ürün ve bıçak türü dizinleri</li><li>Custom ve semi-custom ürün grupları</li><li>Bileme bilgileri ve mağaza blogu</li></ul><ul class="ba-tags"><li>Katalog</li><li>Markalar</li><li>Mutfak</li><li>Bileme</li></ul></section>
+      <section class="ba-panel ba-pad ba-profile-character"><h2>Kaynağın karakteri</h2><p>Katalogcu, geniş kapsamlı ve ürün bilgisi odaklı.</p></section>
+      <section class="ba-panel ba-pad"><h2>Kimler için?</h2><p>Farklı ürün ailelerini ve marka seçeneklerini yan yana araştıranlar.</p></section>
+    </div>
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>İncelenen sayfalar</h2><p class="ba-small">Son kontrol 7 Kasım 2026</p><ul class="ba-source-list"><li><a class="ba-link" href="https://www.knifecenter.com/info/who-we-are" target="_blank" rel="noopener noreferrer">Kimiz? <span aria-hidden="true">↗</span></a></li><li><a class="ba-link" href="https://blog.knifecenter.com/about/" target="_blank" rel="noopener noreferrer">Mağaza blogu hakkında <span aria-hidden="true">↗</span></a></li></ul></section>
+      <section class="ba-panel ba-pad"><h2>Okuma bağlamı</h2><p>1995’te kurulduğunu belirten perakendeci; bilgi içeriği ile satış kataloğunu birlikte işletiyor.</p></section>
+    </div>
+  </div>
+</section>
+<section class="ba-wrap ba-page" data-view="profile" data-profile="knivesandtools" hidden="hidden">
+  <a class="ba-back" href="#atlas/rehber">← Kaynak rehberine dön</a>
+  <header class="ba-profile-intro">
+    <span class="ba-mark" style="--site-color:#688252" aria-hidden="true">KT</span><div>
+      <p class="ba-eyebrow">Mağaza · Hollanda · İngilizce / çok dilli</p>
+      <div data-heading="knivesandtools"></div>
+      <p class="ba-lead">Katalogla uzman bilgisini birleştirir.</p>
+      <div class="ba-actions"><a class="ba-button ba-primary" href="https://www.knivesandtools.com/" target="_blank" rel="noopener noreferrer">Kaynağa git <span aria-hidden="true">↗</span></a><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="knivesandtools" aria-pressed="false" aria-label="Knivesandtools · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></div>
+    </div>
+  </header>
+  <div class="ba-profile-grid">
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>Ne sunuyor?</h2><p>Outdoor ve mutfak bıçaklarını, bileme ürünlerini ve araçları; uzman içerikleri ve müşteri değerlendirmeleriyle birlikte sunan mağaza.</p><ul class="ba-features"><li>Outdoor, mutfak, multitool ve bileme grupları</li><li>Expert Info altında rehber ve karşılaştırmalar</li><li>Kendi ürün fotoğrafları ve müşteri yorumları</li></ul><ul class="ba-tags"><li>Bileme</li><li>Mutfak</li><li>Karşılaştırma</li><li>Outdoor</li></ul></section>
+      <section class="ba-panel ba-pad ba-profile-character"><h2>Kaynağın karakteri</h2><p>Açıklayıcı, karşılaştırmalı ve kullanım odaklı.</p></section>
+      <section class="ba-panel ba-pad"><h2>Kimler için?</h2><p>Bıçak kadar bileme sistemini ve kullanım ayrıntılarını da araştıranlar.</p></section>
+    </div>
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>İncelenen sayfalar</h2><p class="ba-small">Son kontrol 7 Kasım 2026</p><ul class="ba-source-list"><li><a class="ba-link" href="https://www.knivesandtools.com/en/ct/about-us.htm" target="_blank" rel="noopener noreferrer">Hakkımızda <span aria-hidden="true">↗</span></a></li><li><a class="ba-link" href="https://www.knivesandtools.com/en/ct/expert-info.htm" target="_blank" rel="noopener noreferrer">Uzman bilgisi <span aria-hidden="true">↗</span></a></li></ul></section>
+      <section class="ba-panel ba-pad"><h2>Okuma bağlamı</h2><p>Kendi testlerini ve açıklamalarını hazırladığını belirtiyor. Uzman içerikleri bir perakendecinin ürün seçkisiyle birlikte değerlendirilmeli.</p></section>
+    </div>
+  </div>
+</section>
+<section class="ba-wrap ba-page" data-view="profile" data-profile="lamnia" hidden="hidden">
+  <a class="ba-back" href="#atlas/rehber">← Kaynak rehberine dön</a>
+  <header class="ba-profile-intro">
+    <span class="ba-mark" style="--site-color:#708787" aria-hidden="true">LA</span><div>
+      <p class="ba-eyebrow">Mağaza · Finlandiya · İngilizce / çok dilli</p>
+      <div data-heading="lamnia"></div>
+      <p class="ba-lead">İskandinav bıçakçılığına açılan kapı.</p>
+      <div class="ba-actions"><a class="ba-button ba-primary" href="https://www.lamnia.com/" target="_blank" rel="noopener noreferrer">Kaynağa git <span aria-hidden="true">↗</span></a><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="lamnia" aria-pressed="false" aria-label="Lamnia · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></div>
+    </div>
+  </header>
+  <div class="ba-profile-grid">
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>Ne sunuyor?</h2><p>Uluslararası üreticilerle İskandinav ustaların bıçaklarını aynı katalogda topluyor. Kamp ve outdoor ekipmanını da kapsıyor.</p><ul class="ba-features"><li>Sabit, katlanır, geleneksel ve custom bıçaklar</li><li>İskandinav ustaların ürünleri ve outdoor donanımı</li><li>Dil, ülke, para birimi ve ölçü birimi seçenekleri</li></ul><ul class="ba-tags"><li>İskandinav</li><li>Puukko</li><li>Kamp</li><li>Custom</li></ul></section>
+      <section class="ba-panel ba-pad ba-profile-character"><h2>Kaynağın karakteri</h2><p>Kuzey Avrupa çizgisi güçlü, geniş seçkili ve outdoor odaklı.</p></section>
+      <section class="ba-panel ba-pad"><h2>Kimler için?</h2><p>Puukko, İskandinav tasarımları ve outdoor bıçaklarıyla ilgilenenler.</p></section>
+    </div>
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>İncelenen sayfalar</h2><p class="ba-small">Son kontrol 7 Kasım 2026</p><ul class="ba-source-list"><li><a class="ba-link" href="https://www.lamnia.com/en/about-us" target="_blank" rel="noopener noreferrer">Lamnia hakkında <span aria-hidden="true">↗</span></a></li><li><a class="ba-link" href="https://www.lamnia.com/en/contact" target="_blank" rel="noopener noreferrer">İletişim ve merkez <span aria-hidden="true">↗</span></a></li></ul></section>
+      <section class="ba-panel ba-pad"><h2>Okuma bağlamı</h2><p>Finlandiya merkezli perakendeci. Sitedeki ülke ve dil seçimi, ürün kataloglarının sunumunu etkileyebilir.</p></section>
+    </div>
+  </div>
+</section>
+<section class="ba-wrap ba-page" data-view="profile" data-profile="dlttrading" hidden="hidden">
+  <a class="ba-back" href="#atlas/rehber">← Kaynak rehberine dön</a>
+  <header class="ba-profile-intro">
+    <span class="ba-mark" style="--site-color:#94745a" aria-hidden="true">DLT</span><div>
+      <p class="ba-eyebrow">Mağaza · ABD · İngilizce</p>
+      <div data-heading="dlttrading"></div>
+      <p class="ba-lead">Özel seriler ve kişiselleştirme.</p>
+      <div class="ba-actions"><a class="ba-button ba-primary" href="https://www.dlttrading.com/" target="_blank" rel="noopener noreferrer">Kaynağa git <span aria-hidden="true">↗</span></a><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="dlttrading" aria-pressed="false" aria-label="DLT Trading · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></div>
+    </div>
+  </header>
+  <div class="ba-profile-grid">
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>Ne sunuyor?</h2><p>Bıçak, EDC ve bakım ekipmanlarını; mağazaya özel sürümler, custom modeller ve gravür hizmetiyle birleştiriyor.</p><ul class="ba-features"><li>DLT Exclusives, drop ve yeniden stok girişleri</li><li>Gravürlü bıçaklar ve custom ürün grubu</li><li>Shop Talk videoları ve bıçak blogu</li></ul><ul class="ba-tags"><li>Özel seri</li><li>Gravür</li><li>EDC</li><li>Custom</li></ul></section>
+      <section class="ba-panel ba-pad ba-profile-character"><h2>Kaynağın karakteri</h2><p>Meraklıya hitap eden, koleksiyon ve kişiselleştirme odaklı.</p></section>
+      <section class="ba-panel ba-pad"><h2>Kimler için?</h2><p>Belirli sürüm, koleksiyon modeli ya da gravür seçeneği arayanlar.</p></section>
+    </div>
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>İncelenen sayfalar</h2><p class="ba-small">Son kontrol 7 Kasım 2026</p><ul class="ba-source-list"><li><a class="ba-link" href="https://www.dlttrading.com/about-dlt-trading" target="_blank" rel="noopener noreferrer">DLT hakkında <span aria-hidden="true">↗</span></a></li><li><a class="ba-link" href="https://www.dlttrading.com/" target="_blank" rel="noopener noreferrer">Katalog ve kaynaklar <span aria-hidden="true">↗</span></a></li></ul></section>
+      <section class="ba-panel ba-pad"><h2>Okuma bağlamı</h2><p>Ticari katalog ve içerik kanalı birlikte çalışıyor. Özel sürüm ile üreticinin standart modeli aynı ürün olarak varsayılmamalı.</p></section>
+    </div>
+  </div>
+</section>
+<section class="ba-wrap ba-page" data-view="profile" data-profile="smkw" hidden="hidden">
+  <a class="ba-back" href="#atlas/rehber">← Kaynak rehberine dön</a>
+  <header class="ba-profile-intro">
+    <span class="ba-mark" style="--site-color:#a88046" aria-hidden="true">SM</span><div>
+      <p class="ba-eyebrow">Mağaza · ABD · İngilizce</p>
+      <div data-heading="smkw"></div>
+      <p class="ba-lead">Mağaza kültürüyle büyük bir seçki.</p>
+      <div class="ba-actions"><a class="ba-button ba-primary" href="https://smkw.com/" target="_blank" rel="noopener noreferrer">Kaynağa git <span aria-hidden="true">↗</span></a><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="smkw" aria-pressed="false" aria-label="Smoky Mountain Knife Works · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></div>
+    </div>
+  </header>
+  <div class="ba-profile-grid">
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>Ne sunuyor?</h2><p>Online satışını Tennessee’deki fiziksel showroom ve etkinliklerle tamamlayan bıçak ve outdoor perakendecisi.</p><ul class="ba-features"><li>Bıçak ve outdoor ekipmanlarına yayılan katalog</li><li>Fiziksel showroom ve koleksiyon sergileri</li><li>Marka temsilcileriyle mağaza etkinlikleri</li></ul><ul class="ba-tags"><li>Koleksiyon</li><li>Geleneksel</li><li>Outdoor</li><li>Showroom</li></ul></section>
+      <section class="ba-panel ba-pad ba-profile-character"><h2>Kaynağın karakteri</h2><p>Geleneksel mağaza hissi taşıyan, koleksiyoner ve outdoor kitlesine açık.</p></section>
+      <section class="ba-panel ba-pad"><h2>Kimler için?</h2><p>Geleneksel çakı, koleksiyon ve farklı outdoor ürünlerini keşfedenler.</p></section>
+    </div>
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>İncelenen sayfalar</h2><p class="ba-small">Son kontrol 7 Kasım 2026</p><ul class="ba-source-list"><li><a class="ba-link" href="https://smkw.com/about-us/" target="_blank" rel="noopener noreferrer">Hakkımızda ve showroom <span aria-hidden="true">↗</span></a></li><li><a class="ba-link" href="https://smkw.com/" target="_blank" rel="noopener noreferrer">Online mağaza <span aria-hidden="true">↗</span></a></li></ul></section>
+      <section class="ba-panel ba-pad"><h2>Okuma bağlamı</h2><p>Showroom ve etkinlik anlatısı, markanın kendi hakkımızda sayfasına dayanıyor. Fiziksel mağaza deneyimi bu rehber kapsamında test edilmedi.</p></section>
+    </div>
+  </div>
+</section>
+<section class="ba-wrap ba-page" data-view="profile" data-profile="knifeart" hidden="hidden">
+  <a class="ba-back" href="#atlas/rehber">← Kaynak rehberine dön</a>
+  <header class="ba-profile-intro">
+    <span class="ba-mark" style="--site-color:#76675e" aria-hidden="true">KA</span><div>
+      <p class="ba-eyebrow">Mağaza · ABD · İngilizce</p>
+      <div data-heading="knifeart"></div>
+      <p class="ba-lead">Premium ve custom dünyasına yakın.</p>
+      <div class="ba-actions"><a class="ba-button ba-primary" href="https://www.knifeart.com/" target="_blank" rel="noopener noreferrer">Kaynağa git <span aria-hidden="true">↗</span></a><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="knifeart" aria-pressed="false" aria-label="KnifeArt · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></div>
+    </div>
+  </header>
+  <div class="ba-profile-grid">
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>Ne sunuyor?</h2><p>Chris Reeve, Winkler ve William Henry gibi markalarla; özel yapım bıçaklar ve mağazaya özel sürümleri öne çıkarıyor.</p><ul class="ba-features"><li>Custom ustalarına göre ürün dizini</li><li>EDC, av, sabit bıçak ve Damascus kategorileri</li><li>Exclusives ve fiyat aralığına göre koleksiyonlar</li></ul><ul class="ba-tags"><li>Premium</li><li>Custom</li><li>Koleksiyon</li><li>EDC</li></ul></section>
+      <section class="ba-panel ba-pad ba-profile-character"><h2>Kaynağın karakteri</h2><p>Seçkili, koleksiyoner odaklı ve premium ağırlıklı.</p></section>
+      <section class="ba-panel ba-pad"><h2>Kimler için?</h2><p>Üst segment model, özel malzeme veya usta işi bıçak araştıranlar.</p></section>
+    </div>
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>İncelenen sayfalar</h2><p class="ba-small">Son kontrol 7 Kasım 2026</p><ul class="ba-source-list"><li><a class="ba-link" href="https://www.knifeart.com/" target="_blank" rel="noopener noreferrer">Marka ve custom katalogları <span aria-hidden="true">↗</span></a></li></ul></section>
+      <section class="ba-panel ba-pad"><h2>Okuma bağlamı</h2><p>Ana sayfadaki marka ve ürün sunumundan premium odak yorumu çıkarılıyor. Bu ifade her ürünün el yapımı olduğu anlamına gelmez.</p></section>
+    </div>
+  </div>
+</section>
+<section class="ba-wrap ba-page" data-view="profile" data-profile="agrussell" hidden="hidden">
+  <a class="ba-back" href="#atlas/rehber">← Kaynak rehberine dön</a>
+  <header class="ba-profile-intro">
+    <span class="ba-mark" style="--site-color:#8c795d" aria-hidden="true">AG</span><div>
+      <p class="ba-eyebrow">Mağaza · ABD · İngilizce</p>
+      <div data-heading="agrussell"></div>
+      <p class="ba-lead">Katalog geleneği ve bıçak bilgisi.</p>
+      <div class="ba-actions"><a class="ba-button ba-primary" href="https://agrussell.com/" target="_blank" rel="noopener noreferrer">Kaynağa git <span aria-hidden="true">↗</span></a><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="agrussell" aria-pressed="false" aria-label="A.G. Russell · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></div>
+    </div>
+  </header>
+  <div class="ba-profile-grid">
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>Ne sunuyor?</h2><p>Kendi markaları ve farklı üreticilerin bıçaklarıyla birlikte çelik tablosu, bıçak ansiklopedisi ve bileme rehberleri sunuyor.</p><ul class="ba-features"><li>Kendi markaları ve başka üreticilerin kataloğu</li><li>Steel Chart ve Knife Encyclopedia</li><li>Bileme rehberleri ve bıçak makaleleri</li></ul><ul class="ba-tags"><li>Çelik tablosu</li><li>Ansiklopedi</li><li>Geleneksel</li><li>Bileme</li></ul></section>
+      <section class="ba-panel ba-pad ba-profile-character"><h2>Kaynağın karakteri</h2><p>Köklü, açıklayıcı ve geleneksel bıçak kültürüne yakın.</p></section>
+      <section class="ba-panel ba-pad"><h2>Kimler için?</h2><p>Geleneksel modelleri ve temel teknik kavramları birlikte araştıranlar.</p></section>
+    </div>
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>İncelenen sayfalar</h2><p class="ba-small">Son kontrol 7 Kasım 2026</p><ul class="ba-source-list"><li><a class="ba-link" href="https://agrussell.com/" target="_blank" rel="noopener noreferrer">Katalog ve bilgi kaynakları <span aria-hidden="true">↗</span></a></li><li><a class="ba-link" href="https://agrussell.com/chart" target="_blank" rel="noopener noreferrer">Çelik tablosu <span aria-hidden="true">↗</span></a></li></ul></section>
+      <section class="ba-panel ba-pad"><h2>Okuma bağlamı</h2><p>Çelik tablosu bir mağazanın bilgi kaynağıdır. Kimyasal bileşim tablosu ile standartlaştırılmış performans testi aynı şey değildir.</p></section>
+    </div>
+  </div>
+</section>
+<section class="ba-wrap ba-page" data-view="profile" data-profile="knifesteelnerds" hidden="hidden">
+  <a class="ba-back" href="#atlas/rehber">← Kaynak rehberine dön</a>
+  <header class="ba-profile-intro">
+    <span class="ba-mark" style="--site-color:#58748a" aria-hidden="true">SN</span><div>
+      <p class="ba-eyebrow">Teknik araştırma · ABD · İngilizce</p>
+      <div data-heading="knifesteelnerds"></div>
+      <p class="ba-lead">Çeliği verilerle anlamak için.</p>
+      <div class="ba-actions"><a class="ba-button ba-primary" href="https://knifesteelnerds.com/" target="_blank" rel="noopener noreferrer">Kaynağa git <span aria-hidden="true">↗</span></a><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="knifesteelnerds" aria-pressed="false" aria-label="Knife Steel Nerds · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></div>
+    </div>
+  </header>
+  <div class="ba-profile-grid">
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>Ne sunuyor?</h2><p>Metalurjist Dr. Larrin Thomas’ın bıçak çelikleri, ısıl işlem, tokluk, ağız tutma ve korozyon üzerine deneysel araştırmalarını yayımladığı kaynak.</p><ul class="ba-features"><li>Metalurji ve ısıl işlem üzerine teknik yazılar</li><li>Tokluk, ağız tutma ve korozyon testleri</li><li>Test koşulları ve çelik davranışlarına dair grafikler</li></ul><ul class="ba-tags"><li>Metalurji</li><li>Test verisi</li><li>Isıl işlem</li><li>Çelik</li></ul></section>
+      <section class="ba-panel ba-pad ba-profile-character"><h2>Kaynağın karakteri</h2><p>Bilimsel, veri yoğun ve yöntem açıklayan.</p></section>
+      <section class="ba-panel ba-pad"><h2>Kimler için?</h2><p>Çelik iddialarını test verisi ve metalurjiyle değerlendirmek isteyenler.</p></section>
+    </div>
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>İncelenen sayfalar</h2><p class="ba-small">Son kontrol 7 Kasım 2026</p><ul class="ba-source-list"><li><a class="ba-link" href="https://knifesteelnerds.com/about-me/" target="_blank" rel="noopener noreferrer">Yazar ve uzmanlık <span aria-hidden="true">↗</span></a></li><li><a class="ba-link" href="https://knifesteelnerds.com/2021/10/19/knife-steels-rated-by-a-metallurgist-toughness-edge-retention-and-corrosion-resistance/" target="_blank" rel="noopener noreferrer">Çelik değerlendirmeleri ve sınırları <span aria-hidden="true">↗</span></a></li></ul></section>
+      <section class="ba-panel ba-pad"><h2>Okuma bağlamı</h2><p>Çelik puanları, bitmiş her bıçağın performansını tek başına belirlemez. Yazar da geometri ve ısıl işlemin etkisini özellikle açıklıyor.</p></section>
+    </div>
+  </div>
+</section>
+<section class="ba-wrap ba-page" data-view="profile" data-profile="knifenews" hidden="hidden">
+  <a class="ba-back" href="#atlas/rehber">← Kaynak rehberine dön</a>
+  <header class="ba-profile-intro">
+    <span class="ba-mark" style="--site-color:#aa694d" aria-hidden="true">KN</span><div>
+      <p class="ba-eyebrow">Haber ve dergi · Uluslararası · İngilizce</p>
+      <div data-heading="knifenews"></div>
+      <p class="ba-lead">Bıçak dünyasında neler oluyor?</p>
+      <div class="ba-actions"><a class="ba-button ba-primary" href="https://knifenews.com/" target="_blank" rel="noopener noreferrer">Kaynağa git <span aria-hidden="true">↗</span></a><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="knifenews" aria-pressed="false" aria-label="KnifeNews · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></div>
+    </div>
+  </header>
+  <div class="ba-profile-grid">
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>Ne sunuyor?</h2><p>Yeni bıçaklar, üreticiler, tasarımcılar ve sektör gelişmeleri hakkında haberler yayımlıyor.</p><ul class="ba-features"><li>Yeni model ve seri duyuruları</li><li>Üretici ve tasarımcı haberleri</li><li>Fuarlar, şirket gelişmeleri ve sektör başlıkları</li></ul><ul class="ba-tags"><li>Haber</li><li>Yeni ürün</li><li>Tasarımcı</li><li>Sektör</li></ul></section>
+      <section class="ba-panel ba-pad ba-profile-character"><h2>Kaynağın karakteri</h2><p>Gündem odaklı, hızlı taranabilen ve yenilik izleyen.</p></section>
+      <section class="ba-panel ba-pad"><h2>Kimler için?</h2><p>Yeni çıkışları ve sektörün hareketini takip edenler.</p></section>
+    </div>
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>İncelenen sayfalar</h2><p class="ba-small">Son kontrol 7 Kasım 2026</p><ul class="ba-source-list"><li><a class="ba-link" href="https://knifenews.com/" target="_blank" rel="noopener noreferrer">Haber akışı ve yayın tanımı <span aria-hidden="true">↗</span></a></li></ul></section>
+      <section class="ba-panel ba-pad"><h2>Okuma bağlamı</h2><p>Bir haber kaynağı. Model duyurusunu okumak, aynı ürünün uzun süreli kullanım incelemesini okumakla eşdeğer değil.</p></section>
+    </div>
+  </div>
+</section>
+<section class="ba-wrap ba-page" data-view="profile" data-profile="blademag" hidden="hidden">
+  <a class="ba-back" href="#atlas/rehber">← Kaynak rehberine dön</a>
+  <header class="ba-profile-intro">
+    <span class="ba-mark" style="--site-color:#896054" aria-hidden="true">BL</span><div>
+      <p class="ba-eyebrow">Haber ve dergi · ABD · İngilizce</p>
+      <div data-heading="blademag"></div>
+      <p class="ba-lead">Üreticiden koleksiyonere bıçak kültürü.</p>
+      <div class="ba-actions"><a class="ba-button ba-primary" href="https://blademag.com/" target="_blank" rel="noopener noreferrer">Kaynağa git <span aria-hidden="true">↗</span></a><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="blademag" aria-pressed="false" aria-label="BLADE Magazine · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></div>
+    </div>
+  </header>
+  <div class="ba-profile-grid">
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>Ne sunuyor?</h2><p>Bıçak yapımı, koleksiyonculuk, ürün incelemeleri ve sektör etkinliklerini bir araya getiren dergi ve web yayını.</p><ul class="ba-features"><li>Knifemaking ve atölye teknikleri</li><li>Custom bıçaklar ve koleksiyon içerikleri</li><li>İncelemeler, BLADE Show ve sektör haberleri</li></ul><ul class="ba-tags"><li>Zanaat</li><li>Custom</li><li>Koleksiyon</li><li>Dergi</li></ul></section>
+      <section class="ba-panel ba-pad ba-profile-character"><h2>Kaynağın karakteri</h2><p>Dergicilik geleneği olan, zanaat ve sektör kültürüne yakın.</p></section>
+      <section class="ba-panel ba-pad"><h2>Kimler için?</h2><p>Ürünün arkasındaki usta, tasarım ve zanaat dünyasını keşfedenler.</p></section>
+    </div>
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>İncelenen sayfalar</h2><p class="ba-small">Son kontrol 7 Kasım 2026</p><ul class="ba-source-list"><li><a class="ba-link" href="https://blademag.com/about-blade-magazine" target="_blank" rel="noopener noreferrer">BLADE hakkında <span aria-hidden="true">↗</span></a></li><li><a class="ba-link" href="https://blademag.com/" target="_blank" rel="noopener noreferrer">Güncel yayınlar <span aria-hidden="true">↗</span></a></li></ul></section>
+      <section class="ba-panel ba-pad"><h2>Okuma bağlamı</h2><p>Dergi yayıncılığı ile web içeriği birlikte sunuluyor. Haber, rehber ve incelemelerin türü ayrı ayrı okunmalı.</p></section>
+    </div>
+  </div>
+</section>
+<section class="ba-wrap ba-page" data-view="profile" data-profile="knifemagazine" hidden="hidden">
+  <a class="ba-back" href="#atlas/rehber">← Kaynak rehberine dön</a>
+  <header class="ba-profile-intro">
+    <span class="ba-mark" style="--site-color:#6e7864" aria-hidden="true">KM</span><div>
+      <p class="ba-eyebrow">Haber ve dergi · ABD · İngilizce</p>
+      <div data-heading="knifemagazine"></div>
+      <p class="ba-lead">Koleksiyonun hafızası ve güncel gündem.</p>
+      <div class="ba-actions"><a class="ba-button ba-primary" href="https://www.knifemagazine.com/" target="_blank" rel="noopener noreferrer">Kaynağa git <span aria-hidden="true">↗</span></a><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="knifemagazine" aria-pressed="false" aria-label="KNIFE Magazine · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></div>
+    </div>
+  </header>
+  <div class="ba-profile-grid">
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>Ne sunuyor?</h2><p>Basılı dergisini web haber akışı, eski sayı arşivleri, terimler ve tarih odaklı içeriklerle tamamlayan yayın.</p><ul class="ba-features"><li>Eski dergi sayıları ve dijital arşivler</li><li>Custom bıçak, üretim ve sektör haberleri</li><li>Bıçak terimleri, etkinlikler ve koleksiyon içeriği</li></ul><ul class="ba-tags"><li>Arşiv</li><li>Tarih</li><li>Koleksiyon</li><li>Dergi</li></ul></section>
+      <section class="ba-panel ba-pad ba-profile-character"><h2>Kaynağın karakteri</h2><p>Arşivci, tarih meraklısı ve koleksiyoner odaklı.</p></section>
+      <section class="ba-panel ba-pad"><h2>Kimler için?</h2><p>Bıçak tarihine ve dönemsel yayınlara ulaşmak isteyenler.</p></section>
+    </div>
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>İncelenen sayfalar</h2><p class="ba-small">Son kontrol 7 Kasım 2026</p><ul class="ba-source-list"><li><a class="ba-link" href="https://www.knifemagazine.com/about/" target="_blank" rel="noopener noreferrer">Dergi ve ekip <span aria-hidden="true">↗</span></a></li><li><a class="ba-link" href="https://www.knifemagazine.com/" target="_blank" rel="noopener noreferrer">Arşiv ve yayın bölümleri <span aria-hidden="true">↗</span></a></li></ul></section>
+      <section class="ba-panel ba-pad"><h2>Okuma bağlamı</h2><p>Bazı dergi ve arşiv alanları üyelik ya da satın alma gerektirebilir. Web haber akışıyla dergi aboneliği farklı alanlardır.</p></section>
+    </div>
+  </div>
+</section>
+<section class="ba-wrap ba-page" data-view="profile" data-profile="everydaycommentary" hidden="hidden">
+  <a class="ba-back" href="#atlas/rehber">← Kaynak rehberine dön</a>
+  <header class="ba-profile-intro">
+    <span class="ba-mark" style="--site-color:#8a745e" aria-hidden="true">EC</span><div>
+      <p class="ba-eyebrow">İnceleme ve rehber · Uluslararası · İngilizce</p>
+      <div data-heading="everydaycommentary"></div>
+      <p class="ba-lead">EDC’ye kişisel ve eleştirel bir bakış.</p>
+      <div class="ba-actions"><a class="ba-button ba-primary" href="https://www.everydaycommentary.com/" target="_blank" rel="noopener noreferrer">Kaynağa git <span aria-hidden="true">↗</span></a><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="everydaycommentary" aria-pressed="false" aria-label="Everyday Commentary · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></div>
+    </div>
+  </header>
+  <div class="ba-profile-grid">
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>Ne sunuyor?</h2><p>Bıçakları ve günlük taşıma ekipmanlarını yazarın kullanım tercihleri, yorumları ve puanlı inceleme arşivi üzerinden ele alıyor.</p><ul class="ba-features"><li>Katlanır çakı ve diğer EDC ekipmanı incelemeleri</li><li>Puanların ve sonraki güncellemelerin yer aldığı arşiv</li><li>Seçim yazıları ve dönemsel hediye rehberleri</li></ul><ul class="ba-tags"><li>EDC</li><li>Yorum</li><li>İnceleme</li><li>Puanlama</li></ul></section>
+      <section class="ba-panel ba-pad ba-profile-character"><h2>Kaynağın karakteri</h2><p>Kişisel sesi belirgin, eleştirel ve deneyim odaklı.</p></section>
+      <section class="ba-panel ba-pad"><h2>Kimler için?</h2><p>Teknik katalog dışında bir kullanıcının gerekçeli bakışını okumak isteyenler.</p></section>
+    </div>
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>İncelenen sayfalar</h2><p class="ba-small">Son kontrol 7 Kasım 2026</p><ul class="ba-source-list"><li><a class="ba-link" href="https://www.everydaycommentary.com/" target="_blank" rel="noopener noreferrer">Yayınlar ve gelir açıklaması <span aria-hidden="true">↗</span></a></li><li><a class="ba-link" href="https://www.everydaycommentary.com/reviews-archive" target="_blank" rel="noopener noreferrer">İnceleme arşivi <span aria-hidden="true">↗</span></a></li></ul></section>
+      <section class="ba-panel ba-pad"><h2>Okuma bağlamı</h2><p>Puanlar yazarın kendi değerlendirme sistemine aittir. Site, satış ortaklığı bağlantılarını gelir kaynağı olarak açıklıyor.</p></section>
+    </div>
+  </div>
+</section>
+<section class="ba-wrap ba-page" data-view="profile" data-profile="bladereviews" hidden="hidden">
+  <a class="ba-back" href="#atlas/rehber">← Kaynak rehberine dön</a>
+  <header class="ba-profile-intro">
+    <span class="ba-mark" style="--site-color:#738478" aria-hidden="true">BR</span><div>
+      <p class="ba-eyebrow">İnceleme ve rehber · Uluslararası · İngilizce</p>
+      <div data-heading="bladereviews"></div>
+      <p class="ba-lead">Aranabilir ve düzenli inceleme arşivi.</p>
+      <div class="ba-actions"><a class="ba-button ba-primary" href="https://bladereviews.com/" target="_blank" rel="noopener noreferrer">Kaynağa git <span aria-hidden="true">↗</span></a><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="bladereviews" aria-pressed="false" aria-label="BladeReviews · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></div>
+    </div>
+  </header>
+  <div class="ba-profile-grid">
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>Ne sunuyor?</h2><p>Bıçak incelemelerini marka, kullanım amacı ve sınıfına göre düzenliyor. Bakım, çelik ve bileme içerikleri de sunuyor.</p><ul class="ba-features"><li>Marka, kullanım ve bıçak sınıfına göre gezinme</li><li>EDC, yüksek değer ve sabit bıçak incelemeleri</li><li>Bakım, bıçak sözlüğü ve çelik bilgileri</li></ul><ul class="ba-tags"><li>İnceleme</li><li>Arşiv</li><li>Bakım</li><li>Çelik</li></ul></section>
+      <section class="ba-panel ba-pad ba-profile-character"><h2>Kaynağın karakteri</h2><p>Arşivli, sistematik ve model ayrıntısına odaklanan.</p></section>
+      <section class="ba-panel ba-pad"><h2>Kimler için?</h2><p>Belirli bir marka veya model için ayrıntılı okuma yapmak isteyenler.</p></section>
+    </div>
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>İncelenen sayfalar</h2><p class="ba-small">Son kontrol 7 Kasım 2026</p><ul class="ba-source-list"><li><a class="ba-link" href="https://bladereviews.com/" target="_blank" rel="noopener noreferrer">İnceleme kategorileri <span aria-hidden="true">↗</span></a></li><li><a class="ba-link" href="https://bladereviews.com/about/" target="_blank" rel="noopener noreferrer">Ekip ve etik yaklaşım <span aria-hidden="true">↗</span></a></li></ul></section>
+      <section class="ba-panel ba-pad"><h2>Okuma bağlamı</h2><p>Kendi etik açıklamasında reklam ve satış ortaklığı gelirlerini belirtiyor. İnceleme tarihini ürünün güncel sürümüyle birlikte değerlendirmek yararlı.</p></section>
+    </div>
+  </div>
+</section>
+<section class="ba-wrap ba-page" data-view="profile" data-profile="gearjunkie" hidden="hidden">
+  <a class="ba-back" href="#atlas/rehber">← Kaynak rehberine dön</a>
+  <header class="ba-profile-intro">
+    <span class="ba-mark" style="--site-color:#9c7745" aria-hidden="true">GJ</span><div>
+      <p class="ba-eyebrow">İnceleme ve rehber · ABD · İngilizce</p>
+      <div data-heading="gearjunkie"></div>
+      <p class="ba-lead">Bıçağa outdoor kullanımı içinden bakar.</p>
+      <div class="ba-actions"><a class="ba-button ba-primary" href="https://gearjunkie.com/knives" target="_blank" rel="noopener noreferrer">Kaynağa git <span aria-hidden="true">↗</span></a><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="gearjunkie" aria-pressed="false" aria-label="GearJunkie · Knives · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></div>
+    </div>
+  </header>
+  <div class="ba-profile-grid">
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>Ne sunuyor?</h2><p>Geniş outdoor yayıncılığı içinde bıçak, balta ve multitool incelemeleri ile seçim rehberlerine yer veriyor.</p><ul class="ba-features"><li>Bıçak, balta ve multitool içerikleri</li><li>Model incelemeleri ve satın alma rehberleri</li><li>Yayımlanmış ürün değerlendirme ilkeleri</li></ul><ul class="ba-tags"><li>Outdoor</li><li>Kamp</li><li>Multitool</li><li>İnceleme</li></ul></section>
+      <section class="ba-panel ba-pad ba-profile-character"><h2>Kaynağın karakteri</h2><p>Saha kullanımı ve outdoor senaryolarını öne çıkaran.</p></section>
+      <section class="ba-panel ba-pad"><h2>Kimler için?</h2><p>Bıçağı kamp ve günlük ekipman setinin bir parçası olarak araştıranlar.</p></section>
+    </div>
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>İncelenen sayfalar</h2><p class="ba-small">Son kontrol 7 Kasım 2026</p><ul class="ba-source-list"><li><a class="ba-link" href="https://gearjunkie.com/knives" target="_blank" rel="noopener noreferrer">Bıçak bölümü <span aria-hidden="true">↗</span></a></li><li><a class="ba-link" href="https://gearjunkie.com/review-guidelines" target="_blank" rel="noopener noreferrer">İnceleme ilkeleri <span aria-hidden="true">↗</span></a></li></ul></section>
+      <section class="ba-panel ba-pad"><h2>Okuma bağlamı</h2><p>Bıçaklara özel tek konulu bir site değil; outdoor yayıncısının bölümü. İnceleme ve partner içerik etiketleri birlikte kontrol edilebilir.</p></section>
+    </div>
+  </div>
+</section>
+<section class="ba-wrap ba-page" data-view="profile" data-profile="bladeforums" hidden="hidden">
+  <a class="ba-back" href="#atlas/rehber">← Kaynak rehberine dön</a>
+  <header class="ba-profile-intro">
+    <span class="ba-mark" style="--site-color:#67808b" aria-hidden="true">BF</span><div>
+      <p class="ba-eyebrow">Topluluk · Uluslararası · İngilizce</p>
+      <div data-heading="bladeforums"></div>
+      <p class="ba-lead">Bıçak meraklılarının geniş sohbet alanı.</p>
+      <div class="ba-actions"><a class="ba-button ba-primary" href="https://www.bladeforums.com/" target="_blank" rel="noopener noreferrer">Kaynağa git <span aria-hidden="true">↗</span></a><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="bladeforums" aria-pressed="false" aria-label="BladeForums · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></div>
+    </div>
+  </header>
+  <div class="ba-profile-grid">
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>Ne sunuyor?</h2><p>Genel bıçak tartışmalarını, üretici ve usta bölümlerini, kullanıcı deneyimlerini ve ilan alanlarını aynı forumda topluyor.</p><ul class="ba-features"><li>Genel tartışma, üretici ve knifemaker bölümleri</li><li>Kullanıcı yorumları, kaynaklar ve incelemeler</li><li>Exchange ve classifieds alanları</li></ul><ul class="ba-tags"><li>Forum</li><li>Deneyim</li><li>Üreticiler</li><li>Topluluk</li></ul></section>
+      <section class="ba-panel ba-pad ba-profile-character"><h2>Kaynağın karakteri</h2><p>Çok sesli, deneyim paylaşan ve derin arşivli.</p></section>
+      <section class="ba-panel ba-pad"><h2>Kimler için?</h2><p>Bir model hakkında farklı sahiplerin deneyimlerini karşılaştıranlar.</p></section>
+    </div>
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>İncelenen sayfalar</h2><p class="ba-small">Son kontrol 7 Kasım 2026</p><ul class="ba-source-list"><li><a class="ba-link" href="https://www.bladeforums.com/" target="_blank" rel="noopener noreferrer">Forum bölümleri ve ilan yapısı <span aria-hidden="true">↗</span></a></li></ul></section>
+      <section class="ba-panel ba-pad"><h2>Okuma bağlamı</h2><p>İçerik çoğunlukla kullanıcı katkısıdır; tek bir editoryal test protokolünü temsil etmez. İlan alanları ayrıca kendi üyelik ve kullanım kurallarına bağlıdır.</p></section>
+    </div>
+  </div>
+</section>
+<section class="ba-wrap ba-page" data-view="profile" data-profile="aapk" hidden="hidden">
+  <a class="ba-back" href="#atlas/rehber">← Kaynak rehberine dön</a>
+  <header class="ba-profile-intro">
+    <span class="ba-mark" style="--site-color:#917b56" aria-hidden="true">AAPK</span><div>
+      <p class="ba-eyebrow">Topluluk · Uluslararası · İngilizce</p>
+      <div data-heading="aapk"></div>
+      <p class="ba-lead">Cep çakısı meraklıları için araştırma alanı.</p>
+      <div class="ba-actions"><a class="ba-button ba-primary" href="https://www.allaboutpocketknives.com/" target="_blank" rel="noopener noreferrer">Kaynağa git <span aria-hidden="true">↗</span></a><button class="ba-button ba-small-button" type="button" data-action="toggle-site" data-site="aapk" aria-pressed="false" aria-label="All About Pocket Knives · Karşılaştırmaya ekle">Karşılaştırmaya ekle</button></div>
+    </div>
+  </header>
+  <div class="ba-profile-grid">
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>Ne sunuyor?</h2><p>Forum, araştırma bölümü, bıçak kayıtları ve üye mağazalarını birleştiren cep çakısı topluluğu.</p><ul class="ba-features"><li>Forum ve soru-cevap alanları</li><li>Araştırma bölümü ve bıçak kayıtları</li><li>Üye mağazaları ve satılmış ürün arşivleri</li></ul><ul class="ba-tags"><li>Cep çakısı</li><li>Koleksiyon</li><li>Araştırma</li><li>Forum</li></ul></section>
+      <section class="ba-panel ba-pad ba-profile-character"><h2>Kaynağın karakteri</h2><p>Koleksiyoncu, araştırmacı ve topluluk merkezli.</p></section>
+      <section class="ba-panel ba-pad"><h2>Kimler için?</h2><p>Cep çakısı tanımlama, desen ve koleksiyon araştırması yapanlar.</p></section>
+    </div>
+    <div class="ba-stack">
+      <section class="ba-panel ba-pad"><h2>İncelenen sayfalar</h2><p class="ba-small">Son kontrol 7 Kasım 2026</p><ul class="ba-source-list"><li><a class="ba-link" href="https://www.allaboutpocketknives.com/catalog/home" target="_blank" rel="noopener noreferrer">Platform bölümleri <span aria-hidden="true">↗</span></a></li><li><a class="ba-link" href="https://www.allaboutpocketknives.com/catalog/content/research" target="_blank" rel="noopener noreferrer">Araştırma ve öğrenme <span aria-hidden="true">↗</span></a></li></ul></section>
+      <section class="ba-panel ba-pad"><h2>Okuma bağlamı</h2><p>Topluluk bilgisi, araştırma içeriği ve üye satıcıları farklı kaynak türleridir. Tek bir mağazanın kataloğu olarak okunmamalı.</p></section>
+    </div>
+  </div>
+</section>
+    <section class="ba-wrap ba-page" data-view="compare" hidden="hidden">
+      <header class="ba-page-intro"><p class="ba-eyebrow">Kendi önceliklerinle karşılaştır</p><div data-heading="compare"></div><p class="ba-lead">Ölçütleri sen belirle, seçenekleri puanla. Önceliklerin değiştikçe sıralama anında güncellensin.</p></header>
+      <p class="ba-note">Puanlar senin değerlendirmen. Seçimlerin ve puanların bu tarayıcıda saklanır.</p>
+      <div class="ba-panel ba-decision-tools">
+        <div class="ba-grow"><label for="atlas-decision-title">Kararın başlığı</label><input id="atlas-decision-title" type="text" maxlength="160"/><p class="ba-small" id="atlas-save-status" aria-live="polite">Bu tarayıcıda saklanır.</p></div>
+        <button class="ba-button ba-small-button" type="button" data-action="export-json">JSON yedek indir</button>
+        <button class="ba-button ba-small-button" type="button" data-action="import-json">Yedek yükle</button>
+        <input class="ba-sr" id="atlas-import-file" type="file" accept="application/json,.json" aria-label="Karar JSON dosyası seç" tabindex="-1"/>
+        <button class="ba-button ba-small-button" type="button" data-action="export-text">Metin özeti indir</button>
+        <button class="ba-button ba-small-button" type="button" data-action="new-decision">Yeni karar</button>
+      </div>
+      <div class="ba-compare-grid">
+        <aside class="ba-panel ba-pad ba-criteria" aria-label="Ölçütler ve ağırlıklar">
+          <p class="ba-eyebrow">01 / Önceliklerin</p><h2>Senin için ne önemli?</h2><p class="ba-small">Önem 0–10 arasında değişir. Yüzdeler toplam ağırlık içindeki payı gösterir.</p>
+          <div id="atlas-criteria"></div>
+          <form class="ba-add-form" id="atlas-add-criterion"><div class="ba-grow"><label for="atlas-criterion-name">Yeni ölçüt</label><input id="atlas-criterion-name" type="text" maxlength="100" placeholder="Örn. Türkçe içerik"/></div><button class="ba-button ba-small-button" type="submit" id="atlas-criterion-add">Ekle</button></form>
+          <button class="ba-button ba-small-button ba-equal" type="button" data-action="equal-weights">Eşit ağırlık</button>
+        </aside>
+        <div class="ba-stack">
+          <section class="ba-panel ba-pad ba-snapshot" aria-labelledby="atlas-snapshot-heading"><h2 id="atlas-snapshot-heading">Kararının fotoğrafı</h2><div id="atlas-snapshot" aria-live="polite"></div></section>
+          <section class="ba-panel ba-pad ba-ranking" aria-labelledby="atlas-ranking-heading"><h2 id="atlas-ranking-heading">Seçeneklerin sıralaması</h2><p class="ba-small">Renkli dilimler her ölçütün puana katkısını gösterir.</p><div id="atlas-ranking"></div></section>
+        </div>
+      </div>
+      <section class="ba-score-editor" aria-labelledby="atlas-score-heading">
+        <p class="ba-eyebrow">02 / Seçeneklerin</p><h2 id="atlas-score-heading">Her seçeneğe bir puan ver.</h2>
+        <p class="ba-small">0 hiç uygun değil, 10 çok uygun. Geniş tabloları yana kaydırabilirsin.</p>
+        <div id="atlas-score-table"></div>
+        <div class="ba-option-forms">
+          <form class="ba-add-form" id="atlas-add-source"><div class="ba-grow"><label for="atlas-source-select">Rehberden kaynak ekle</label><select id="atlas-source-select"><option value="">Kaynak seç…</option></select></div><button class="ba-button ba-primary" type="submit" id="atlas-source-add">Ekle</button></form>
+          <form class="ba-add-form" id="atlas-add-option"><div class="ba-grow"><label for="atlas-option-name">Kendi seçeneğini ekle</label><input id="atlas-option-name" type="text" maxlength="120" placeholder="Örn. Yerel bıçak forumu"/></div><button class="ba-button" type="submit" id="atlas-option-add">Ekle</button></form>
+        </div>
+        <p class="ba-small ba-limit">En fazla 8 seçenek ve 12 ölçüt eklenebilir.</p>
+      </section>
+    </section>
+    <section class="ba-wrap ba-page ba-method" data-view="method" hidden="hidden">
+      <a class="ba-back" href="#atlas/rehber">← Kaynak rehberine dön</a>
+      <header class="ba-page-intro"><p class="ba-eyebrow">Kaynaklar, yorumlar ve hesaplama</p><div data-heading="method"></div><p class="ba-lead">Hangi kaynağın hangi soruya yardımcı olduğunu görmek için hazırlanmış, seçilmiş bir rehber.</p></header>
+      <section class="ba-method-section"><p class="ba-eyebrow">01 / Kapsam</p><h2>20 kaynak, beş farklı tür.</h2><p>AnkaOutdoor, BıçakKurdu, Knife Informer, Blade HQ ve KnifeCenter başlangıç kümesiydi. Mağaza, inceleme, teknik araştırma, haber ve topluluk kaynaklarıyla liste 20 siteye genişletildi.</p></section>
+      <section class="ba-method-section"><p class="ba-eyebrow">02 / Dayanak</p><h2>Özellikler kaynak sayfalarına dayanır.</h2><p>Kaynaklar 7 Kasım 2026 tarihinde kontrol edildi. Ana sayfalar, kategoriler, hakkımızda bölümleri ve yayımlanmış test ilkeleri temel alındı. Her profilde kullanılan sayfalara doğrudan bağlantı bulunur.</p></section>
+      <section class="ba-method-section"><p class="ba-eyebrow">03 / Yorum</p><h2>Her kaynağı kendi bağlamında oku.</h2><p>Özellikler gözlemlenebilir bilgilerdir. Karakter cümleleri rehberin editoryal yorumudur. Mağaza içeriği ürün keşfine, deneysel testler teknik değerlendirmeye, forumlar kullanıcı deneyimine yardımcı olur. Marka adları ilgili sahiplerine aittir.</p></section>
+      <section class="ba-method-section"><p class="ba-eyebrow">04 / Hesaplama</p><h2>Önceliklerin sonucu değiştirir.</h2><p>Her seçeneğe 0–10 arası puan, her ölçüte 0–10 arası ağırlık ver. Yüksek puan daha iyi uyum anlamına gelir.</p><p class="ba-note ba-formula">Sonuç = toplam (puan × ağırlık) ÷ toplam ağırlık</p><ul><li>Sıfır ağırlıklı ölçütün puanı boş kalabilir.</li><li>Etkin ölçütünde puanı eksik olan seçenek bekler.</li><li>Tüm ağırlıklar sıfırsa veya ölçüt yoksa sıralama yapılmaz.</li><li>Eşit puanlar aynı sırayı paylaşır.</li></ul></section>
+      <section class="ba-method-section"><p class="ba-eyebrow">05 / Kişisel alan</p><h2>Kararın bu tarayıcıda kalır.</h2><p>Seçimlerin, başlığın ve puanların tarayıcında saklanır. JSON yedeği indirerek kararını başka cihaza taşıyabilirsin.</p></section>
+      <div class="ba-actions"><a class="ba-button ba-primary" href="#atlas/rehber">Kaynakları keşfet →</a><a class="ba-button" href="#atlas/karsilastir">Karşılaştırmayı aç</a></div>
+    </section>
+  </main>
+  <footer class="ba-footer"><div class="ba-wrap ba-footer-inner"><div><a class="ba-brand" href="#atlas/rehber"><span>bıçak<em>atlası.</em></span></a><p class="ba-small">Bıçak dünyasını keşfetmek için bir kaynak haritası.</p></div><div><a class="ba-link" href="#atlas/yontem">Araştırma yöntemi</a><p class="ba-small">Son kaynak kontrolü 7 Kasım 2026</p></div></div></footer>
+  <aside class="ba-selection" id="atlas-selection" aria-label="Karşılaştırma seçimi" hidden="hidden"><div><strong id="atlas-selection-count"></strong><p id="atlas-selection-names"></p></div><a class="ba-button ba-primary" href="#atlas/karsilastir">Puanlayarak karşılaştır →</a></aside>
+  <div class="ba-toast" id="atlas-toast" role="status" hidden="hidden"></div>
+  <dialog id="atlas-dialog" aria-labelledby="atlas-dialog-title" aria-describedby="atlas-dialog-description"><h2 id="atlas-dialog-title"></h2><p id="atlas-dialog-description"></p><div class="ba-actions"><button class="ba-button" type="button" data-action="cancel-dialog" autofocus="autofocus">Vazgeç</button><button class="ba-button ba-primary" id="atlas-dialog-accept" type="button" data-action="accept-dialog">Onayla</button></div></dialog>
+  <script id="atlas-source-data" type="application/json">{"checked":"7 Kasım 2026","categories":["Mağaza","İnceleme ve rehber","Haber ve dergi","Teknik araştırma","Topluluk"],"sites":[{"id":"ankaoutdoor","name":"AnkaOutdoor","initials":"AO","url":"https://www.ankaoutdoor.com/","country":"Türkiye","language":"Türkçe","category":"Mağaza","color":"#b56a3e","tagline":"Türkiye’den outdoor dünyasına.","description":"Bıçak ve çakı çeşitlerini kamp, av ve outdoor ekipmanlarıyla bir araya getiren Türkçe mağaza. Ürün keşfini kullanım alanlarına göre kuruyor.","character":"Yerel, pratik ve ürün odaklı.","features":["Çakı, sabit bıçak, av ve bushcraft kategorileri","Bıçak aksesuarları, kamp ekipmanı ve marka sayfaları","Ürün rehberleri, blog ve video bağlantıları"],"ideal":"Türkçe ürün bilgisiyle bıçak ve kamp ekipmanı araştıranlar.","context":"Ana işlevi perakende satış. Ürün açıklamaları ve mağaza rehberleri bu ticari bağlam içinde okunmalı.","tags":["Türkçe","Kamp","Bushcraft","Çakı"],"sources":[{"label":"Ana sayfa ve kategori yapısı","url":"https://www.ankaoutdoor.com/"},{"label":"Hakkımızda","url":"https://www.ankaoutdoor.com/sayfa/hakkimizda"}]},{"id":"bicakkurdu","name":"BıçakKurdu","initials":"BK","url":"https://bicakkurdu.com/","country":"Türkiye","language":"Türkçe","category":"İnceleme ve rehber","color":"#3b6350","tagline":"Bıçak bilgisinin Türkçe adreslerinden.","description":"Bıçak ve çakı incelemeleri, çelik karşılaştırmaları, marka profilleri ve mekanizma açıklamalarına odaklanan Türkçe içerik kaynağı.","character":"Öğretici, teknik konuları açıklayan ve rehber odaklı.","features":["Bıçak ve çakı incelemeleri ile teknik içerikler","Üreticileri tanıtan marka profilleri","Kaynak seçimi ve çelik puanlama metodolojisi"],"ideal":"Terimleri Türkçe öğrenmek, marka ve mekanizma bilgisi toplamak isteyenler.","context":"Çelik karşılaştırmalarını kullanılan test kaynağı ve yöntemle birlikte okumak gerekir. Profil, yayımlanmış WordPress sayfaları üzerinden doğrulandı.","tags":["Türkçe","Çelik","Markalar","Mekanizmalar"],"sources":[{"label":"Hakkımızda","url":"https://bicakkurdu.com/hakkimizda/"},{"label":"Marka dizini","url":"https://bicakkurdu.com/markalar/"},{"label":"Kaynak ve inceleme metodolojisi","url":"https://bicakkurdu.com/kaynak-ve-inceleme-metodolojisi/"}]},{"id":"knifeinformer","name":"Knife Informer","initials":"KI","url":"https://knifeinformer.com/","country":"Uluslararası","language":"İngilizce","category":"İnceleme ve rehber","color":"#728449","tagline":"İncelemeden seçim rehberine.","description":"Cep çakısı ve outdoor bıçakları için incelemeler, satın alma rehberleri ve seçim araçları sunuyor. Test yaklaşımını ayrı bir sayfada açıklıyor.","character":"Seçenekleri daraltan, karşılaştırmalı ve tüketici odaklı.","features":["Model incelemeleri ve kullanım amacına göre rehberler","Knife Finder ve çelik karşılaştırma aracı","Test alanları, ekip ve gelir modeli açıklamaları"],"ideal":"İngilizce incelemelerle kısa liste oluşturmak isteyenler.","context":"Eski incelemelerde sayısal puanlar, yeni video incelemelerinde yazılı sonuç kullanılıyor. Reklam, satış ortaklığı ve etiketlenen sponsor içeriklerle destekleniyor.","tags":["EDC","İnceleme","Çelik","Seçim aracı"],"sources":[{"label":"İncelemeler ve araçlar","url":"https://knifeinformer.com/"},{"label":"Test ve gelir modeli","url":"https://knifeinformer.com/how-we-test/"}]},{"id":"bladehq","name":"Blade HQ","initials":"BH","url":"https://www.bladehq.com/","country":"ABD","language":"İngilizce","category":"Mağaza","color":"#56776c","tagline":"Modern çakı ve EDC kataloğu.","description":"Katlanır, sabit ve otomatik bıçakları; EDC ekipmanını ve mağazaya özel serileri öne çıkaran perakendeci.","character":"Görsel keşfi güçlü, modern ve yeni ürün odaklı.","features":["Bıçak türüne ve kullanım amacına göre katalog","Blade HQ Exclusives ve yeni gelen ürünler","Knife Blog ve kaynak dizini"],"ideal":"Model çeşitlerini, farklı sürümleri ve yeni çıkışları keşfedenler.","context":"Bir mağazanın içerik ekosistemi. Blog ve seçim içerikleri ürün satışıyla aynı yapı içinde sunuluyor.","tags":["EDC","Yeni ürün","Özel seri","Katalog"],"sources":[{"label":"Kaynak dizini ve mağaza menüsü","url":"https://www.bladehq.com/resources"},{"label":"Knife Blog","url":"https://www.bladehq.com/blog/"}]},{"id":"knifecenter","name":"KnifeCenter","initials":"KC","url":"https://www.knifecenter.com/","country":"ABD","language":"İngilizce","category":"Mağaza","color":"#697b89","tagline":"Kapsamlı bir kesici alet kataloğu.","description":"Üretim bıçaklarından özel yapım modellere, mutfak bıçaklarından bileme ekipmanlarına kadar uzanan ürün kataloğu sunuyor.","character":"Katalogcu, geniş kapsamlı ve ürün bilgisi odaklı.","features":["Marka, yeni ürün ve bıçak türü dizinleri","Custom ve semi-custom ürün grupları","Bileme bilgileri ve mağaza blogu"],"ideal":"Farklı ürün ailelerini ve marka seçeneklerini yan yana araştıranlar.","context":"1995’te kurulduğunu belirten perakendeci; bilgi içeriği ile satış kataloğunu birlikte işletiyor.","tags":["Katalog","Markalar","Mutfak","Bileme"],"sources":[{"label":"Kimiz?","url":"https://www.knifecenter.com/info/who-we-are"},{"label":"Mağaza blogu hakkında","url":"https://blog.knifecenter.com/about/"}]},{"id":"knivesandtools","name":"Knivesandtools","initials":"KT","url":"https://www.knivesandtools.com/","country":"Hollanda","language":"İngilizce / çok dilli","category":"Mağaza","color":"#688252","tagline":"Katalogla uzman bilgisini birleştirir.","description":"Outdoor ve mutfak bıçaklarını, bileme ürünlerini ve araçları; uzman içerikleri ve müşteri değerlendirmeleriyle birlikte sunan mağaza.","character":"Açıklayıcı, karşılaştırmalı ve kullanım odaklı.","features":["Outdoor, mutfak, multitool ve bileme grupları","Expert Info altında rehber ve karşılaştırmalar","Kendi ürün fotoğrafları ve müşteri yorumları"],"ideal":"Bıçak kadar bileme sistemini ve kullanım ayrıntılarını da araştıranlar.","context":"Kendi testlerini ve açıklamalarını hazırladığını belirtiyor. Uzman içerikleri bir perakendecinin ürün seçkisiyle birlikte değerlendirilmeli.","tags":["Bileme","Mutfak","Karşılaştırma","Outdoor"],"sources":[{"label":"Hakkımızda","url":"https://www.knivesandtools.com/en/ct/about-us.htm"},{"label":"Uzman bilgisi","url":"https://www.knivesandtools.com/en/ct/expert-info.htm"}]},{"id":"lamnia","name":"Lamnia","initials":"LA","url":"https://www.lamnia.com/","country":"Finlandiya","language":"İngilizce / çok dilli","category":"Mağaza","color":"#708787","tagline":"İskandinav bıçakçılığına açılan kapı.","description":"Uluslararası üreticilerle İskandinav ustaların bıçaklarını aynı katalogda topluyor. Kamp ve outdoor ekipmanını da kapsıyor.","character":"Kuzey Avrupa çizgisi güçlü, geniş seçkili ve outdoor odaklı.","features":["Sabit, katlanır, geleneksel ve custom bıçaklar","İskandinav ustaların ürünleri ve outdoor donanımı","Dil, ülke, para birimi ve ölçü birimi seçenekleri"],"ideal":"Puukko, İskandinav tasarımları ve outdoor bıçaklarıyla ilgilenenler.","context":"Finlandiya merkezli perakendeci. Sitedeki ülke ve dil seçimi, ürün kataloglarının sunumunu etkileyebilir.","tags":["İskandinav","Puukko","Kamp","Custom"],"sources":[{"label":"Lamnia hakkında","url":"https://www.lamnia.com/en/about-us"},{"label":"İletişim ve merkez","url":"https://www.lamnia.com/en/contact"}]},{"id":"dlttrading","name":"DLT Trading","initials":"DLT","url":"https://www.dlttrading.com/","country":"ABD","language":"İngilizce","category":"Mağaza","color":"#94745a","tagline":"Özel seriler ve kişiselleştirme.","description":"Bıçak, EDC ve bakım ekipmanlarını; mağazaya özel sürümler, custom modeller ve gravür hizmetiyle birleştiriyor.","character":"Meraklıya hitap eden, koleksiyon ve kişiselleştirme odaklı.","features":["DLT Exclusives, drop ve yeniden stok girişleri","Gravürlü bıçaklar ve custom ürün grubu","Shop Talk videoları ve bıçak blogu"],"ideal":"Belirli sürüm, koleksiyon modeli ya da gravür seçeneği arayanlar.","context":"Ticari katalog ve içerik kanalı birlikte çalışıyor. Özel sürüm ile üreticinin standart modeli aynı ürün olarak varsayılmamalı.","tags":["Özel seri","Gravür","EDC","Custom"],"sources":[{"label":"DLT hakkında","url":"https://www.dlttrading.com/about-dlt-trading"},{"label":"Katalog ve kaynaklar","url":"https://www.dlttrading.com/"}]},{"id":"smkw","name":"Smoky Mountain Knife Works","initials":"SM","url":"https://smkw.com/","country":"ABD","language":"İngilizce","category":"Mağaza","color":"#a88046","tagline":"Mağaza kültürüyle büyük bir seçki.","description":"Online satışını Tennessee’deki fiziksel showroom ve etkinliklerle tamamlayan bıçak ve outdoor perakendecisi.","character":"Geleneksel mağaza hissi taşıyan, koleksiyoner ve outdoor kitlesine açık.","features":["Bıçak ve outdoor ekipmanlarına yayılan katalog","Fiziksel showroom ve koleksiyon sergileri","Marka temsilcileriyle mağaza etkinlikleri"],"ideal":"Geleneksel çakı, koleksiyon ve farklı outdoor ürünlerini keşfedenler.","context":"Showroom ve etkinlik anlatısı, markanın kendi hakkımızda sayfasına dayanıyor. Fiziksel mağaza deneyimi bu rehber kapsamında test edilmedi.","tags":["Koleksiyon","Geleneksel","Outdoor","Showroom"],"sources":[{"label":"Hakkımızda ve showroom","url":"https://smkw.com/about-us/"},{"label":"Online mağaza","url":"https://smkw.com/"}]},{"id":"knifeart","name":"KnifeArt","initials":"KA","url":"https://www.knifeart.com/","country":"ABD","language":"İngilizce","category":"Mağaza","color":"#76675e","tagline":"Premium ve custom dünyasına yakın.","description":"Chris Reeve, Winkler ve William Henry gibi markalarla; özel yapım bıçaklar ve mağazaya özel sürümleri öne çıkarıyor.","character":"Seçkili, koleksiyoner odaklı ve premium ağırlıklı.","features":["Custom ustalarına göre ürün dizini","EDC, av, sabit bıçak ve Damascus kategorileri","Exclusives ve fiyat aralığına göre koleksiyonlar"],"ideal":"Üst segment model, özel malzeme veya usta işi bıçak araştıranlar.","context":"Ana sayfadaki marka ve ürün sunumundan premium odak yorumu çıkarılıyor. Bu ifade her ürünün el yapımı olduğu anlamına gelmez.","tags":["Premium","Custom","Koleksiyon","EDC"],"sources":[{"label":"Marka ve custom katalogları","url":"https://www.knifeart.com/"}]},{"id":"agrussell","name":"A.G. Russell","initials":"AG","url":"https://agrussell.com/","country":"ABD","language":"İngilizce","category":"Mağaza","color":"#8c795d","tagline":"Katalog geleneği ve bıçak bilgisi.","description":"Kendi markaları ve farklı üreticilerin bıçaklarıyla birlikte çelik tablosu, bıçak ansiklopedisi ve bileme rehberleri sunuyor.","character":"Köklü, açıklayıcı ve geleneksel bıçak kültürüne yakın.","features":["Kendi markaları ve başka üreticilerin kataloğu","Steel Chart ve Knife Encyclopedia","Bileme rehberleri ve bıçak makaleleri"],"ideal":"Geleneksel modelleri ve temel teknik kavramları birlikte araştıranlar.","context":"Çelik tablosu bir mağazanın bilgi kaynağıdır. Kimyasal bileşim tablosu ile standartlaştırılmış performans testi aynı şey değildir.","tags":["Çelik tablosu","Ansiklopedi","Geleneksel","Bileme"],"sources":[{"label":"Katalog ve bilgi kaynakları","url":"https://agrussell.com/"},{"label":"Çelik tablosu","url":"https://agrussell.com/chart"}]},{"id":"knifesteelnerds","name":"Knife Steel Nerds","initials":"SN","url":"https://knifesteelnerds.com/","country":"ABD","language":"İngilizce","category":"Teknik araştırma","color":"#58748a","tagline":"Çeliği verilerle anlamak için.","description":"Metalurjist Dr. Larrin Thomas’ın bıçak çelikleri, ısıl işlem, tokluk, ağız tutma ve korozyon üzerine deneysel araştırmalarını yayımladığı kaynak.","character":"Bilimsel, veri yoğun ve yöntem açıklayan.","features":["Metalurji ve ısıl işlem üzerine teknik yazılar","Tokluk, ağız tutma ve korozyon testleri","Test koşulları ve çelik davranışlarına dair grafikler"],"ideal":"Çelik iddialarını test verisi ve metalurjiyle değerlendirmek isteyenler.","context":"Çelik puanları, bitmiş her bıçağın performansını tek başına belirlemez. Yazar da geometri ve ısıl işlemin etkisini özellikle açıklıyor.","tags":["Metalurji","Test verisi","Isıl işlem","Çelik"],"sources":[{"label":"Yazar ve uzmanlık","url":"https://knifesteelnerds.com/about-me/"},{"label":"Çelik değerlendirmeleri ve sınırları","url":"https://knifesteelnerds.com/2021/10/19/knife-steels-rated-by-a-metallurgist-toughness-edge-retention-and-corrosion-resistance/"}]},{"id":"knifenews","name":"KnifeNews","initials":"KN","url":"https://knifenews.com/","country":"Uluslararası","language":"İngilizce","category":"Haber ve dergi","color":"#aa694d","tagline":"Bıçak dünyasında neler oluyor?","description":"Yeni bıçaklar, üreticiler, tasarımcılar ve sektör gelişmeleri hakkında haberler yayımlıyor.","character":"Gündem odaklı, hızlı taranabilen ve yenilik izleyen.","features":["Yeni model ve seri duyuruları","Üretici ve tasarımcı haberleri","Fuarlar, şirket gelişmeleri ve sektör başlıkları"],"ideal":"Yeni çıkışları ve sektörün hareketini takip edenler.","context":"Bir haber kaynağı. Model duyurusunu okumak, aynı ürünün uzun süreli kullanım incelemesini okumakla eşdeğer değil.","tags":["Haber","Yeni ürün","Tasarımcı","Sektör"],"sources":[{"label":"Haber akışı ve yayın tanımı","url":"https://knifenews.com/"}]},{"id":"blademag","name":"BLADE Magazine","initials":"BL","url":"https://blademag.com/","country":"ABD","language":"İngilizce","category":"Haber ve dergi","color":"#896054","tagline":"Üreticiden koleksiyonere bıçak kültürü.","description":"Bıçak yapımı, koleksiyonculuk, ürün incelemeleri ve sektör etkinliklerini bir araya getiren dergi ve web yayını.","character":"Dergicilik geleneği olan, zanaat ve sektör kültürüne yakın.","features":["Knifemaking ve atölye teknikleri","Custom bıçaklar ve koleksiyon içerikleri","İncelemeler, BLADE Show ve sektör haberleri"],"ideal":"Ürünün arkasındaki usta, tasarım ve zanaat dünyasını keşfedenler.","context":"Dergi yayıncılığı ile web içeriği birlikte sunuluyor. Haber, rehber ve incelemelerin türü ayrı ayrı okunmalı.","tags":["Zanaat","Custom","Koleksiyon","Dergi"],"sources":[{"label":"BLADE hakkında","url":"https://blademag.com/about-blade-magazine"},{"label":"Güncel yayınlar","url":"https://blademag.com/"}]},{"id":"knifemagazine","name":"KNIFE Magazine","initials":"KM","url":"https://www.knifemagazine.com/","country":"ABD","language":"İngilizce","category":"Haber ve dergi","color":"#6e7864","tagline":"Koleksiyonun hafızası ve güncel gündem.","description":"Basılı dergisini web haber akışı, eski sayı arşivleri, terimler ve tarih odaklı içeriklerle tamamlayan yayın.","character":"Arşivci, tarih meraklısı ve koleksiyoner odaklı.","features":["Eski dergi sayıları ve dijital arşivler","Custom bıçak, üretim ve sektör haberleri","Bıçak terimleri, etkinlikler ve koleksiyon içeriği"],"ideal":"Bıçak tarihine ve dönemsel yayınlara ulaşmak isteyenler.","context":"Bazı dergi ve arşiv alanları üyelik ya da satın alma gerektirebilir. Web haber akışıyla dergi aboneliği farklı alanlardır.","tags":["Arşiv","Tarih","Koleksiyon","Dergi"],"sources":[{"label":"Dergi ve ekip","url":"https://www.knifemagazine.com/about/"},{"label":"Arşiv ve yayın bölümleri","url":"https://www.knifemagazine.com/"}]},{"id":"everydaycommentary","name":"Everyday Commentary","initials":"EC","url":"https://www.everydaycommentary.com/","country":"Uluslararası","language":"İngilizce","category":"İnceleme ve rehber","color":"#8a745e","tagline":"EDC’ye kişisel ve eleştirel bir bakış.","description":"Bıçakları ve günlük taşıma ekipmanlarını yazarın kullanım tercihleri, yorumları ve puanlı inceleme arşivi üzerinden ele alıyor.","character":"Kişisel sesi belirgin, eleştirel ve deneyim odaklı.","features":["Katlanır çakı ve diğer EDC ekipmanı incelemeleri","Puanların ve sonraki güncellemelerin yer aldığı arşiv","Seçim yazıları ve dönemsel hediye rehberleri"],"ideal":"Teknik katalog dışında bir kullanıcının gerekçeli bakışını okumak isteyenler.","context":"Puanlar yazarın kendi değerlendirme sistemine aittir. Site, satış ortaklığı bağlantılarını gelir kaynağı olarak açıklıyor.","tags":["EDC","Yorum","İnceleme","Puanlama"],"sources":[{"label":"Yayınlar ve gelir açıklaması","url":"https://www.everydaycommentary.com/"},{"label":"İnceleme arşivi","url":"https://www.everydaycommentary.com/reviews-archive"}]},{"id":"bladereviews","name":"BladeReviews","initials":"BR","url":"https://bladereviews.com/","country":"Uluslararası","language":"İngilizce","category":"İnceleme ve rehber","color":"#738478","tagline":"Aranabilir ve düzenli inceleme arşivi.","description":"Bıçak incelemelerini marka, kullanım amacı ve sınıfına göre düzenliyor. Bakım, çelik ve bileme içerikleri de sunuyor.","character":"Arşivli, sistematik ve model ayrıntısına odaklanan.","features":["Marka, kullanım ve bıçak sınıfına göre gezinme","EDC, yüksek değer ve sabit bıçak incelemeleri","Bakım, bıçak sözlüğü ve çelik bilgileri"],"ideal":"Belirli bir marka veya model için ayrıntılı okuma yapmak isteyenler.","context":"Kendi etik açıklamasında reklam ve satış ortaklığı gelirlerini belirtiyor. İnceleme tarihini ürünün güncel sürümüyle birlikte değerlendirmek yararlı.","tags":["İnceleme","Arşiv","Bakım","Çelik"],"sources":[{"label":"İnceleme kategorileri","url":"https://bladereviews.com/"},{"label":"Ekip ve etik yaklaşım","url":"https://bladereviews.com/about/"}]},{"id":"gearjunkie","name":"GearJunkie · Knives","initials":"GJ","url":"https://gearjunkie.com/knives","country":"ABD","language":"İngilizce","category":"İnceleme ve rehber","color":"#9c7745","tagline":"Bıçağa outdoor kullanımı içinden bakar.","description":"Geniş outdoor yayıncılığı içinde bıçak, balta ve multitool incelemeleri ile seçim rehberlerine yer veriyor.","character":"Saha kullanımı ve outdoor senaryolarını öne çıkaran.","features":["Bıçak, balta ve multitool içerikleri","Model incelemeleri ve satın alma rehberleri","Yayımlanmış ürün değerlendirme ilkeleri"],"ideal":"Bıçağı kamp ve günlük ekipman setinin bir parçası olarak araştıranlar.","context":"Bıçaklara özel tek konulu bir site değil; outdoor yayıncısının bölümü. İnceleme ve partner içerik etiketleri birlikte kontrol edilebilir.","tags":["Outdoor","Kamp","Multitool","İnceleme"],"sources":[{"label":"Bıçak bölümü","url":"https://gearjunkie.com/knives"},{"label":"İnceleme ilkeleri","url":"https://gearjunkie.com/review-guidelines"}]},{"id":"bladeforums","name":"BladeForums","initials":"BF","url":"https://www.bladeforums.com/","country":"Uluslararası","language":"İngilizce","category":"Topluluk","color":"#67808b","tagline":"Bıçak meraklılarının geniş sohbet alanı.","description":"Genel bıçak tartışmalarını, üretici ve usta bölümlerini, kullanıcı deneyimlerini ve ilan alanlarını aynı forumda topluyor.","character":"Çok sesli, deneyim paylaşan ve derin arşivli.","features":["Genel tartışma, üretici ve knifemaker bölümleri","Kullanıcı yorumları, kaynaklar ve incelemeler","Exchange ve classifieds alanları"],"ideal":"Bir model hakkında farklı sahiplerin deneyimlerini karşılaştıranlar.","context":"İçerik çoğunlukla kullanıcı katkısıdır; tek bir editoryal test protokolünü temsil etmez. İlan alanları ayrıca kendi üyelik ve kullanım kurallarına bağlıdır.","tags":["Forum","Deneyim","Üreticiler","Topluluk"],"sources":[{"label":"Forum bölümleri ve ilan yapısı","url":"https://www.bladeforums.com/"}]},{"id":"aapk","name":"All About Pocket Knives","initials":"AAPK","url":"https://www.allaboutpocketknives.com/","country":"Uluslararası","language":"İngilizce","category":"Topluluk","color":"#917b56","tagline":"Cep çakısı meraklıları için araştırma alanı.","description":"Forum, araştırma bölümü, bıçak kayıtları ve üye mağazalarını birleştiren cep çakısı topluluğu.","character":"Koleksiyoncu, araştırmacı ve topluluk merkezli.","features":["Forum ve soru-cevap alanları","Araştırma bölümü ve bıçak kayıtları","Üye mağazaları ve satılmış ürün arşivleri"],"ideal":"Cep çakısı tanımlama, desen ve koleksiyon araştırması yapanlar.","context":"Topluluk bilgisi, araştırma içeriği ve üye satıcıları farklı kaynak türleridir. Tek bir mağazanın kataloğu olarak okunmamalı.","tags":["Cep çakısı","Koleksiyon","Araştırma","Forum"],"sources":[{"label":"Platform bölümleri","url":"https://www.allaboutpocketknives.com/catalog/home"},{"label":"Araştırma ve öğrenme","url":"https://www.allaboutpocketknives.com/catalog/content/research"}]}]}</script>
+</div>
+
+<script>
+(() => {
+'use strict';
+const SCHEMA = 'bicak-atlasi/karar';
+const MAX_OPTIONS = 8;
+const MAX_CRITERIA = 12;
+const DEFAULT_TITLE = 'Hangi kaynak bana daha uygun?';
+const scoreFormat = new Intl.NumberFormat('tr-TR', {
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2
+});
+const percentFormat = new Intl.NumberFormat('tr-TR', {
+  style: 'percent',
+  maximumFractionDigits: 1
+});
+
+function escapeMarkup(value) {
+  const entities = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+  return String(value).replace(/[&<>"']/g, character => entities[character]);
+}
+
+function defaultDecision() {
+  return {
+    schema: SCHEMA,
+    version: 1,
+    title: DEFAULT_TITLE,
+    criteria: [
+      { id: 'dil', name: 'Dil ve anlaşılabilirlik', weight: 5 },
+      { id: 'derinlik', name: 'İçerik derinliği', weight: 5 },
+      { id: 'uygunluk', name: 'İhtiyacıma uygunluk', weight: 5 },
+      { id: 'seffaflik', name: 'Kaynak şeffaflığı', weight: 5 }
+    ],
+    options: [],
+    scores: Object.create(null)
+  };
+}
+
+function normalize(text) {
+  return String(text).toLocaleLowerCase('tr-TR').replace(/ı/g, 'i')
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[’'´]/g, '').replace(/\s+/g, ' ').trim();
+}
+
+function filterSites(sites, filters) {
+  const words = normalize(filters.query || '').split(' ').filter(Boolean);
+  const matched = sites.filter(site => {
+    if (filters.category && site.category !== filters.category) return false;
+    if (filters.turkish && site.language !== 'Türkçe') return false;
+    const searchable = [
+      site.name, site.url, site.tagline, site.description, site.character,
+      site.ideal, site.context, site.category, site.country, site.language,
+      ...site.features, ...site.tags
+    ];
+    const text = normalize(searchable.join(' '));
+    return words.every(word => text.includes(word));
+  });
+  if (filters.sort === 'az') {
+    matched.sort((left, right) => left.name.localeCompare(right.name, 'tr-TR', { sensitivity: 'base' }));
+  }
+  return matched;
+}
+
+function parseScore(raw) {
+  const text = String(raw).trim().replace(',', '.');
+  if (!text) return { valid: true, value: null };
+  if (!/^(?:\d+(?:\.\d*)?|\.\d+)$/.test(text)) return { valid: false, value: null };
+  const value = Number(text);
+  const valid = Number.isFinite(value) && value >= 0 && value <= 10;
+  return { valid, value: valid ? value : null };
+}
+
+function getScore(state, optionId, criterionId) {
+  const value = state.scores[optionId]?.[criterionId];
+  return typeof value === 'number' && Number.isFinite(value) && value >= 0 && value <= 10
+    ? value
+    : null;
+}
+
+function optionName(option) {
+  return option.name.trim() || 'Adsız seçenek';
+}
+
+function criterionName(criterion) {
+  return criterion.name.trim() || 'Adsız ölçüt';
+}
+
+function calculate(state) {
+  const active = state.criteria.filter(criterion => criterion.weight > 0);
+  const totalWeight = active.reduce((sum, criterion) => sum + criterion.weight, 0);
+  const rows = state.options.map(option => {
+    const missing = active.filter(criterion => getScore(state, option.id, criterion.id) === null);
+    if (totalWeight === 0 || missing.length > 0) {
+      return { option, missing, contributions: [], total: null, rank: null };
+    }
+    const contributions = active.map(criterion => ({
+      id: criterion.id,
+      name: criterionName(criterion),
+      value: getScore(state, option.id, criterion.id) * criterion.weight / totalWeight
+    }));
+    const total = contributions.reduce((sum, part) => sum + part.value, 0);
+    return { option, missing, contributions, total, rank: null };
+  });
+  const ranked = rows.filter(row => row.total !== null).sort((left, right) => right.total - left.total);
+  ranked.forEach((row, index) => {
+    const previous = ranked[index - 1];
+    row.rank = previous && Math.abs(previous.total - row.total) < 1e-9 ? previous.rank : index + 1;
+  });
+  let status = 'ready';
+  if (!state.options.length) status = 'no-options';
+  else if (!state.criteria.length) status = 'no-criteria';
+  else if (!totalWeight) status = 'zero-weight';
+  else if (!ranked.length) status = 'incomplete';
+  return { status, totalWeight, rows, ranked, incomplete: rows.filter(row => row.total === null) };
+}
+
+function summarize(result) {
+  if (result.status === 'no-options') {
+    return { title: 'Önce seçeneklerini belirle.', description: 'Rehberden kaynak seç veya kendi seçeneğini ekle.' };
+  }
+  if (result.status === 'no-criteria') {
+    return { title: 'Bir ölçüt ekleyerek başla.', description: 'Sıralama için en az bir ölçüt gerekli.' };
+  }
+  if (result.status === 'zero-weight') {
+    return { title: 'Önceliklerine biraz ağırlık ver.', description: 'Tüm ağırlıklar sıfır. Bir ağırlığı artır veya “Eşit ağırlık” düğmesini kullan.' };
+  }
+  if (result.status === 'incomplete') {
+    return { title: 'Puanlarınla tablo netleşsin.', description: 'Sıralamaya girmek için etkin ölçütlerin tamamına puan ver.' };
+  }
+  const [first, second] = result.ranked;
+  const leaders = result.ranked.filter(row => row.rank === 1);
+  const pending = result.incomplete.length
+    ? ' ' + result.incomplete.length + ' seçenek eksik puan nedeniyle bekliyor.'
+    : '';
+  if (leaders.length > 1) {
+    return {
+      title: leaders.map(row => optionName(row.option)).join(' ve ') + ' eşit.',
+      description: scoreFormat.format(first.total) + ' puanla aynı sırayı paylaşıyorlar.' + pending,
+      score: first.total
+    };
+  }
+  const biggest = first.contributions.reduce((best, part) => !best || part.value > best.value ? part : best, null);
+  const contribution = biggest ? biggest.name + ' · ' + scoreFormat.format(biggest.value) + ' puan katkı' : '';
+  if (!second) {
+    return {
+      title: optionName(first.option) + ' ' + scoreFormat.format(first.total) + ' puan aldı.',
+      description: 'Karşılaştırmak için başka bir seçeneğin puanlarını da tamamla.' + pending,
+      score: first.total,
+      contribution
+    };
+  }
+  return {
+    title: optionName(first.option) + ' bir adım önde.',
+    description: optionName(second.option) + ' ile farkı ' + scoreFormat.format(first.total - second.total) + ' puan.' + pending,
+    score: first.total,
+    contribution
+  };
+}
+
+function isRecord(value) {
+  return value !== null && typeof value === 'object' && !Array.isArray(value);
+}
+
+function uniqueId(id, used) {
+  const valid = typeof id === 'string' && /^[a-zA-Z0-9][a-zA-Z0-9_-]{0,79}$/.test(id)
+    && !['constructor', 'prototype', '__proto__'].includes(id);
+  if (!valid || used.has(id)) throw new Error('Bir ölçütün veya seçeneğin kimliği geçersiz ya da tekrarlı.');
+  used.add(id);
+  return id;
+}
+
+function validateDecision(raw, knownSites) {
+  if (!isRecord(raw) || raw.schema !== SCHEMA || raw.version !== 1) {
+    throw new Error('Bu dosya desteklenen bir Bıçak Atlası karar yedeği değil.');
+  }
+  if (typeof raw.title !== 'string' || raw.title.length > 160) throw new Error('Karar başlığı en fazla 160 karakter olabilir.');
+  if (!Array.isArray(raw.criteria) || raw.criteria.length > MAX_CRITERIA) throw new Error('En fazla 12 ölçüt içe aktarılabilir.');
+  if (!Array.isArray(raw.options) || raw.options.length > MAX_OPTIONS) throw new Error('En fazla 8 seçenek içe aktarılabilir.');
+  if (!isRecord(raw.scores)) throw new Error('Puan verisi okunamadı.');
+  const criterionIds = new Set(), optionIds = new Set(), sourceIds = new Set();
+  const criteria = raw.criteria.map(criterion => {
+    if (!isRecord(criterion) || typeof criterion.name !== 'string' || criterion.name.length > 100
+      || !Number.isInteger(criterion.weight) || criterion.weight < 0 || criterion.weight > 10) {
+      throw new Error('Ölçüt adlarını ve 0–10 arası ağırlıkları kontrol et.');
+    }
+    return { id: uniqueId(criterion.id, criterionIds), name: criterion.name, weight: criterion.weight };
+  });
+  const options = raw.options.map(option => {
+    if (!isRecord(option) || typeof option.name !== 'string' || option.name.length > 120) {
+      throw new Error('Seçenek adı en fazla 120 karakter olabilir.');
+    }
+    const clean = { id: uniqueId(option.id, optionIds), name: option.name };
+    if (option.siteId !== undefined) {
+      if (!knownSites.includes(option.siteId) || sourceIds.has(option.siteId)) {
+        throw new Error('Kaynak seçimi geçersiz veya tekrarlı.');
+      }
+      sourceIds.add(option.siteId);
+      clean.siteId = option.siteId;
+    }
+    return clean;
+  });
+  const scores = Object.create(null);
+  for (const option of options) {
+    const input = Object.hasOwn(raw.scores, option.id) ? raw.scores[option.id] : {};
+    if (!isRecord(input)) throw new Error('Bir seçeneğin puanları okunamadı.');
+    const row = Object.create(null);
+    for (const criterion of criteria) {
+      const value = Object.hasOwn(input, criterion.id) ? input[criterion.id] : null;
+      if (value !== null && (typeof value !== 'number' || !Number.isFinite(value) || value < 0 || value > 10)) {
+        throw new Error('Puanlar boş ya da 0–10 arasında sayılar olmalı.');
+      }
+      row[criterion.id] = value;
+    }
+    scores[option.id] = row;
+  }
+  return { schema: SCHEMA, version: 1, title: raw.title, criteria, options, scores };
+}
+
+function decisionText(state) {
+  const result = calculate(state);
+  const summary = summarize(result);
+  const weights = state.criteria.map(criterion => criterionName(criterion) + ' · ' + criterion.weight + '/10');
+  const ranking = result.ranked.map(row => row.rank + '. ' + optionName(row.option) + ' · ' + scoreFormat.format(row.total));
+  const incomplete = result.incomplete.map(row => optionName(row.option) + ' · henüz sıralanmadı');
+  return [
+    'Bıçak Atlası · Kişisel karşılaştırma', state.title || DEFAULT_TITLE,
+    '', 'Ölçütler', ...weights, '', 'Sıralama', ...ranking, ...incomplete,
+    '', summary.title, summary.description, summary.contribution || '',
+    '', 'Puanlar kişisel değerlendirmedir.'
+  ].join('\n');
+}
+
+const root = document.getElementById('bicak-atlasi-app');
+if (!root || root.dataset.ready) return;
+root.dataset.ready = 'true';
+
+const byId = id => root.querySelector('#' + id);
+const all = selector => Array.from(root.querySelectorAll(selector));
+const { sites } = JSON.parse(byId('atlas-source-data').textContent);
+const siteById = new Map(sites.map(site => [site.id, site]));
+const knownSites = sites.map(site => site.id);
+const storageKey = 'bicak-atlasi:blogger:v1';
+const filters = { query: '', category: '', turkish: false, sort: 'guide', view: 'cards' };
+const colors = ['#386653', '#827d47', '#a56542', '#53758e', '#836389', '#ac8259'];
+const heading = byId('atlas-main-title');
+const directoryHeading = heading.innerHTML;
+const dialog = byId('atlas-dialog');
+let view = '';
+let toastTimer;
+let onConfirm;
+let nextId = 0;
+let state = defaultDecision();
+
+try {
+  const saved = localStorage.getItem(storageKey);
+  if (saved) {
+    state = validateDecision(JSON.parse(saved), knownSites);
+    byId('atlas-save-status').textContent = 'Bu tarayıcıdaki karar açıldı.';
+  }
+} catch {
+  byId('atlas-save-status').textContent = 'Tarayıcı kaydı açılamadı. JSON yedeği kullanabilirsin.';
+}
+
+function save() {
+  let status = 'Bu tarayıcıda kaydedildi.';
+  try {
+    localStorage.setItem(storageKey, JSON.stringify(state));
+  } catch {
+    status = 'Tarayıcı kaydı kullanılamıyor. JSON yedeği indirebilirsin.';
+  }
+  byId('atlas-save-status').textContent = status;
+}
+
+function notify(message) {
+  const toast = byId('atlas-toast');
+  toast.textContent = message;
+  toast.hidden = false;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { toast.hidden = true; }, 4400);
+}
+
+function freshId(prefix, entries) {
+  let id;
+  do {
+    id = prefix + '-' + ++nextId;
+  } while (entries.some(entry => entry.id === id));
+  return id;
+}
+
+function renderRoute(focus) {
+  const hash = location.hash;
+  const profileId = hash.startsWith('#atlas/profil/') ? hash.slice('#atlas/profil/'.length) : '';
+  const profile = siteById.get(profileId);
+  const nextView = profile ? profile.id : ({
+    '#atlas/karsilastir': 'compare',
+    '#atlas/yontem': 'method',
+    '#atlas/rehber': 'directory',
+    '#atlas-kaynaklar': 'directory',
+    '': 'directory'
+  })[hash] || view || 'directory';
+  if (nextView === view) return;
+  view = nextView;
+  const page = profile ? 'profile' : view;
+  for (const section of all('[data-view]')) {
+    section.hidden = section.dataset.view !== page ||
+      (page === 'profile' && section.dataset.profile !== view);
+  }
+  const name = profile ? profile.name : ({ compare: 'Karar karşılaştırma', method: 'Araştırma yöntemi' })[view];
+  if (name) heading.textContent = name;
+  else heading.innerHTML = directoryHeading;
+  root.querySelector('[data-heading="' + view + '"]').append(heading);
+  for (const link of all('[data-nav]')) {
+    if (link.dataset.nav === (profile ? 'directory' : view)) link.setAttribute('aria-current', 'page');
+    else link.removeAttribute('aria-current');
+  }
+  if (!root.dataset.embedded) document.title = name ? name + ' | Bıçak Atlası' : 'Bıçak Atlası | Kaynak Rehberi';
+  syncSelection();
+  if (hash === '#atlas-kaynaklar') byId('atlas-kaynaklar').scrollIntoView();
+  else if (focus) {
+    heading.focus({ preventScroll: true });
+    root.scrollIntoView({ block: 'start' });
+  }
+}
+
+function renderDirectory() {
+  const matched = filterSites(sites, filters);
+  const ids = new Set(matched.map(site => site.id));
+  for (const node of all('[data-directory-site]')) node.hidden = !ids.has(node.dataset.directorySite);
+  const cards = byId('atlas-cards');
+  const rows = byId('atlas-rows');
+  for (const site of matched) {
+    cards.append(byId('atlas-card-' + site.id));
+    rows.append(byId('atlas-row-' + site.id));
+  }
+  cards.hidden = !matched.length || filters.view !== 'cards';
+  byId('atlas-table-wrap').hidden = !matched.length || filters.view !== 'table';
+  byId('atlas-empty').hidden = Boolean(matched.length);
+  byId('atlas-results').innerHTML = '<strong>' + matched.length + '</strong> kaynak gösteriliyor';
+  byId('atlas-clear').hidden = !(filters.query || filters.category || filters.turkish || filters.sort !== 'guide');
+  for (const chip of all('[data-action="category"]')) {
+    chip.setAttribute('aria-pressed', String(chip.dataset.category === filters.category));
+  }
+  for (const button of all('[data-action="view"]')) {
+    button.setAttribute('aria-pressed', String(button.dataset.mode === filters.view));
+  }
+}
+
+function syncSelection() {
+  const selected = new Set(state.options.map(option => option.siteId));
+  for (const button of all('[data-action="toggle-site"]')) {
+    const added = selected.has(button.dataset.site);
+    button.setAttribute('aria-pressed', String(added));
+    button.textContent = added ? 'Seçildi ✓' : 'Karşılaştırmaya ekle';
+    const name = siteById.get(button.dataset.site).name;
+    button.setAttribute('aria-label', name + (added ? ' · Seçimden çıkar' : ' · Karşılaştırmaya ekle'));
+  }
+  const count = state.options.length;
+  byId('atlas-nav-count').textContent = count ? '· ' + count : '';
+  byId('atlas-selection').hidden = !count || (view !== 'directory' && !siteById.has(view));
+  byId('atlas-selection-count').textContent = count + ' seçenek hazır';
+  byId('atlas-selection-names').textContent = state.options.map(optionName).join(' · ');
+}
+
+function renderEditors() {
+  byId('atlas-decision-title').value = state.title;
+  byId('atlas-criteria').innerHTML = state.criteria.map(criterion => {
+    const name = escapeMarkup(criterionName(criterion));
+    return `<div class="ba-criterion">
+      <div class="ba-row">
+        <input type="text" data-edit="criterion" data-criterion="${criterion.id}" maxlength="100" value="${escapeMarkup(criterion.name)}" aria-label="${name} · Ölçüt adı">
+        <button class="ba-remove" type="button" data-action="remove-criterion" data-criterion="${criterion.id}" aria-label="${name} ölçütünü kaldır">×</button>
+      </div>
+      <input type="range" min="0" max="10" step="1" data-edit="weight" data-criterion="${criterion.id}" value="${criterion.weight}" aria-label="${name} ağırlığı">
+      <div class="ba-weight-meta"><span data-weight-value="${criterion.id}"></span><span data-weight-share="${criterion.id}"></span></div>
+    </div>`;
+  }).join('') || '<p class="ba-small">Kararını değerlendirmek için bir ölçüt ekle.</p>';
+
+  if (state.options.length) {
+    const columns = state.criteria.map(criterion => `<th scope="col" data-criterion-heading="${criterion.id}">${escapeMarkup(criterionName(criterion))}</th>`).join('');
+    const rows = state.options.map((option, rowIndex) => {
+      const name = escapeMarkup(optionName(option));
+      const cells = state.criteria.map((criterion, columnIndex) => {
+        const score = getScore(state, option.id, criterion.id);
+        const value = score === null ? '' : String(score).replace('.', ',');
+        const errorId = 'atlas-score-error-' + rowIndex + '-' + columnIndex;
+        return `<td><input class="ba-score-input" type="text" inputmode="decimal" autocomplete="off" data-edit="score" data-option="${option.id}" data-criterion="${criterion.id}" aria-label="${name} – ${escapeMarkup(criterionName(criterion))} puanı" aria-describedby="${errorId}" placeholder="—" value="${value}">
+          <div class="ba-score-error" id="${errorId}" hidden>0–10 arası sayı gir.</div></td>`;
+      }).join('');
+      return `<tr><th scope="row"><div class="ba-row">
+        <input type="text" maxlength="120" data-edit="option" data-option="${option.id}" value="${escapeMarkup(option.name)}" aria-label="${name} · Seçenek adı">
+        <button class="ba-remove" type="button" data-action="remove-option" data-option="${option.id}" aria-label="${name} seçeneğini kaldır">×</button>
+      </div></th>${cells}<td data-total="${option.id}"></td></tr>`;
+    }).join('');
+    const minWidth = 305 + state.criteria.length * 105;
+    byId('atlas-score-table').innerHTML = `<div class="ba-table-wrap" tabindex="0" role="region" aria-label="Puan tablosu"><table class="ba-score-table" style="min-width:${minWidth}px"><caption class="ba-sr">Seçeneklere göre ölçüt puanları</caption><thead><tr><th scope="col">Seçenek</th>${columns}<th scope="col">Puan / 10</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+  } else {
+    byId('atlas-score-table').innerHTML = '<p class="ba-note">Rehberden bir kaynak seç veya kendi seçeneğini ekle.</p>';
+  }
+  const select = byId('atlas-source-select');
+  const previous = select.value;
+  const available = sites.filter(site => !state.options.some(option => option.siteId === site.id));
+  select.replaceChildren(new Option('Kaynak seç…', ''), ...available.map(site => new Option(site.name, site.id)));
+  if (available.some(site => site.id === previous)) select.value = previous;
+  const full = state.options.length >= MAX_OPTIONS;
+  select.disabled = full;
+  byId('atlas-source-add').disabled = full;
+  byId('atlas-option-name').disabled = full;
+  byId('atlas-option-add').disabled = full;
+  const criteriaFull = state.criteria.length >= MAX_CRITERIA;
+  byId('atlas-criterion-name').disabled = criteriaFull;
+  byId('atlas-criterion-add').disabled = criteriaFull;
+  root.querySelector('[data-action="equal-weights"]').disabled = !state.criteria.length;
+}
+
+function renderResults() {
+  const result = calculate(state);
+  const summary = summarize(result);
+  for (const criterion of state.criteria) {
+    const share = result.totalWeight ? criterion.weight / result.totalWeight : 0;
+    root.querySelector('[data-weight-value="' + criterion.id + '"]').textContent = criterion.weight + ' / 10';
+    root.querySelector('[data-weight-share="' + criterion.id + '"]').textContent = percentFormat.format(share) + ' pay';
+  }
+  for (const row of result.rows) {
+    root.querySelector('[data-total="' + row.option.id + '"]').textContent =
+      row.total === null ? '—' : scoreFormat.format(row.total);
+  }
+  const score = summary.score === undefined ? '' :
+    `<strong class="ba-big-score">${scoreFormat.format(summary.score)}<small>10 üzerinden</small></strong>`;
+  const contribution = summary.contribution ?
+    `<p class="ba-snap-contribution">En yüksek katkı · ${escapeMarkup(summary.contribution)}</p>` : '';
+  byId('atlas-snapshot').innerHTML = `<div class="ba-snap"><div><p class="ba-snap-title">${escapeMarkup(summary.title)}</p>
+    <p class="ba-snap-description">${escapeMarkup(summary.description)}</p>${contribution}</div>${score}</div>`;
+
+  const ranks = result.ranked.map(row => {
+    const segments = row.contributions.map((part, index) =>
+      `<span style="width:${part.value * 10}%;background:${colors[index % colors.length]}"></span>`).join('');
+    const values = row.contributions.map(part =>
+      escapeMarkup(part.name) + ' ' + scoreFormat.format(part.value)).join(' · ');
+    return `<li><div class="ba-row"><strong>${row.rank}. ${escapeMarkup(optionName(row.option))}</strong><strong>${scoreFormat.format(row.total)}</strong></div>
+      <div class="ba-bar" aria-hidden="true">${segments}</div><p class="ba-contributions">${values}</p></li>`;
+  });
+  const pending = result.incomplete.filter(row => row.missing.length).map(row =>
+    ' <strong>' + escapeMarkup(optionName(row.option)) + '</strong> (' + row.missing.length + ' eksik puan)');
+  byId('atlas-ranking').innerHTML = (ranks.length
+    ? '<ol class="ba-rank-list">' + ranks.join('') + '</ol>'
+    : '<p class="ba-note ba-limit">Puanlar tamamlandığında sıralama burada görünür.</p>') +
+    (pending.length ? '<p class="ba-pending">Bekleyenler ·' + pending.join(',') + '</p>' : '');
+}
+
+function renderDecision() {
+  renderEditors();
+  renderResults();
+  syncSelection();
+}
+
+function commitStructure() {
+  renderDecision();
+  save();
+}
+
+function addSource(id) {
+  const site = siteById.get(id);
+  if (!site || state.options.some(option => option.siteId === id)) return;
+  if (state.options.length >= MAX_OPTIONS) {
+    notify('En fazla 8 seçenek ekleyebilirsin.');
+    return;
+  }
+  state.options.push({ id: freshId('option', state.options), name: site.name, siteId: id });
+  commitStructure();
+  notify(site.name + ' seçildi.');
+}
+
+function removeOption(id) {
+  state.options = state.options.filter(option => option.id !== id);
+  delete state.scores[id];
+  commitStructure();
+}
+
+function updateLabels() {
+  for (const criterion of state.criteria) {
+    const name = criterionName(criterion);
+    const field = root.querySelector('[data-edit="criterion"][data-criterion="' + criterion.id + '"]');
+    field.setAttribute('aria-label', name + ' · Ölçüt adı');
+    field.closest('.ba-row').querySelector('button').setAttribute('aria-label', name + ' ölçütünü kaldır');
+    root.querySelector('[data-edit="weight"][data-criterion="' + criterion.id + '"]').setAttribute('aria-label', name + ' ağırlığı');
+    const cell = root.querySelector('[data-criterion-heading="' + criterion.id + '"]');
+    if (cell) cell.textContent = name;
+  }
+  for (const option of state.options) {
+    const name = optionName(option);
+    const field = root.querySelector('[data-edit="option"][data-option="' + option.id + '"]');
+    field.setAttribute('aria-label', name + ' · Seçenek adı');
+    field.closest('.ba-row').querySelector('button').setAttribute('aria-label', name + ' seçeneğini kaldır');
+  }
+  for (const input of all('[data-edit="score"]')) {
+    const option = state.options.find(item => item.id === input.dataset.option);
+    const criterion = state.criteria.find(item => item.id === input.dataset.criterion);
+    input.setAttribute('aria-label', optionName(option) + ' – ' + criterionName(criterion) + ' puanı');
+  }
+}
+
+function download(name, content, mime) {
+  const url = URL.createObjectURL(new Blob([content], { type: mime }));
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = name;
+  root.append(link);
+  link.click();
+  link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function confirmChange(title, description, acceptLabel, action) {
+  if (typeof dialog.showModal !== 'function') {
+    if (window.confirm(description)) action();
+    return;
+  }
+  byId('atlas-dialog-title').textContent = title;
+  byId('atlas-dialog-description').textContent = description;
+  byId('atlas-dialog-accept').textContent = acceptLabel;
+  onConfirm = action;
+  if (!dialog.open) dialog.showModal();
+}
+
+root.addEventListener('click', event => {
+  const button = event.target.closest('button[data-action]');
+  if (!button) return;
+  const { action, site, option, criterion } = button.dataset;
+  switch (action) {
+    case 'category':
+      filters.category = button.dataset.category;
+      renderDirectory();
+      break;
+    case 'view':
+      filters.view = button.dataset.mode;
+      renderDirectory();
+      break;
+    case 'clear':
+      Object.assign(filters, { query: '', category: '', turkish: false, sort: 'guide' });
+      byId('atlas-search').value = '';
+      byId('atlas-turkish').checked = false;
+      byId('atlas-sort').value = 'guide';
+      renderDirectory();
+      byId('atlas-search').focus();
+      break;
+    case 'toggle-site': {
+      const selected = state.options.find(item => item.siteId === site);
+      if (selected) removeOption(selected.id);
+      else addSource(site);
+      break;
+    }
+    case 'remove-option':
+      removeOption(option);
+      byId('atlas-option-name').focus();
+      break;
+    case 'remove-criterion':
+      state.criteria = state.criteria.filter(item => item.id !== criterion);
+      for (const row of Object.values(state.scores)) delete row[criterion];
+      commitStructure();
+      byId('atlas-criterion-name').focus();
+      break;
+    case 'equal-weights':
+      for (const item of state.criteria) {
+        item.weight = 5;
+        root.querySelector('[data-edit="weight"][data-criterion="' + item.id + '"]').value = 5;
+      }
+      renderResults();
+      save();
+      break;
+    case 'export-json':
+      download('bicak-atlasi-karar.json', JSON.stringify(state, null, 2), 'application/json;charset=utf-8');
+      break;
+    case 'export-text':
+      download('bicak-atlasi-ozet.txt', decisionText(state), 'text/plain;charset=utf-8');
+      break;
+    case 'import-json':
+      byId('atlas-import-file').click();
+      break;
+    case 'new-decision':
+      confirmChange('Yeni karar başlat', 'Bu tarayıcıdaki mevcut karar silinecek. Saklamak istersen önce JSON yedeğini indir.', 'Yeni karar başlat', () => {
+        state = defaultDecision();
+        commitStructure();
+        byId('atlas-decision-title').focus();
+      });
+      break;
+    case 'cancel-dialog':
+      dialog.close();
+      break;
+    case 'accept-dialog': {
+      const action = onConfirm;
+      dialog.close();
+      action?.();
+      break;
+    }
+  }
+});
+
+dialog.addEventListener('close', () => { onConfirm = undefined; });
+
+root.addEventListener('input', event => {
+  const input = event.target;
+  if (input.id === 'atlas-search') {
+    filters.query = input.value;
+    renderDirectory();
+    return;
+  }
+  if (input.id === 'atlas-decision-title') {
+    state.title = input.value;
+    save();
+    return;
+  }
+  const { edit, option, criterion } = input.dataset;
+  if (!edit) return;
+  const item = state.criteria.find(entry => entry.id === criterion);
+  switch (edit) {
+    case 'weight':
+      item.weight = Number(input.value);
+      break;
+    case 'criterion':
+      item.name = input.value;
+      updateLabels();
+      break;
+    case 'option':
+      state.options.find(entry => entry.id === option).name = input.value;
+      updateLabels();
+      syncSelection();
+      break;
+    case 'score': {
+      const { valid, value } = parseScore(input.value);
+      const row = state.scores[option] ??= Object.create(null);
+      row[criterion] = value;
+      input.setAttribute('aria-invalid', String(!valid));
+      byId(input.getAttribute('aria-describedby')).hidden = valid;
+      break;
+    }
+  }
+  renderResults();
+  save();
+});
+
+root.addEventListener('change', async event => {
+  const input = event.target;
+  if (input.id === 'atlas-sort' || input.id === 'atlas-turkish') {
+    filters.sort = byId('atlas-sort').value;
+    filters.turkish = byId('atlas-turkish').checked;
+    renderDirectory();
+  }
+  if (input.id !== 'atlas-import-file') return;
+  const file = input.files[0];
+  input.value = '';
+  if (!file) return;
+  try {
+    if (file.size > 256 * 1024) throw new Error('Karar yedeği en fazla 256 KB olabilir.');
+    const imported = validateDecision(JSON.parse(await file.text()), knownSites);
+    confirmChange('Yedeği yükle', 'Mevcut karar, seçtiğin dosyadaki karar ile değiştirilecek.', 'Yedeği yükle', () => {
+      state = imported;
+      commitStructure();
+      notify('Karar yüklendi.');
+    });
+  } catch (error) {
+    notify(error instanceof SyntaxError ? 'Dosya okunamadı. Bir Atlas JSON yedeği seç.' : error.message);
+  }
+});
+
+root.addEventListener('submit', event => {
+  const form = event.target;
+  event.preventDefault();
+  if (form.id === 'atlas-add-source') {
+    const select = byId('atlas-source-select');
+    if (select.value) addSource(select.value);
+    else notify('Rehberden bir kaynak seç.');
+    return;
+  }
+  if (form.id !== 'atlas-add-option' && form.id !== 'atlas-add-criterion') return;
+  const isCriterion = form.id === 'atlas-add-criterion';
+  const field = byId(isCriterion ? 'atlas-criterion-name' : 'atlas-option-name');
+  const entries = isCriterion ? state.criteria : state.options;
+  const limit = isCriterion ? MAX_CRITERIA : MAX_OPTIONS;
+  const name = field.value.trim();
+  if (!name) {
+    notify(isCriterion ? 'Bir ölçüt adı gir.' : 'Bir seçenek adı gir.');
+    field.focus();
+    return;
+  }
+  if (entries.length >= limit) return;
+  const entry = { id: freshId(isCriterion ? 'criterion' : 'option', entries), name };
+  if (isCriterion) entry.weight = 5;
+  entries.push(entry);
+  field.value = '';
+  commitStructure();
+  field.focus();
+});
+
+window.addEventListener('hashchange', () => renderRoute(true));
+renderDirectory();
+renderDecision();
+renderRoute(false);
+
+})();
+</script>
+</body>
+</html>
