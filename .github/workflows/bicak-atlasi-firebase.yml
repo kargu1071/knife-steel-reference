@@ -1,0 +1,70 @@
+name: Bicak Atlasi - Firebase Hosting
+
+on:
+  pull_request:
+    paths:
+      - 'firebase.json'
+      - '.github/workflows/bicak-atlasi-firebase.yml'
+      - 'bicak-atlasi/deploy/**'
+      - 'bicak-atlasi/render/public/**'
+  push:
+    branches: [main]
+    paths:
+      - 'firebase.json'
+      - '.github/workflows/bicak-atlasi-firebase.yml'
+      - 'bicak-atlasi/deploy/**'
+      - 'bicak-atlasi/render/public/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bicak-atlasi-firebase-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare static Atlas files
+        run: node bicak-atlasi/deploy/prepare.mjs cloudflare
+      - name: Check Firebase configuration and required routes
+        run: |
+          node -e "const fs=require('fs'); const c=JSON.parse(fs.readFileSync('firebase.json','utf8'));if(c.hosting?.public!=='.atlas-dist'||!c.hosting?.headers?.some(h=>h.headers?.some(v=>v.key==='X-Robots-Tag'&&v.value.includes('noindex'))))process.exit(1)"
+          test -s .atlas-dist/index.html
+          test -s .atlas-dist/karsilastir/index.html
+          test -s .atlas-dist/yontem/index.html
+          test -s .atlas-dist/sitemap.xml
+
+  deploy:
+    needs: verify
+    if: ${{ github.event_name != 'pull_request' && vars.ATLAS_FIREBASE_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare Firebase Hosting output
+        run: node bicak-atlasi/deploy/prepare.mjs cloudflare
+      - name: Ensure account configuration is present
+        env:
+          FIREBASE_PROJECT_ID: ${{ vars.ATLAS_FIREBASE_PROJECT_ID }}
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.ATLAS_FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          test -n "$FIREBASE_PROJECT_ID" && test -n "$FIREBASE_SERVICE_ACCOUNT" || {
+            echo "Missing Firebase project ID or service account GitHub secret"
+            exit 1
+          }
+      - name: Deploy to Firebase Hosting live channel
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          firebaseServiceAccount: ${{ secrets.ATLAS_FIREBASE_SERVICE_ACCOUNT }}
+          projectId: ${{ vars.ATLAS_FIREBASE_PROJECT_ID }}
+          channelId: live
+          entryPoint: .
