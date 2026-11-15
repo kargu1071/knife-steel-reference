@@ -87,6 +87,10 @@ export async function extendAtlas({ target, origin, platform }) {
   // IndexNow key is public by design. Publishing the key is not a URL submission.
   if (platform === 'cloudflare') {
     await writeFile(path.join(target, INDEXNOW_KEY + '.txt'), INDEXNOW_KEY);
+    const cfCommit = process.env.CF_PAGES_COMMIT_SHA;
+    if (cfCommit && /^[a-f0-9]{40}$/i.test(cfCommit)) {
+      await writeFile(path.join(target, 'atlas-build.txt'), cfCommit.toLowerCase());
+    }
     const verification = process.env.ATLAS_GOOGLE_SITE_VERIFICATION;
     if (verification) {
       if (!/^[A-Za-z0-9_-]{10,200}$/.test(verification)) {
