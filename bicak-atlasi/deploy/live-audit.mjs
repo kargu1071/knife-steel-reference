@@ -16,7 +16,8 @@ const entries = [
   { name: 'Cloudflare sürüm kimliği', url: base + '/atlas-build.txt', must: false, kind: 'build' },
   { name: 'Firebase (ilk yayın bekleniyor)', url: 'https://bicak-atlasi.web.app/', must: false, kind: 'mirror' },
   { name: 'Render yedek', url: 'https://bicak-atlasi.onrender.com/', must: false, kind: 'mirror' },
-  { name: 'Vercel mevcut Next.js', url: 'https://bicak-atlasi.vercel.app/', must: false, kind: 'mirror' }
+  { name: 'Vercel mevcut Next.js', url: 'https://bicak-atlasi.vercel.app/', must: false, kind: 'mirror' },
+  { name: 'GitLab Pages herkese açık erişim', url: 'https://bscak-atlass-91a525.gitlab.io/', must: false, kind: 'gitlab' }
 ];
 
 async function one(entry) {
@@ -46,6 +47,18 @@ async function one(entry) {
       if (entry.kind === 'build') {
         good = okHttp && /^[a-f0-9]{40}$/i.test(content.trim());
         message = 'Deployed SHA=' + (good ? content.trim().slice(0,12) : 'unavailable');
+      }
+      if (entry.kind === 'gitlab') {
+        const hasAtlas = /Bıçak Atlası|Bıcak Atlası|Bicak Atlasi/i.test(content);
+        const isGitlabOrigin = new URL(response.url).hostname === 'bscak-atlass-91a525.gitlab.io';
+        const robotsMeta = content.match(/<meta[^>]+name=["']robots["'][^>]*>/i)?.[0] ?? 'not seen';
+        const canonical = content.match(/<link[^>]+rel=["']canonical["'][^>]*>/i)?.[0] ?? 'not seen';
+        good = okHttp && hasAtlas && isGitlabOrigin;
+        message = 'Public=' + good + ', Final URL=' + response.url
+          + ', robots meta=' + robotsMeta.slice(0,180)
+          + ', X-Robots-Tag=' + (robot || 'not seen')
+          + ', canonical=' + canonical.slice(0,180)
+          + ', title=' + (content.match(/<title[^>]*>([^<]+)/i)?.[1] || 'not found');
       }
       if (entry.kind === 'mirror') {
         const hasAtlas = /Bıçak Atlası|Bıcak Atlası|Bicak Atlasi/i.test(content);
