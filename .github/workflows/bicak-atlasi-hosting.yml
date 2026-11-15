@@ -39,14 +39,6 @@ jobs:
           test -s .atlas-dist/index.html
           test -s .atlas-dist/karsilastir/index.html
           test -s .atlas-dist/sitemap.xml
-      - name: Validate Render backup canonical points at Cloudflare
-        env:
-          RENDER_EXTERNAL_URL: https://bicak-atlasi.onrender.com
-        run: |
-          node --check bicak-atlasi/render/prepare-deploy.mjs
-          node bicak-atlasi/render/prepare-deploy.mjs
-          grep -q 'rel="canonical" href="https://bicak-atlasi.pages.dev/"' bicak-atlasi/render/public/index.html
-          grep -q '<loc>https://bicak-atlasi.pages.dev/' bicak-atlasi/render/public/sitemap.xml
       - name: Validate DigitalOcean static build and duplicate-indexing safeguards
         run: |
           npm run build:atlas-digitalocean
@@ -56,6 +48,14 @@ jobs:
           grep -q 'name="robots" content="noindex, follow"' .atlas-dist/index.html
           grep -q 'name="robots" content="noindex, follow"' .atlas-dist/konular/index.html
           grep -q 'href="https://bicak-atlasi.pages.dev/' .atlas-dist/index.html
+      - name: Validate Render backup canonical points at Cloudflare
+        env:
+          RENDER_EXTERNAL_URL: https://bicak-atlasi.onrender.com
+        run: |
+          node --check bicak-atlasi/render/prepare-deploy.mjs
+          node bicak-atlasi/render/prepare-deploy.mjs
+          grep -q 'rel="canonical" href="https://bicak-atlasi.pages.dev/"' bicak-atlasi/render/public/index.html
+          grep -q '<loc>https://bicak-atlasi.pages.dev/' bicak-atlasi/render/public/sitemap.xml
 
   cloudflare:
     needs: verify
