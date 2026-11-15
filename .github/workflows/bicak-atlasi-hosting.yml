@@ -48,6 +48,13 @@ jobs:
           grep -q 'name="robots" content="noindex, follow"' .atlas-dist/index.html
           grep -q 'name="robots" content="noindex, follow"' .atlas-dist/konular/index.html
           grep -q 'href="https://bicak-atlasi.pages.dev/' .atlas-dist/index.html
+      - name: Validate Netlify secondary site headers
+        run: |
+          node bicak-atlasi/deploy/prepare.mjs netlify
+          test -s .atlas-dist/index.html
+          grep -q 'X-Robots-Tag: noindex, follow' .atlas-dist/_headers
+          grep -q 'rel="canonical" href="https://bicak-atlasi.pages.dev/"' .atlas-dist/index.html
+          grep -q 'X-Robots-Tag = "noindex, follow"' netlify.toml
       - name: Validate Render backup canonical points at Cloudflare
         env:
           RENDER_EXTERNAL_URL: https://bicak-atlasi.onrender.com
