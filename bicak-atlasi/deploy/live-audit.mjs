@@ -40,7 +40,10 @@ async function one(entry) {
           + ' comparison=' + urls.includes(base+'/karsilastir/');
       }
       if (entry.kind === 'robots') good = okHttp && content.includes('Sitemap:');
-      if (entry.kind === 'mirror') message = 'X-Robots-Tag=' + (robot||'not seen');
+      if (entry.kind === 'mirror') {
+        good = okHttp && robot.toLowerCase().includes('noindex');
+        message = 'HTTP access=' + okHttp + ', X-Robots-Tag=' + (robot||'not seen');
+      }
       if (good || attempt===2 || !entry.must) {
         return { ...entry, ok:good, status:response.status, final:response.url, message };
       }
