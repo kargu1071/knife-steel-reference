@@ -34,9 +34,9 @@ Alan adı doğrulandıktan sonra:
 
 - Cloudflare production build ortam değişkeni: `ATLAS_CANONICAL_ORIGIN=https://GERCEK-ALAN-ADI` (sonunda `/` yok). Deploy tetikleyin.
 - Netlify ve Render'daki ikincil sürümlerde canonical, aynı ana alan adını göstermelidir. Netlify build ortam değişkeni `ATLAS_CANONICAL_ORIGIN` desteklenir; Render'ın eski hazırlama betiği ayrıca güncellenmelidir.
-- Azure/Firebase GitHub Actions işlerinde yeni alan adını canonical olarak kullanmak için GitHub Actions variable `ATLAS_CANONICAL_ORIGIN` ayarını yazıp iş akışlarına iletin (bu PR'dan sonraki merkezi yapılandırma).
+- Azure/Firebase/Netlify GitHub Actions işlerinde yeni alan adı otomatik olarak GitHub Actions variable `ATLAS_CANONICAL_ORIGIN` üzerinden okunur. Aynı değişkeni depo Variables alanına gerçek tam HTTPS adresiyle kaydedin.
 - GSC için yeni alan adının uygun mülkünü doğrulayın; sitemap URL'sini yeni alan adına göre güncelleyin.
-- GitHub Actions değişkeni `ATLAS_INDEXNOW_ORIGIN` yeni alan adı olacak şekilde yapılandırılmalı; `submit-indexnow.mjs` bu değeri kullanır. Anahtar dosyası yeni alan adının kökünden de erişilebilir olmalı.
+- GitHub Actions değişkeni `ATLAS_CANONICAL_ORIGIN` IndexNow işine `ATLAS_INDEXNOW_ORIGIN` olarak aktarılır; anahtar dosyasının yeni alan adında yayınlandığını ve `atlas-build.txt` sürüm kontrolünü doğrulayın. Anahtar dosyası yeni alan adının kökünden de erişilebilir olmalı.
 - Eski URL'lerin yeni adrese 301 yönlendirilmesini, bütün geçiş kontrolleri tamamlandıktan sonra yapın. Canonical değişimi, yönlendirme ve GSC mülkiyet geçişini tek seferde test edin.
 
 ## 4. Yeni site özelliği: konulara göre kaynak keşfi
@@ -70,6 +70,12 @@ Ardından Actions > **Bicak Atlasi - Firebase Hosting** > Run workflow. Firebase
 5. GitHub Actions > **Bicak Atlasi - Azure Static Web Apps** > Run workflow.
 
 Azure yayını `.atlas-dist` çıktısından yapılır. Çıktıdaki `staticwebapp.config.json` bütün sayfalara **X-Robots-Tag: noindex, follow** ekler. Azure'da yeni oluşturulan sitenin adresi oluşturma sonrası görülecek, burada tahmin edilmez.
+
+## 7. Cloudflare Web Analytics ve yayın izlemesi
+
+Cloudflare Pages projesinde **Metrics > Web Analytics > Enable** seçeneğini açın. Cloudflare, geçerli HTML sayfalarına izleme betiğini sonraki yayında otomatik ekler; ayrıca HTML'ye elle analitik kodu yazmayın. Bu ölçüm Cloudflare ana sürümünün sayfa görüntülemelerini ve performansını izlemek içindir. https://developers.cloudflare.com/pages/how-to/web-analytics/
+
+GitHub > Actions ekranında Cloudflare/Netlify, Firebase, Azure ve IndexNow işlerinin **verify**, **skipped** ve **success** statülerini ayrı yorumlayın. `verify: success` derlemenin doğrulandığını, dağıtım job'u `skipped` ise ilgili platforma **yayın yapılmadığını** gösterir.
 
 ## Genel güvenlik ve kalite kontrolü
 
