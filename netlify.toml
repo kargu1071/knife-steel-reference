@@ -1,0 +1,13 @@
+# Bıçak Atlası — Netlify is a secondary mirror; Cloudflare Pages is canonical.
+[build]
+  command = "node bicak-atlasi/deploy/prepare.mjs netlify"
+  publish = ".atlas-dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, follow"
+    X-Content-Type-Options = "nosniff"
