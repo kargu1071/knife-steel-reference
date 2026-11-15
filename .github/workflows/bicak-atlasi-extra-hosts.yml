@@ -1,0 +1,101 @@
+name: Bicak Atlasi - Surge and Neocities
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/bicak-atlasi-extra-hosts.yml'
+      - 'bicak-atlasi/deploy/**'
+      - 'bicak-atlasi/render/public/**'
+      - 'bicak-atlasi/siteler.json'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/bicak-atlasi-extra-hosts.yml'
+      - 'bicak-atlasi/deploy/**'
+      - 'bicak-atlasi/render/public/**'
+      - 'bicak-atlasi/siteler.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  ATLAS_CANONICAL_ORIGIN: ${{ vars.ATLAS_CANONICAL_ORIGIN || 'https://bicak-atlasi.pages.dev' }}
+
+concurrency:
+  group: bicak-atlasi-extra-hosts-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate prepared Surge and Neocities sites
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check bicak-atlasi/deploy/prepare.mjs
+          for platform in surge neocities; do
+            node bicak-atlasi/deploy/prepare.mjs "$platform"
+            test -s .atlas-dist/index.html
+            test -s .atlas-dist/konular/index.html
+            test -s .atlas-dist/karsilastir/index.html
+            test -s .atlas-dist/sitemap.xml
+            grep -Fq '<meta name="robots" content="noindex, follow">' .atlas-dist/index.html
+            grep -Fq '<meta name="robots" content="noindex, follow">' .atlas-dist/konular/index.html
+            grep -Fq 'rel="canonical" href="https://bicak-atlasi.pages.dev/"' .atlas-dist/index.html
+            grep -Fq '<loc>https://bicak-atlasi.pages.dev/konular/</loc>' .atlas-dist/sitemap.xml
+          done
+
+  surge:
+    needs: verify
+    if: ${{ github.event_name != 'pull_request' && vars.ATLAS_SURGE_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare noindex backup
+        run: node bicak-atlasi/deploy/prepare.mjs surge
+      - name: Publish to user-configured Surge subdomain
+        shell: bash
+        env:
+          DOMAIN: ${{ vars.ATLAS_SURGE_DOMAIN }}
+          SURGE_TOKEN: ${{ secrets.ATLAS_SURGE_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [[ ! "$DOMAIN" =~ ^[a-z0-9]([a-z0-9-]*[a-z0-9])?\.surge\.sh$ ]]; then
+            echo "Set ATLAS_SURGE_DOMAIN to your actual <name>.surge.sh subdomain"
+            exit 1
+          fi
+          test -n "$SURGE_TOKEN" || { echo "Missing ATLAS_SURGE_TOKEN secret"; exit 1; }
+          npx --yes surge@0.53.0 .atlas-dist "$DOMAIN" --force https
+
+  neocities:
+    needs: verify
+    if: ${{ github.event_name != 'pull_request' && vars.ATLAS_NEOCITIES_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare noindex backup
+        run: node bicak-atlasi/deploy/prepare.mjs neocities
+      - name: Confirm dedicated site API key is available
+        env:
+          NEOCITIES_API_KEY: ${{ secrets.ATLAS_NEOCITIES_API_KEY }}
+        run: test -n "$NEOCITIES_API_KEY" || { echo "Missing ATLAS_NEOCITIES_API_KEY secret"; exit 1; }
+      - name: Publish to Neocities without deleting existing files
+        uses: bcomnes/deploy-to-neocities@v3
+        with:
+          api_key: ${{ secrets.ATLAS_NEOCITIES_API_KEY }}
+          dist_dir: .atlas-dist
+          cleanup: false
+          neocities_supporter: false
+          preview_before_deploy: true
