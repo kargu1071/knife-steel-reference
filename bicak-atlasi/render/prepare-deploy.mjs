@@ -5,8 +5,11 @@ import {fileURLToPath} from 'node:url';
 const marker='https://render-origin.bicak-atlasi.invalid';
 const value=process.env.RENDER_EXTERNAL_URL;
 if(!value)throw new Error('RENDER_EXTERNAL_URL is required for publication');
-const origin=new URL(value).origin;
-if(!origin.startsWith('https://'))throw new Error('An HTTPS publication URL is required');
+const renderOrigin=new URL(value).origin;
+if(!renderOrigin.startsWith('https://'))throw new Error('An HTTPS publication URL is required');
+// This Render service is a secondary mirror; keep canonical URLs on the primary Cloudflare site.
+const origin=(process.env.ATLAS_CANONICAL_ORIGIN ?? 'https://bicak-atlasi.pages.dev').replace(/\/$/, '');
+if(!/^https:\/\/[\w.-]+(?::\d+)?$/.test(origin))throw new Error('ATLAS_CANONICAL_ORIGIN must be a valid HTTPS origin');
 const directory=path.join(path.dirname(fileURLToPath(import.meta.url)),'public');
 let updated=0;
 async function walk(dir){
