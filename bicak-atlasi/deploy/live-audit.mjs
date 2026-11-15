@@ -14,6 +14,8 @@ const entries = [
   { name: 'Robots', url: base + '/robots.txt', must: true, kind: 'robots' },
   { name: 'IndexNow dosyası', url: base + '/bicatlas2026c8a73e945612.txt', must: false, kind: 'indexnow' },
   { name: 'Cloudflare sürüm kimliği', url: base + '/atlas-build.txt', must: false, kind: 'build' },
+  { name: 'Azure Static Web Apps yedek', url: 'https://yellow-grass-09592c910.4.azurestaticapps.net/', must: false, kind: 'mirror' },
+  { name: 'Netlify yedek', url: 'https://bright-kulfi-073204.netlify.app/', must: false, kind: 'mirror' },
   { name: 'Firebase (ilk yayın bekleniyor)', url: 'https://bicak-atlasi.web.app/', must: false, kind: 'mirror' },
   { name: 'Render yedek', url: 'https://bicak-atlasi.onrender.com/', must: false, kind: 'mirror' },
   { name: 'Vercel mevcut Next.js', url: 'https://bicak-atlasi.vercel.app/', must: false, kind: 'mirror' },
@@ -74,7 +76,11 @@ async function one(entry) {
         const hasAtlas = /Bıçak Atlası|Bıcak Atlası|Bicak Atlasi/i.test(content);
         good = okHttp && robot.toLowerCase().includes('noindex') && hasAtlas;
         const tag = content.match(/<link[^>]*rel=[\"']canonical[\"'][^>]*>/i)?.[0] ?? 'not seen';
-        message = 'Atlas content=' + hasAtlas + ', X-Robots-Tag=' + (robot||'not seen') + ', canonical=' + tag.slice(0,170);
+        const canonicalPointsToPrimary = tag.includes('href="' + base + '/') ||
+          tag.includes("href='" + base + '/');
+        message = 'Atlas content=' + hasAtlas + ', X-Robots-Tag=' + (robot||'not seen') +
+          ', canonicalPointsToPrimary=' + canonicalPointsToPrimary +
+          ', canonical=' + tag.slice(0,170);
       }
       if (good || attempt===2 || !entry.must) {
         return { ...entry, ok:good, status:response.status, final:response.url, message };
