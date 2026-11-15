@@ -1,0 +1,30 @@
+name: Bicak Atlasi - Public Site Audit
+
+on:
+  pull_request:
+    paths:
+      - 'bicak-atlasi/deploy/live-audit.mjs'
+      - '.github/workflows/bicak-atlasi-live-audit.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'bicak-atlasi/deploy/live-audit.mjs'
+      - '.github/workflows/bicak-atlasi-live-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  live-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check syntax
+        run: node --check bicak-atlasi/deploy/live-audit.mjs
+      - name: Audit Cloudflare Pages and secondary hosts
+        run: node bicak-atlasi/deploy/live-audit.mjs
