@@ -14,6 +14,9 @@ on:
       - '.github/workflows/bicak-atlasi-hosting.yml'
   workflow_dispatch:
 
+env:
+  ATLAS_CANONICAL_ORIGIN: ${{ vars.ATLAS_CANONICAL_ORIGIN || 'https://bicak-atlasi.pages.dev' }}
+
 permissions:
   contents: read
 
