@@ -1,0 +1,29 @@
+name: Bicak Atlasi - Bing IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'bicak-atlasi/deploy/extend.mjs'
+      - 'bicak-atlasi/deploy/prepare.mjs'
+      - 'bicak-atlasi/deploy/submit-indexnow.mjs'
+      - 'bicak-atlasi/render/public/**'
+      - 'bicak-atlasi/siteler.json'
+      - '.github/workflows/bicak-atlasi-indexnow.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  submit:
+    if: ${{ vars.ATLAS_INDEXNOW_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify deployed Cloudflare commit and submit URLs
+        run: node bicak-atlasi/deploy/submit-indexnow.mjs

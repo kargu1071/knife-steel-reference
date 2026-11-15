@@ -1,0 +1,61 @@
+name: Bicak Atlasi - Azure Static Web Apps
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/bicak-atlasi-azure.yml'
+      - 'bicak-atlasi/deploy/**'
+      - 'bicak-atlasi/render/public/**'
+      - 'bicak-atlasi/siteler.json'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/bicak-atlasi-azure.yml'
+      - 'bicak-atlasi/deploy/**'
+      - 'bicak-atlasi/render/public/**'
+      - 'bicak-atlasi/siteler.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare Bıçak Atlası for Azure
+        run: |
+          node --check bicak-atlasi/deploy/extend.mjs
+          node bicak-atlasi/deploy/prepare.mjs azure
+          test -s .atlas-dist/index.html
+          test -s .atlas-dist/konular/index.html
+          test -s .atlas-dist/karsilastir/index.html
+          node -e "const fs=require('fs'); const config=JSON.parse(fs.readFileSync('.atlas-dist/staticwebapp.config.json','utf8')); if(config.globalHeaders?.['X-Robots-Tag'] !== 'noindex, follow') process.exit(1);"
+
+  deploy:
+    needs: verify
+    if: ${{ github.event_name != 'pull_request' && vars.ATLAS_AZURE_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare static build and noindex policy
+        run: node bicak-atlasi/deploy/prepare.mjs azure
+      - name: Check Azure deployment token exists
+        env:
+          TOKEN: ${{ secrets.ATLAS_AZURE_STATIC_WEB_APPS_TOKEN }}
+        run: test -n "$TOKEN" || { echo 'Missing Azure Static Web Apps deployment token'; exit 1; }
+      - name: Deploy to the existing configured Azure Static Web App
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.ATLAS_AZURE_STATIC_WEB_APPS_TOKEN }}
+          action: upload
+          app_location: .atlas-dist
+          output_location: ''
+          skip_app_build: true
