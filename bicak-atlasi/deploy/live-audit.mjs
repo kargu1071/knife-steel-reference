@@ -34,7 +34,17 @@ async function one(entry) {
       const robot = response.headers.get('x-robots-tag') ?? '';
       const okHttp = response.ok;
       let good = okHttp;
-      if (entry.kind === 'html') good = okHttp && /<html\b/i.test(content);
+      if (entry.kind === 'html') {
+        good = okHttp && /<html\b/i.test(content);
+        if (entry.name === 'Ana sayfa') {
+          const robots = content.match(/<meta[^>]+name=["']robots["'][^>]*>/i)?.[0] ?? '';
+          const canonical = content.match(/<link[^>]+rel=["']canonical["'][^>]*>/i)?.[0] ?? '';
+          const noindex = /noindex/i.test(robots) || /noindex/i.test(robot);
+          const correctCanonical = canonical.includes('href="' + base + '/"');
+          good = good && !noindex && correctCanonical;
+          message = 'Primary noindex=' + noindex + ', canonicalMatches=' + correctCanonical;
+        }
+      }
       if (entry.kind === 'sitemap') {
         const urls = [...content.matchAll(/<loc>([^<]+)<\/loc>/g)].map(x=>x[1]);
         good = okHttp && type.includes('xml') && urls.some(s=>s===base+'/konular/')
