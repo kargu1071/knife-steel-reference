@@ -79,7 +79,7 @@ export async function extendAtlas({ target, origin, platform }) {
   for (const route of ['/karsilastir/', '/konular/']) {
     const loc = origin + route;
     if (!sitemap.includes('<loc>' + loc + '</loc>')) {
-      sitemap = sitemap.replace('</urlset>', '<url><loc>' + loc + '</loc><lastmod>2026-11-15</lastmod></url>\n</urlset>');
+      sitemap = sitemap.replace('</urlset>', '<url><loc>' + loc + '</loc><lastmod>' + (route === '/konular/' ? '2026-11-15' : '2026-11-07') + '</lastmod></url>\n</urlset>');
     }
   }
   await writeFile(sitemapFile, sitemap);
