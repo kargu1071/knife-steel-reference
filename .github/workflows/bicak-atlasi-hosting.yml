@@ -39,6 +39,15 @@ jobs:
           test -s .atlas-dist/index.html
           test -s .atlas-dist/karsilastir/index.html
           test -s .atlas-dist/sitemap.xml
+      - name: Validate DigitalOcean static build and duplicate-indexing safeguards
+        run: |
+          npm run build:atlas-digitalocean
+          test -s .atlas-dist/index.html
+          test -s .atlas-dist/konular/index.html
+          test -s .atlas-dist/karsilastir/index.html
+          grep -q 'name="robots" content="noindex, follow"' .atlas-dist/index.html
+          grep -q 'name="robots" content="noindex, follow"' .atlas-dist/konular/index.html
+          grep -q 'href="https://bicak-atlasi.pages.dev/' .atlas-dist/index.html
 
   cloudflare:
     needs: verify

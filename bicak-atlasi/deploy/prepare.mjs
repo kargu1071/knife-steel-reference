@@ -10,8 +10,8 @@ const platform = process.argv[2] ?? 'cloudflare';
 const origin = (process.env.ATLAS_CANONICAL_ORIGIN ?? 'https://bicak-atlasi.pages.dev').replace(/\/$/, '');
 const marker = 'https://render-origin.bicak-atlasi.invalid';
 
-if (!['cloudflare', 'netlify', 'azure'].includes(platform)) {
-  throw new Error('Platform must be cloudflare, netlify or azure');
+if (!['cloudflare', 'netlify', 'azure', 'digitalocean'].includes(platform)) {
+  throw new Error('Platform must be cloudflare, netlify, azure or digitalocean');
 }
 if (!/^https:\/\/[\w.-]+(?::\d+)?$/.test(origin)) {
   throw new Error('ATLAS_CANONICAL_ORIGIN must be an HTTPS origin without a path');
@@ -48,4 +48,29 @@ if (platform === 'netlify') {
   await writeFile(path.join(target, '_headers'), '/*\n  X-Robots-Tag: noindex, follow\n');
 }
 await extendAtlas({ target, origin, platform });
+if (platform === 'digitalocean') {
+  async function markAsSecondarySite(directory) {
+    for (const entry of await readdir(directory, { withFileTypes: true })) {
+      const file = path.join(directory, entry.name);
+      if (entry.isDirectory()) {
+        await markAsSecondarySite(file);
+        continue;
+      }
+      if (!entry.name.endsWith('.html')) continue;
+      const html = await readFile(file, 'utf8');
+      if (!/<head\b[^>]*>/i.test(html)) throw new Error('Missing HTML head for ' + file);
+      const sanitized = html
+        .replace(/<meta\s+name=["']robots["'][^>]*>/gi, '')
+        .replace(/<head\b[^>]*>/i, (head) => head + '<meta name="robots" content="noindex, follow">');
+      await writeFile(file, sanitized);
+    }
+  }
+  await markAsSecondarySite(target);
+  const homeNoIndex = await readFile(path.join(target, 'index.html'), 'utf8');
+  if (!homeNoIndex.includes('<meta name="robots" content="noindex, follow">') ||
+      homeNoIndex.includes('<meta name="robots" content="index, follow">')) {
+    throw new Error('Secondary-site search indexing safeguards failed');
+  }
+}
+
 console.log('Validated ' + platform + ' output in .atlas-dist; replaced canonical in ' + replacedFiles + ' files');

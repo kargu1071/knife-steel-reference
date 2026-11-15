@@ -1,0 +1,12 @@
+{
+  "name": "knife-steel-reference-publish",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "build:atlas-digitalocean": "node bicak-atlasi/deploy/prepare.mjs digitalocean"
+  }
+}
