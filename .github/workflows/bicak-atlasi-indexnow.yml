@@ -12,6 +12,9 @@ on:
       - '.github/workflows/bicak-atlasi-indexnow.yml'
   workflow_dispatch:
 
+env:
+  ATLAS_INDEXNOW_ORIGIN: ${{ vars.ATLAS_CANONICAL_ORIGIN || 'https://bicak-atlasi.pages.dev' }}
+
 permissions:
   contents: read
 
