@@ -10,8 +10,8 @@ const platform = process.argv[2] ?? 'cloudflare';
 const origin = (process.env.ATLAS_CANONICAL_ORIGIN ?? 'https://bicak-atlasi.pages.dev').replace(/\/$/, '');
 const marker = 'https://render-origin.bicak-atlasi.invalid';
 
-if (!['cloudflare', 'netlify', 'azure', 'digitalocean'].includes(platform)) {
-  throw new Error('Platform must be cloudflare, netlify, azure or digitalocean');
+if (!['cloudflare', 'netlify', 'azure', 'digitalocean', 'surge', 'neocities'].includes(platform)) {
+  throw new Error('Unsupported hosting platform: ' + platform);
 }
 if (!/^https:\/\/[\w.-]+(?::\d+)?$/.test(origin)) {
   throw new Error('ATLAS_CANONICAL_ORIGIN must be an HTTPS origin without a path');
@@ -48,7 +48,7 @@ if (platform === 'netlify') {
   await writeFile(path.join(target, '_headers'), '/*\n  X-Robots-Tag: noindex, follow\n');
 }
 await extendAtlas({ target, origin, platform });
-if (platform === 'digitalocean') {
+if (['digitalocean', 'surge', 'neocities'].includes(platform)) {
   async function markAsSecondarySite(directory) {
     for (const entry of await readdir(directory, { withFileTypes: true })) {
       const file = path.join(directory, entry.name);
