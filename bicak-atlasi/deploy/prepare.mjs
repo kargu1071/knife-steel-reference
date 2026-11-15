@@ -1,6 +1,7 @@
 import { cp, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { extendAtlas } from './extend.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const source = path.resolve(here, '../render/public');
@@ -9,8 +10,8 @@ const platform = process.argv[2] ?? 'cloudflare';
 const origin = (process.env.ATLAS_CANONICAL_ORIGIN ?? 'https://bicak-atlasi.pages.dev').replace(/\/$/, '');
 const marker = 'https://render-origin.bicak-atlasi.invalid';
 
-if (!['cloudflare', 'netlify'].includes(platform)) {
-  throw new Error('Platform must be cloudflare or netlify');
+if (!['cloudflare', 'netlify', 'azure'].includes(platform)) {
+  throw new Error('Platform must be cloudflare, netlify or azure');
 }
 if (!/^https:\/\/[\w.-]+(?::\d+)?$/.test(origin)) {
   throw new Error('ATLAS_CANONICAL_ORIGIN must be an HTTPS origin without a path');
@@ -46,4 +47,5 @@ await readFile(path.join(target, 'sitemap.xml'));
 if (platform === 'netlify') {
   await writeFile(path.join(target, '_headers'), '/*\n  X-Robots-Tag: noindex, follow\n');
 }
+await extendAtlas({ target, origin, platform });
 console.log('Validated ' + platform + ' output in .atlas-dist; replaced canonical in ' + replacedFiles + ' files');
